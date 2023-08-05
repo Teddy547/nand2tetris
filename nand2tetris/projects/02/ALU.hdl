@@ -42,5 +42,31 @@ CHIP ALU {
         ng; // 1 if (out < 0),  0 otherwise
 
     PARTS:
-   // Put you code here:
+    //zero/negate x
+	Mux16(a = x, sel = zx, out = x1);
+	Not16(in = x1, out = notx1);
+	Mux16(a = x1, b = notx1, sel = nx, out = x2);
+	
+	//zero/negate y
+	Mux16(a = y, sel = zy, out = y1);
+	Not16(in = y1, out = noty1);
+	Mux16(a = y1, b = noty1, sel = ny, out = y2);
+	
+	//function select
+	Add16(a = x2, b = y2, out = result1);
+	And16(a = x2, b = y2, out = result2);
+	Mux16(a = result2, b = result1, sel = f, out = result3);
+	
+	//final output
+	Not16(in = result3, out = notresult3);
+	Mux16(a = result3, b = notresult3, sel = no, out = out, out[15] = MSBout, out[0..7] = finalLeft, out[8..15] = finalRight);
+	
+	//setting zero flag
+	Or8Way(in = finalLeft, out = zrl);
+	Or8Way(in = finalRight, out = zrr);
+	Or(a = zrl, b = zrr, out = nzr);
+	Not(in = nzr, out = zr);
+	
+	//setting negative flag
+	And(a = MSBout, b = true, out = ng);
 }

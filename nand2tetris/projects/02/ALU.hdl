@@ -52,14 +52,11 @@ CHIP ALU {
     Add16(a=x3, b=y3, out=outAdd);
     Mux16(a=outAnd, b=outAdd, sel=f, out=result);
     Not16(in=result, out=resulteNegated);
-    Mux16(a=result, b=resulteNegated, sel=no, out[15]=ng, out=out1);
+    Mux16(a=result, b=resulteNegated, sel=no, out[15]=ng, out[0..7]=lByte, out[8..15]=hByte, out=out);
 
     //Flag pin 
-    Not16(in=out1, out=notOut);
-    Inc16(in=notOut, out=minusOut1);
-    Or16(a=out1, b=minusOut1, out=outOr);
-    Not16(in=outOr, out[15]=zr);
-
-    //Result
-    And16(a=out1, b=true, out=out);
+    Or8Way(in=lByte, out=lBit);
+    Or8Way(in=hByte, out=hBit);
+    Or(a=lBit, b=hBit, out=isNotZero);
+    Not(in=isNotZero, out=zr);
 }

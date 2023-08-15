@@ -12,3 +12,57 @@
 // the screen should remain fully clear as long as no key is pressed.
 
 // Put your code here.
+    //Base Address for screen and length of memory map. 
+    @8192
+    D=A 
+    @R0 
+    M=D 
+
+    //Loop counter
+    @n
+    M=0
+
+(LOOP)
+    @n
+    D=M 
+    @R0 
+    D=D-M 
+    @RESET 
+    D;JEQ 
+    @KBD 
+    D=M 
+    @WHITE
+    D;JEQ
+    @BLACK
+    0;JMP
+
+(WHITE)
+    @SCREEN 
+    D=A 
+    @n
+    A=D+M 
+    M=0
+    @n
+    M=M+1
+    @LOOP
+    0;JMP
+
+(BLACK)
+    @SCREEN 
+    D=A
+    @n
+    A=D+M 
+    M=-1
+    @n
+    M=M+1
+    @LOOP
+    0;JMP
+
+(RESET)
+    @n 
+    M=0
+    @LOOP
+    0;JMP
+
+
+

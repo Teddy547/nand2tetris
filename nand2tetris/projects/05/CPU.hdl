@@ -81,7 +81,6 @@ CHIP CPU {
     Mux(a=zr, b=greaterOrEqual, sel=c0, out=out2);
     Mux(a=ng, b=notZero, sel=c0, out=out3);
     Mux(a=lessOrEqual, b=true, sel=c0, out=out4);
-
     Mux(a=out1, b=out2, sel=c1, out=out5);
     Mux(a=out3, b=out4, sel=c1, out=out6);
     Mux(a=out5, b=out6, sel=c2, out=jump);

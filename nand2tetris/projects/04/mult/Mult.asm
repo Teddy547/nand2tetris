@@ -9,7 +9,7 @@
 // This program only needs to handle arguments that satisfy
 // R0 >= 0, R1 >= 0, and R0*R1 < 32768.
 
-@prod
+@R2
 M = 0
 
 @R0
@@ -23,12 +23,12 @@ M = 0
 	D;JEQ
 
 (LOOP)
-@prod
+@R2
 	D=M
 	M=D
 @R1
 	D=M
-@prod
+@R2
 	D=D+M
 	M=D
 @R0
@@ -42,9 +42,8 @@ M = 0
 	0;JMP
 
 (STOP)
-@prod
-	D=M
 @R2
+	D=M
 	M=D
 
 (END)

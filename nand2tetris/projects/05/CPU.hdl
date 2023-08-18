@@ -15,7 +15,7 @@
  * holds the value of this location. If the current instruction needs 
  * to write a value to M, the value is placed in outM, the address 
  * of the target location is placed in the addressM output, and the 
- * writeM control bit is asserted. (When writeM==0, any value may 
+ * writeM c bit is asserted. (When writeM==0, any value may 
  * appear in outM). The outM and writeM outputs are combinational: 
  * they are affected instantaneously by the execution of the current 
  * instruction. The addressM and pc outputs are clocked: although they 
@@ -39,5 +39,53 @@ CHIP CPU {
         pc[15];          // address of next instruction
 
     PARTS:
-    // Put your code here:
-}
+    //Control bits
+    Mux16(a[15]=true, a[0..14]=false, b=instruction, sel=instruction[15],
+        out[3]=writeM,
+        out[15]=c15,
+        out[14]=c14,
+        out[13]=c13,
+        out[12]=c12,
+        out[11]=c11,
+        out[10]=c10,
+        out[9]=c9,
+        out[8]=c8,
+        out[7]=c7,
+        out[6]=c6,
+        out[5]=c5,
+        out[4]=c4,
+        out[3]=c3,
+        out[2]=c2,
+        out[1]=c1,
+        out[0]=c0);
+
+    //A Register
+    Mux(a=c15, b=c5, sel=instruction[15], out=loadA);
+    Mux16(a=instruction, b=outALU, sel=c5, out=inputARegister);
+    ARegister(in=inputARegister, load=loadA, out=outARegister, out[0..14]=addressM);
+
+    //D Register
+    DRegister(in=outALU, load=c4, out=outDRegister);
+
+    //Input for ALU
+    Mux16(a=outARegister, b=inM, sel=c12, out=inputALU);
+    ALU(x=outDRegister, y=inputALU, no=c6, f=c7, ny=c8, zy=c9, nx=c10,zx=c11, out=outALU, out=outM, zr=zr, ng=ng);
+    
+    //Jumps
+    Not(in=ng, out=greaterOrEqual);
+    Not(in=zr, out=notZero);
+    And(a=notZero, b=greaterOrEqual, out=greaterThan);
+    Or(a=zr, b=ng, out=lessOrEqual);
+
+    Mux(a=false, b=greaterThan, sel=c0, out=out1);
+    Mux(a=zr, b=greaterOrEqual, sel=c0, out=out2);
+    Mux(a=ng, b=notZero, sel=c0, out=out3);
+    Mux(a=lessOrEqual, b=true, sel=c0, out=out4);
+
+    Mux(a=out1, b=out2, sel=c1, out=out5);
+    Mux(a=out3, b=out4, sel=c1, out=out6);
+    Mux(a=out5, b=out6, sel=c2, out=jump);
+
+    PC(in=outARegister, load=jump, inc=true, reset=reset, out[0..14]=pc);
+
+} 

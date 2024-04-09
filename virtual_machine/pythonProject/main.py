@@ -2,7 +2,7 @@ from Parser import Parser
 from CodeWriter import CodeWriter
 
 if __name__ == '__main__':
-    file_to_read = "/home/christian/dev/virtual_machine/Test_Dateien/StackTest.vm"
+    file_to_read = "/home/christian/dev/virtual_machine/Test_Dateien/BasicTest.vm"
     line_number = 0
 
     file_to_write = file_to_read.strip(".vm")
@@ -25,7 +25,7 @@ if __name__ == '__main__':
                 argument_2 = ''
 
             #Write the current VM command as a comment in the assembly file for easier debugging
-            output_source.file.write(f"//{line}\n")
+            output_source.file.write(f"\n//{line}")
 
             if c_type == input_source.C_PUSH or c_type == input_source.C_POP:
                 output_source.write_push_pop(c_type, argument_1, argument_2)

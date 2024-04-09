@@ -129,22 +129,51 @@ class CodeWriter(constants):
         elif segment == "that" or (segment == "pointer" and index == 1):
             assembly_seg = "THAT"
         elif segment == "temp":
-            index = 5 +index
+            index = int(5) + int(index)
 
         if command == self.C_PUSH:
-            self.file.write(f"@{assembly_seg}{index}\n")
 
             if segment == "constant":
-                self.file.write("D=A\n")
+                self.file.write(f"@{index}\n"
+                                f"D=A\n")
+            elif segment == "temp":
+                self.file.write(f"@{index}\n"
+                                f"D=M\n")
+            elif segment == "pointer":
+                self.file.write(f"@{assembly_seg}\n"
+                                f"A=M\n"
+                                f"D=M\n")
             else:
-                self.file.write("M=D\n")
+                self.file.write(f"@{index}\n"
+                                f"D=A\n"
+                                f"@{assembly_seg}\n"
+                                f"A=D+M\n"
+                                f"D=M\n")
 
             self.__push()
 
         if command == self.C_POP:
-            self.__pop()
-            self.file.write(f"@{assembly_seg}{index}\n"
-                            f"M=D\n")
+
+            if segment == "temp":
+                self.__pop()
+                self.file.write(f"@{index}\n"
+                                f"M=D\n")
+            elif segment == "pointer":
+                self.__pop()
+                self.file.write(f"@{assembly_seg}\n"
+                                f"A=M\n"
+                                f"M=D\n")
+            else:
+                self.file.write(f"@{index}\n"
+                                f"D=A\n"
+                                f"@{assembly_seg}\n"
+                                f"D=D+M\n"
+                                f"@13\n"
+                                f"M=D\n")
+                self.__pop()
+                self.file.write("@13\n"
+                                "A=M\n"
+                                "M=D\n")
 
     def __pop(self):
         self.file.write("@SP\n"
@@ -160,7 +189,7 @@ class CodeWriter(constants):
                         "M=M+1\n")
 
     def finishing_line(self):
-        self.file.write("//finish\n"
+        self.file.write("\n//finish\n"
                         "(END)\n"
                         "@END\n"
                         "0;JMP")

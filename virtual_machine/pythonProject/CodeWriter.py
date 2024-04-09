@@ -124,9 +124,9 @@ class CodeWriter(constants):
             assembly_seg = "LCL"
         elif segment == "argument":
             assembly_seg = "ARG"
-        elif segment == "this" or (segment == "pointer" and index == 0):
+        elif segment == "this" or (segment == "pointer" and index == "0"):
             assembly_seg = "THIS"
-        elif segment == "that" or (segment == "pointer" and index == 1):
+        elif segment == "that" or (segment == "pointer" and index == "1"):
             assembly_seg = "THAT"
         elif segment == "temp":
             index = int(5) + int(index)
@@ -141,7 +141,6 @@ class CodeWriter(constants):
                                 f"D=M\n")
             elif segment == "pointer":
                 self.file.write(f"@{assembly_seg}\n"
-                                f"A=M\n"
                                 f"D=M\n")
             else:
                 self.file.write(f"@{index}\n"
@@ -161,7 +160,6 @@ class CodeWriter(constants):
             elif segment == "pointer":
                 self.__pop()
                 self.file.write(f"@{assembly_seg}\n"
-                                f"A=M\n"
                                 f"M=D\n")
             else:
                 self.file.write(f"@{index}\n"

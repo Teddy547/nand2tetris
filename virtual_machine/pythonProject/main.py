@@ -2,7 +2,7 @@ from Parser import Parser
 from CodeWriter import CodeWriter
 
 if __name__ == '__main__':
-    file_to_read = "/home/christian/dev/virtual_machine/Test_Dateien/BasicTest.vm"
+    file_to_read = "/home/christian/dev/virtual_machine/Test_Dateien/PointerTest.vm"
     line_number = 0
 
     file_to_write = file_to_read.strip(".vm")

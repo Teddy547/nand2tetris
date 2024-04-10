@@ -2,11 +2,14 @@ from Parser import Parser
 from CodeWriter import CodeWriter
 
 if __name__ == '__main__':
-    file_to_read = "/home/christian/dev/virtual_machine/Test_Dateien/PointerTest.vm"
+    file_to_read = "/home/christian/dev/virtual_machine/Test_Dateien/StackTest.vm"
     line_number = 0
 
     file_to_write = file_to_read.strip(".vm")
     file_to_write = file_to_write + ".asm"
+
+    file_name = file_to_read.split("/")
+    file_name = file_name[-1].strip(".vm")
 
     input_source = Parser(file_to_read)
     output_source = CodeWriter(file_to_write)
@@ -28,7 +31,7 @@ if __name__ == '__main__':
             output_source.file.write(f"\n//{line}")
 
             if c_type == input_source.C_PUSH or c_type == input_source.C_POP:
-                output_source.write_push_pop(c_type, argument_1, argument_2)
+                output_source.write_push_pop(c_type, argument_1, argument_2, file_name)
 
             if c_type == input_source.C_ARITHMETIC:
                 output_source.write_arithmetic(argument_1, line_number)

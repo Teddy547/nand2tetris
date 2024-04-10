@@ -17,12 +17,7 @@ class CodeWriter(constants):
             self.__push()
 
         if command == "sub":
-            self.__pop()
-            self.file.write("@13\n"
-                            "M=D\n")
-            self.__pop()
-            self.file.write("@13\n"
-                            "D=D-M\n")
+            self.__subtract()
             self.__push()
 
         if command == "neg":
@@ -33,12 +28,7 @@ class CodeWriter(constants):
             self.__push()
 
         if command == "eq":
-            self.__pop()
-            self.file.write("@13\n"
-                            "M=D\n")
-            self.__pop()
-            self.file.write("@13\n"
-                            "D=D-M\n")
+            self.__subtract()
             self.file.write(f"@EQUAL.{line_number}\n"
                             "D;JEQ\n"
                             f"@NOTEQUAL.{line_number}\n"
@@ -53,12 +43,7 @@ class CodeWriter(constants):
             self.__push()
 
         if command == "gt":
-            self.__pop()
-            self.file.write("@13\n"
-                            "M=D\n")
-            self.__pop()
-            self.file.write("@13\n"
-                            "D=D-M\n")
+            self.__subtract()
             self.file.write(f"@GREATER.{line_number}\n"
                             "D;JGT\n"
                             f"@NOTGREATER.{line_number}\n"
@@ -73,12 +58,7 @@ class CodeWriter(constants):
             self.__push()
 
         if command == "lt":
-            self.__pop()
-            self.file.write("@13\n"
-                            "M=D\n")
-            self.__pop()
-            self.file.write("@13\n"
-                            "D=D-M\n")
+            self.__subtract()
             self.file.write(f"@LOWER.{line_number}\n"
                             "D;JLT\n"
                             f"@NOTLOWER.{line_number}\n"
@@ -117,7 +97,7 @@ class CodeWriter(constants):
             self.file.write("D=!M\n")
             self.__push()
 
-    def write_push_pop(self, command, segment, index):
+    def write_push_pop(self, command, segment, index, file_name):
         assembly_seg = ''
 
         if segment == "local":
@@ -130,6 +110,8 @@ class CodeWriter(constants):
             assembly_seg = "THAT"
         elif segment == "temp":
             index = int(5) + int(index)
+        elif segment == "static":
+            assembly_seg = f"{file_name}.{index}"
 
         if command == self.C_PUSH:
 
@@ -139,7 +121,7 @@ class CodeWriter(constants):
             elif segment == "temp":
                 self.file.write(f"@{index}\n"
                                 f"D=M\n")
-            elif segment == "pointer":
+            elif segment == "pointer" or segment == "static":
                 self.file.write(f"@{assembly_seg}\n"
                                 f"D=M\n")
             else:
@@ -157,7 +139,7 @@ class CodeWriter(constants):
                 self.__pop()
                 self.file.write(f"@{index}\n"
                                 f"M=D\n")
-            elif segment == "pointer":
+            elif segment == "pointer" or segment == "static":
                 self.__pop()
                 self.file.write(f"@{assembly_seg}\n"
                                 f"M=D\n")
@@ -185,6 +167,14 @@ class CodeWriter(constants):
                         "M=D\n"
                         "@SP\n"
                         "M=M+1\n")
+
+    def __subtract(self):
+        self.__pop()
+        self.file.write("@13\n"
+                        "M=D\n")
+        self.__pop()
+        self.file.write("@13\n"
+                        "D=D-M\n")
 
     def finishing_line(self):
         self.file.write("\n//finish\n"

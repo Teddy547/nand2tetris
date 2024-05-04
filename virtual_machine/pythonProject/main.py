@@ -2,7 +2,7 @@ from Parser import Parser
 from CodeWriter import CodeWriter
 
 if __name__ == '__main__':
-    file_to_read = "/home/christian/dev/virtual_machine/Test_Dateien/StaticTest.vm"
+    file_to_read = "/home/christian/dev/virtual_machine/Test_Dateien/BasicLoop.vm"
     line_number = 0
 
     #Construct the output file name
@@ -44,6 +44,15 @@ if __name__ == '__main__':
 
             if c_type == input_source.C_ARITHMETIC:
                 output_source.write_arithmetic(argument_1, line_number, file_name)
+
+            if c_type == input_source.C_LABEL:
+                output_source.writeLabel(argument_1, file_name)
+
+            if c_type == input_source.C_GOTO:
+                output_source.writeGoto(argument_1, file_name)
+
+            if c_type == input_source.C_IF:
+                output_source.writeIf(argument_1, file_name)
 
         if not line:
             output_source.finishing_line()

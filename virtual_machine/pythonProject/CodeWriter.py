@@ -166,6 +166,18 @@ class CodeWriter(constants):
                                 "A=M\n"
                                 "M=D\n")                                # get before saved adress from '@13', set the adress register accordingly and finally store the value from the data register
 
+    def writeLabel(self, label, file_name):
+        self.file.write(f"({label}.{file_name})\n")
+
+    def writeGoto(self, label, file_name):
+        self.file.write(f"@{label}.{file_name}\n"
+                        f"0;JMP\n")
+
+    def writeIf(self, label, file_name):
+        self.__pop()
+        self.file.write(f"@{label}.{file_name}\n"
+                        f"D;JNE\n")
+
     # Generic assembly code to pop the topmost stack value into
     # the data register.
     def __pop(self):

@@ -1,11 +1,13 @@
 from Constants import constants
 
+# This class generates and writes assembly code to the output file
+# The generated code depends on the type of command which the parser reads
 class CodeWriter(constants):
 
     def __init__(self, file_name):
         self.file = open(file_name, "w")
 
-    #Writes Assembly code for any arithmetic command
+    # Writes Assembly code for any arithmetic command
     def write_arithmetic(self, command, line_number, file_name):
 
         if command == "add":
@@ -63,7 +65,7 @@ class CodeWriter(constants):
                             f"(AFTER.{file_name}.{line_number})\n")
             self.__push()
 
-        # 'Lower than: Assembly code is analogous to 'equal'
+        # 'Lower than': Assembly code is analogous to 'equal'
         if command == "lt":
             self.__subtract()
             self.file.write(f"@LOWER.{file_name}.{line_number}\n"
@@ -137,10 +139,10 @@ class CodeWriter(constants):
                                 f"D=M\n")
             else:
                 self.file.write(f"@{index}\n"                       
-                                f"D=A\n"                                # write index adress in the data register
+                                f"D=A\n"                                # write index address in the data register
                                 f"@{assembly_seg}\n"                    
-                                f"A=D+M\n"                              # set adress register to base adress + index adress
-                                f"D=M\n")
+                                f"A=D+M\n"                              # set address register to base address + index address
+                                f"D=M\n")                               # set data register to the value to be pushed
 
             self.__push()
 
@@ -156,23 +158,30 @@ class CodeWriter(constants):
                                 f"M=D\n")
             else:
                 self.file.write(f"@{index}\n"
-                                f"D=A\n"                                # take adress of index into the data register
+                                f"D=A\n"                                # take address of index into the data register
                                 f"@{assembly_seg}\n"
-                                f"D=D+M\n"                              # take index adress + base adress (stored in the memory of 'assembly_seg') into the data register
+                                f"D=D+M\n"                              # take index address + base address (stored in the memory of 'assembly_seg') into the data register
                                 f"@13\n"
-                                f"M=D\n")                               # store adress at the internal adress '@13'
+                                f"M=D\n")                               # store address at the internal address '@13'
                 self.__pop()                                            # pop topmost stack value into the data register
-                self.file.write("@13\n"
-                                "A=M\n"
-                                "M=D\n")                                # get before saved adress from '@13', set the adress register accordingly and finally store the value from the data register
+                self.file.write("@13\n"                                 
+                                "A=M\n"                                 # set address register to address saved at '@13'
+                                "M=D\n")                                # store the value from the data register at the target destination
 
+    # Writes a label to the output file. The label is made unique
+    # by adding the file name to it.
     def writeLabel(self, label, file_name):
         self.file.write(f"({label}.{file_name})\n")
 
+    # Generates assembly code that realizes an unconditional jump
+    # to the specified label.
     def writeGoto(self, label, file_name):
         self.file.write(f"@{label}.{file_name}\n"
                         f"0;JMP\n")
 
+    # Generates assembly code that realizes a conditional jump
+    # to the specified label. First, pops the stacks topmost value
+    # into the data register. Jumps to label if value is not zero.
     def writeIf(self, label, file_name):
         self.__pop()
         self.file.write(f"@{label}.{file_name}\n"

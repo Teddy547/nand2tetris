@@ -1,15 +1,15 @@
 from Constants import constants
 
-#This class is used to read a single line from the input file and to return constants for the type of arguments and then the arguments themselves
+# This class is used to read a single line from the input file and to return constants for the type of arguments and then the arguments themselves
 class Parser(constants):
 
-    #The class constructor. Takes a path to a .vm file as input and opens a readable stream to it.
-    #param: path to file
+    # The class constructor. Takes a path to a .vm file as input and opens a readable stream to it.
+    # param: path to file
     def __init__(self, file_name):
         self.file = open(file_name, "r")
 
-    #Reads one line of the input file, strips any blank space and the newline, then returns the line. Comments or newline lines are ignored.
-    #param: none
+    # Reads one line of the input file, strips any blank space and the newline, then returns the line. Comments or newline lines are ignored.
+    # param: none
     def advance(self):
         command = self.file.readline()
 
@@ -21,8 +21,8 @@ class Parser(constants):
         else:
             return self.NOTHING
 
-    #Returns the current command type as a constant.
-    #param: current line as returned by 'advance'
+    # Returns the current command type as a constant.
+    # param: current line as returned by 'advance'
     def command_type(self, line):
         c_type = line.split()
 
@@ -58,8 +58,8 @@ class Parser(constants):
         else:
             return ''
 
-    #Returns the first argument of the command. In case of arithmetic commands the command itself is returned
-    #param: current line; command type
+    # Returns the first argument of the command. In case of arithmetic commands the command itself is returned
+    # param: current line; command type
     def arg1(self, line, c_type):
         argument_1 = line.split()
 
@@ -71,8 +71,8 @@ class Parser(constants):
         else:
             return argument_1[1]
 
-    #Returns the second argument of the command
-    #param: current line
+    # Returns the second argument of the command
+    # param: current line
     def arg2(self, line):
         argument_2 = line.split()
 

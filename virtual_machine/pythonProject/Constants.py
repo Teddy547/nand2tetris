@@ -1,3 +1,4 @@
+# Defines constants for use in the other modules
 class constants:
     NOTHING = '0'
     C_ARITHMETIC = 1

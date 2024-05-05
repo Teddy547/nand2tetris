@@ -2,7 +2,7 @@ from Parser import Parser
 from CodeWriter import CodeWriter
 
 if __name__ == '__main__':
-    file_to_read = "/home/christian/dev/virtual_machine/Test_Dateien/BasicLoop.vm"
+    file_to_read = "/home/christian/dev/virtual_machine/Test_Dateien/FibonacciSeries.vm"
     line_number = 0
 
     # Construct the output file name
@@ -16,14 +16,14 @@ if __name__ == '__main__':
     input_source = Parser(file_to_read)
     output_source = CodeWriter(file_to_write)
 
-    # Loop breaks when an empty string is returned from the read operation (must be EOF)
+    # Loop breaks when has_more_lines returns false
     while True:
         line = input_source.advance()
         line_number = line_number + 1
         argument_1 = ''
         argument_2 = ''
 
-        if not line == input_source.NOTHING and line:
+        if not line == input_source.NOTHING and input_source.has_more_lines(line):
             c_type = input_source.command_type(line)
 
             if not c_type == input_source.C_RETURN:
@@ -52,7 +52,7 @@ if __name__ == '__main__':
             if c_type == input_source.C_IF:
                 output_source.writeIf(argument_1, file_name)
 
-        if not line:
+        if not input_source.has_more_lines(line):
             output_source.finishing_line()
             break
 

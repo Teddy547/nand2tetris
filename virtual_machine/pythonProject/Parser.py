@@ -21,6 +21,12 @@ class Parser(constants):
         else:
             return self.NOTHING
 
+    def has_more_lines(self, line):
+        if line:
+            return True
+        else:
+            return False
+
     # Returns the current command type as a constant.
     # param: current line as returned by 'advance'
     def command_type(self, line):

@@ -49,7 +49,7 @@ class CodeWriter(constants):
                             f"(AFTER.{file_name}.{line_number})\n")
             self.__push()
 
-        # 'Greater than': Assembly code is analogous to 'egual'
+        # 'Greater than': Assembly code is analogous to 'equal'
         if command == "gt":
             self.__subtract()
             self.file.write(f"@GREATER.{file_name}.{line_number}\n"
@@ -110,7 +110,7 @@ class CodeWriter(constants):
     def write_push_pop(self, command, segment, index, file_name):
         assembly_seg = ''
 
-        # 'temp' segment starts at RAM adress 5
+        # 'temp' segment starts at RAM address 5
         # static is named by file name and numbered by line number of first appearance
         # to differentiate between different files and in one file.
         if segment == "local":
@@ -170,22 +170,100 @@ class CodeWriter(constants):
 
     # Writes a label to the output file. The label is made unique
     # by adding the file name to it.
-    def writeLabel(self, label, file_name):
-        self.file.write(f"({label}.{file_name})\n")
+    def write_label(self, file_name, function_name, label):
+        self.file.write(f"({file_name}.{function_name}${label})\n")
 
     # Generates assembly code that realizes an unconditional jump
     # to the specified label.
-    def writeGoto(self, label, file_name):
-        self.file.write(f"@{label}.{file_name}\n"
+    def write_goto(self, file_name, function_name, label):
+        self.file.write(f"@{file_name}.{function_name}${label}\n"
                         f"0;JMP\n")
 
     # Generates assembly code that realizes a conditional jump
     # to the specified label. First, pops the stacks topmost value
     # into the data register. Jumps to label if value is not zero.
-    def writeIf(self, label, file_name):
+    def write_if(self, file_name, function_name, label):
         self.__pop()
-        self.file.write(f"@{label}.{file_name}\n"
+        self.file.write(f"@{file_name}.{function_name}${label}\n"
                         f"D;JNE\n")
+
+    # Generates assembly code that realizes the function command.
+    # First writes the entry point label and then initializes the
+    # number of local variables to 0.
+    def write_function(self, file_name, function_name, n_vars):
+        i = int(n_vars)
+        self.file.write(f"({file_name}.{function_name})\n"
+                        f"@0\n"
+                        f"D=A\n")
+        while i != 0:
+            self.__push()
+            i = i - 1
+
+    def write_return(self):
+        self.file.write("\n//save frame address\n")
+        self.file.write("@LCL\n"                                                            # save the end address of the frame at the temporary variable 14
+                        "D=M\n"
+                        "@14\n"
+                        "M=D\n")
+
+        self.file.write("\n//save return address\n")
+        self.file.write("@5\n"                                                              # get the return address and save it at the temporary variable 15
+                        "D=A\n"
+                        "@14\n"
+                        "A=M-D\n"
+                        "D=M\n"
+                        "@15\n"
+                        "M=D\n")
+
+        self.file.write("\n//Pop return value to top of stack\n")
+        self.write_push_pop(self.C_POP, "argument", "0", '')      # pop the return value to argument 0, which will be at the top of the stack after returning
+
+        self.file.write("\n//reposition stack pointer for caller\n")
+        self.file.write("@ARG\n"                                                            # Reposition the stack pointer for the caller
+                        "D=M+1\n"
+                        "@SP\n"
+                        "M=D\n")
+
+        self.file.write("\n//reposition 'THAT' for caller\n")
+        self.file.write("@1\n"                                                              # Reposition THAT for the caller
+                        "D=A\n"
+                        "@14\n"
+                        "A=M-D\n"
+                        "D=M\n"
+                        "@THAT\n"
+                        "M=D\n")
+
+        self.file.write("\n//reposition 'THIS' for caller\n")
+        self.file.write("@2\n"                                                              # Reposition THIS for the caller
+                        "D=A\n"
+                        "@14\n"
+                        "A=M-D\n"
+                        "D=M\n"
+                        "@THIS\n"
+                        "M=D\n")
+
+        self.file.write("\n//reposition 'ARG' for caller\n")
+        self.file.write("@3\n"                                                              # Reposition ARG for the caller
+                        "D=A\n"
+                        "@14\n"
+                        "A=M-D\n"
+                        "D=M\n"
+                        "@ARG\n"
+                        "M=D\n")
+
+        self.file.write("\n//reposition 'LCL' for caller\n")
+        self.file.write("@4\n"                                                              # Reposition LCL for the caller
+                        "D=A\n"
+                        "@14\n"
+                        "A=M-D\n"
+                        "D=M\n"
+                        "@LCL\n"
+                        "M=D\n")
+
+        self.file.write("\n//jump to return address\n")
+        self.file.write("@15\n"
+                        "A=M\n"
+                        "0;JMP\n")
 
     # Generic assembly code to pop the topmost stack value into
     # the data register.

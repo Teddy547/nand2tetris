@@ -2,7 +2,7 @@ from Parser import Parser
 from CodeWriter import CodeWriter
 
 if __name__ == '__main__':
-    file_to_read = "/home/christian/dev/virtual_machine/Test_Dateien/FibonacciSeries.vm"
+    file_to_read = "/home/christian/dev/virtual_machine/Test_Dateien/SimpleFunction.vm"
     line_number = 0
 
     # Construct the output file name
@@ -22,6 +22,7 @@ if __name__ == '__main__':
         line_number = line_number + 1
         argument_1 = ''
         argument_2 = ''
+        function_name = ''
 
         if not line == input_source.NOTHING and input_source.has_more_lines(line):
             c_type = input_source.command_type(line)
@@ -31,6 +32,10 @@ if __name__ == '__main__':
 
             if c_type == input_source.C_PUSH or c_type == input_source.C_POP or c_type == input_source.C_FUNCTION or c_type == input_source.C_CALL:
                 argument_2 = input_source.arg2(line)
+                if c_type == input_source.C_FUNCTION:
+                    function_name = argument_1
+                elif c_type == input_source.C_RETURN:
+                    function_name = ''
             else:
                 argument_2 = ''
 
@@ -44,13 +49,19 @@ if __name__ == '__main__':
                 output_source.write_arithmetic(argument_1, line_number, file_name)
 
             if c_type == input_source.C_LABEL:
-                output_source.writeLabel(argument_1, file_name)
+                output_source.write_label(file_name, function_name, argument_1)
 
             if c_type == input_source.C_GOTO:
-                output_source.writeGoto(argument_1, file_name)
+                output_source.write_goto(file_name, function_name, argument_1)
 
             if c_type == input_source.C_IF:
-                output_source.writeIf(argument_1, file_name)
+                output_source.write_if(file_name, function_name, argument_1)
+
+            if c_type == input_source.C_FUNCTION:
+                output_source.write_function(file_name, function_name, argument_2)
+
+            if c_type == input_source.C_RETURN:
+                output_source.write_return()
 
         if not input_source.has_more_lines(line):
             output_source.finishing_line()

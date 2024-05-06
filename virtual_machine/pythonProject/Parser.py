@@ -21,7 +21,8 @@ class Parser(constants):
         else:
             return self.NOTHING
 
-    def has_more_lines(self, line):
+    @staticmethod
+    def has_more_lines(line):
         if line:
             return True
         else:
@@ -79,7 +80,8 @@ class Parser(constants):
 
     # Returns the second argument of the command
     # param: current line
-    def arg2(self, line):
+    @staticmethod
+    def arg2(line):
         argument_2 = line.split()
 
         if not argument_2[2]:

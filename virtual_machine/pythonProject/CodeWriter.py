@@ -2,10 +2,12 @@ from Constants import constants
 
 # This class generates and writes assembly code to the output file
 # The generated code depends on the type of command which the parser reads
+# The file is opened in append mode to properly merge more than one input file
+# into a single output file
 class CodeWriter(constants):
 
     def __init__(self, file_name):
-        self.file = open(file_name, "w")
+        self.file = open(file_name, "a")
 
     # Writes Assembly code for any arithmetic command
     def write_arithmetic(self, command, line_number, file_name):

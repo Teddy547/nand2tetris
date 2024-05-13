@@ -8,6 +8,7 @@ if __name__ == '__main__':
 
     folder_to_read = "/home/christian/dev/virtual_machine/Test_Dateien/FibonacciElement"
     line_number = 0
+    counter = 1
     files = [100]
     input_source = ""
     output_source = ""
@@ -30,12 +31,15 @@ if __name__ == '__main__':
     except OSError:
         pass
 
+    output_source = CodeWriter(file_to_write)
+
     # Loops over all '.vm' files in the folder or just over one single supplied '.vm' file. Whatever is the case
     for i in range(len(files)):
         input_source = Parser(files[i])
-        output_source = CodeWriter(file_to_write)
         file_name = files[i].split("/")
         file_name = file_name[-1].strip(".vm")
+
+        function_name = ''
 
     # Loop breaks when has_more_lines returns false
         while True:
@@ -43,7 +47,6 @@ if __name__ == '__main__':
             line_number = line_number + 1
             argument_1 = ''
             argument_2 = ''
-            function_name = ''
 
             if not line == input_source.NOTHING and input_source.has_more_lines(line):
                 c_type = input_source.command_type(line)
@@ -79,7 +82,10 @@ if __name__ == '__main__':
                     output_source.write_if(file_name, function_name, argument_1)
 
                 if c_type == input_source.C_FUNCTION:
-                    output_source.write_function(file_name, function_name, argument_2)
+                    output_source.write_function(function_name, argument_2)
+
+                if c_type == input_source.C_CALL:
+                    output_source.write_call(argument_1, counter, argument_2)
 
                 if c_type == input_source.C_RETURN:
                     output_source.write_return()

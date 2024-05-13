@@ -9,6 +9,12 @@ class CodeWriter(constants):
     def __init__(self, file_name):
         self.file = open(file_name, "a")
 
+        self.file.write("@256\n"
+                        "D=A\n"
+                        "@SP\n"
+                        "M=D\n")
+        self.write_call("Sys.init", '0', '0')
+
     # Writes Assembly code for any arithmetic command
     def write_arithmetic(self, command, line_number, file_name):
 
@@ -192,14 +198,68 @@ class CodeWriter(constants):
     # Generates assembly code that realizes the function command.
     # First writes the entry point label and then initializes the
     # number of local variables to 0.
-    def write_function(self, file_name, function_name, n_vars):
+    def write_function(self, function_name, n_vars):
         i = int(n_vars)
-        self.file.write(f"({file_name}.{function_name})\n"
+        self.file.write(f"({function_name})\n"
                         f"@0\n"
                         f"D=A\n")
         while i != 0:
             self.__push()
             i = i - 1
+
+    def write_call(self, function_name, counter, n_vars):
+        counter = int(counter)
+        i = int(n_vars) + 5
+
+        self.file.write("\n//Generate return label and push it on the stack\n")
+        self.file.write(f"@{function_name}$ret.{counter}\n"                     # Push the return address on the stack
+                        f"D=A\n")
+        self.__push()
+
+        self.file.write("\n//Push 'LCL' on the stack\n")
+        self.file.write("@LCL\n"
+                        "D=M\n")
+        self.__push()
+
+        self.file.write("\n//Push 'ARG' on the stack\n")
+        self.file.write("@ARG\n"
+                        "D=M\n")
+        self.__push()
+
+        self.file.write("\n//Push 'THIS' on the stack\n")
+        self.file.write("@THIS\n"
+                         "D=M\n")
+        self.__push()
+
+        self.file.write("\n//Push 'THAT' on the stack\n")
+        self.file.write("@THAT\n"
+                        "D=M\n")
+        self.__push()
+
+        self.file.write("\n//Reposition 'ARG'\n")
+        self.file.write(f"@{i}\n"
+                        f"D=A\n"
+                        f"@14\n"
+                        f"M=D\n"
+                        f"@SP\n"
+                        f"D=M\n"
+                        f"@14\n"
+                        f"D=D-M\n"
+                        f"@ARG\n"
+                        f"M=D\n")                                                           # Reposition 'ARG' to SP-5-n-vars
+
+        self.file.write("\n//Reposition 'LCL'\n")
+        self.file.write("@SP\n"
+                        "D=M\n"
+                        "@LCL\n"
+                        "M=D\n")                                                            # Reposition 'LCL' to 'SP'
+
+        self.file.write("\n//Jump to called function\n")
+        self.file.write(f"@{function_name}\n"
+                        "0;JMP\n")                                                          # Jump to the called function
+
+        self.file.write("\n//Inject return address label\n")
+        self.file.write(f"({function_name}$ret.{counter})\n")                   # Inject return address label
 
     def write_return(self):
         self.file.write("\n//save frame address\n")

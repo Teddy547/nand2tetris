@@ -393,7 +393,7 @@ M=M+1
 //call Main.fibonacci 1  // computes fib(n-1)
 
 //Generate return label and push it on the stack
-@Main.fibonacci$ret.1
+@Main.fibonacci$ret.2
 D=A
 @SP
 A=M
@@ -460,7 +460,7 @@ M=D
 0;JMP
 
 //Inject return address label
-(Main.fibonacci$ret.1)
+(Main.fibonacci$ret.2)
 
 //add                    // returns fib(n-1) + fib(n-2)
 @SP
@@ -577,7 +577,7 @@ M=M+1
 //call Main.fibonacci 1   // computes the 4'th fibonacci element
 
 //Generate return label and push it on the stack
-@Main.fibonacci$ret.1
+@Main.fibonacci$ret.3
 D=A
 @SP
 A=M
@@ -644,7 +644,7 @@ M=D
 0;JMP
 
 //Inject return address label
-(Main.fibonacci$ret.1)
+(Main.fibonacci$ret.3)
 
 //label WHILE
 (Sys.Sys.init$WHILE)

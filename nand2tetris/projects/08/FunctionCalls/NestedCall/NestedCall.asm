@@ -73,25 +73,13 @@ M=D
 //Inject return address label
 (Sys.init$ret.0)
 
-//function Main.fibonacci 0
-(Main.fibonacci)
+//function Sys.init 0
+(Sys.init)
 @0
 D=A
 
-//push argument 0
-@0
-D=A
-@ARG
-A=D+M
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//push constant 2
-@2
+//push constant 4000	// test THIS and THAT context save
+@4000
 D=A
 @SP
 A=M
@@ -99,84 +87,195 @@ M=D
 @SP
 M=M+1
 
-//lt                     // checks if n<2
+//pop pointer 0
 @SP
 M=M-1
 A=M
 D=M
-@13
+@THIS
 M=D
-@SP
-M=M-1
-A=M
-D=M
-@13
-D=D-M
-@LOWER.Main.14
-D;JLT
-@NOTLOWER.Main.14
-D;JGE
-(LOWER.Main.14)
-D=-1
-@AFTER.Main.14
-0;JMP
-(NOTLOWER.Main.14)
-D=0
-(AFTER.Main.14)
-@SP
-A=M
-M=D
-@SP
-M=M+1
 
-//if-goto IF_TRUE
-@SP
-M=M-1
-A=M
-D=M
-@Main.Main.fibonacci$IF_TRUE
-D;JNE
-
-//goto IF_FALSE
-@Main.Main.fibonacci$IF_FALSE
-0;JMP
-
-//label IF_TRUE          // if n<2, return n
-(Main.Main.fibonacci$IF_TRUE)
-
-//push argument 0        
-@0
+//push constant 5000
+@5000
 D=A
-@ARG
-A=D+M
-D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
 
-//return
+//pop pointer 1
+@SP
+M=M-1
+A=M
+D=M
+@THAT
+M=D
 
-//save frame address
+//call Sys.main 0
+
+//Generate return label and push it on the stack
+@Sys.main$ret.1
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1
+
+//Push 'LCL' on the stack
 @LCL
 D=M
-@14
+@SP
+A=M
 M=D
+@SP
+M=M+1
 
-//save return address
+//Push 'ARG' on the stack
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+
+//Push 'THIS' on the stack
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+
+//Push 'THAT' on the stack
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+
+//Reposition 'ARG'
 @5
 D=A
 @14
-A=M-D
+M=D
+@SP
 D=M
-@15
+@14
+D=D-M
+@ARG
 M=D
 
-//Pop return value to top of stack
+//Reposition 'LCL'
+@SP
+D=M
+@LCL
+M=D
+
+//Jump to called function
+@Sys.main
+0;JMP
+
+//Inject return address label
+(Sys.main$ret.1)
+
+//pop temp 1
+@SP
+M=M-1
+A=M
+D=M
+@6
+M=D
+
+//label LOOP
+(Sys.Sys.init$LOOP)
+
+//goto LOOP
+@Sys.Sys.init$LOOP
+0;JMP
+
+//function Sys.main 5
+(Sys.main)
 @0
 D=A
-@ARG
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@SP
+A=M
+M=D
+@SP
+M=M+1
+
+//push constant 4001
+@4001
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1
+
+//pop pointer 0
+@SP
+M=M-1
+A=M
+D=M
+@THIS
+M=D
+
+//push constant 5001
+@5001
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1
+
+//pop pointer 1
+@SP
+M=M-1
+A=M
+D=M
+@THAT
+M=D
+
+//push constant 200
+@200
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1
+
+//pop local 1
+@1
+D=A
+@LCL
 D=D+M
 @13
 M=D
@@ -188,82 +287,44 @@ D=M
 A=M
 M=D
 
-//reposition stack pointer for caller
-@ARG
-D=M+1
-@SP
-M=D
-
-//reposition 'THAT' for caller
-@1
+//push constant 40
+@40
 D=A
-@14
-A=M-D
-D=M
-@THAT
+@SP
+A=M
 M=D
+@SP
+M=M+1
 
-//reposition 'THIS' for caller
+//pop local 2
 @2
 D=A
-@14
-A=M-D
+@LCL
+D=D+M
+@13
+M=D
+@SP
+M=M-1
+A=M
 D=M
-@THIS
+@13
+A=M
 M=D
 
-//reposition 'ARG' for caller
+//push constant 6
+@6
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1
+
+//pop local 3
 @3
 D=A
-@14
-A=M-D
-D=M
-@ARG
-M=D
-
-//reposition 'LCL' for caller
-@4
-D=A
-@14
-A=M-D
-D=M
 @LCL
-M=D
-
-//jump to return address
-@15
-A=M
-0;JMP
-
-//label IF_FALSE         // if n>=2, returns fib(n-2)+fib(n-1)
-(Main.Main.fibonacci$IF_FALSE)
-
-//push argument 0
-@0
-D=A
-@ARG
-A=D+M
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//push constant 2
-@2
-D=A
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//sub
-@SP
-M=M-1
-A=M
-D=M
+D=D+M
 @13
 M=D
 @SP
@@ -271,17 +332,22 @@ M=M-1
 A=M
 D=M
 @13
-D=D-M
+A=M
+M=D
+
+//push constant 123
+@123
+D=A
 @SP
 A=M
 M=D
 @SP
 M=M+1
 
-//call Main.fibonacci 1  // computes fib(n-2)
+//call Sys.add12 1
 
 //Generate return label and push it on the stack
-@Main.fibonacci$ret.1
+@Sys.add12$ret.2
 D=A
 @SP
 A=M
@@ -344,16 +410,24 @@ D=M
 M=D
 
 //Jump to called function
-@Main.fibonacci
+@Sys.add12
 0;JMP
 
 //Inject return address label
-(Main.fibonacci$ret.1)
+(Sys.add12$ret.2)
 
-//push argument 0
+//pop temp 0
+@SP
+M=M-1
+A=M
+D=M
+@5
+M=D
+
+//push local 0
 @0
 D=A
-@ARG
+@LCL
 A=D+M
 D=M
 @SP
@@ -362,16 +436,55 @@ M=D
 @SP
 M=M+1
 
-//push constant 1
+//push local 1
 @1
 D=A
+@LCL
+A=D+M
+D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
 
-//sub
+//push local 2
+@2
+D=A
+@LCL
+A=D+M
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+
+//push local 3
+@3
+D=A
+@LCL
+A=D+M
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+
+//push local 4
+@4
+D=A
+@LCL
+A=D+M
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+
+//add
 @SP
 M=M-1
 A=M
@@ -383,86 +496,52 @@ M=M-1
 A=M
 D=M
 @13
-D=D-M
+D=M+D
 @SP
 A=M
 M=D
 @SP
 M=M+1
 
-//call Main.fibonacci 1  // computes fib(n-1)
-
-//Generate return label and push it on the stack
-@Main.fibonacci$ret.2
-D=A
+//add
+@SP
+M=M-1
+A=M
+D=M
+@13
+M=D
+@SP
+M=M-1
+A=M
+D=M
+@13
+D=M+D
 @SP
 A=M
 M=D
 @SP
 M=M+1
 
-//Push 'LCL' on the stack
-@LCL
+//add
+@SP
+M=M-1
+A=M
 D=M
+@13
+M=D
+@SP
+M=M-1
+A=M
+D=M
+@13
+D=M+D
 @SP
 A=M
 M=D
 @SP
 M=M+1
 
-//Push 'ARG' on the stack
-@ARG
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//Push 'THIS' on the stack
-@THIS
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//Push 'THAT' on the stack
-@THAT
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//Reposition 'ARG'
-@6
-D=A
-@14
-M=D
-@SP
-D=M
-@14
-D=D-M
-@ARG
-M=D
-
-//Reposition 'LCL'
-@SP
-D=M
-@LCL
-M=D
-
-//Jump to called function
-@Main.fibonacci
-0;JMP
-
-//Inject return address label
-(Main.fibonacci$ret.2)
-
-//add                    // returns fib(n-1) + fib(n-2)
+//add
 @SP
 M=M-1
 A=M
@@ -560,97 +639,162 @@ M=D
 A=M
 0;JMP
 
-//function Sys.init 0
-(Sys.init)
+//function Sys.add12 0
+(Sys.add12)
 @0
 D=A
 
-//push constant 4
+//push constant 4002
+@4002
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1
+
+//pop pointer 0
+@SP
+M=M-1
+A=M
+D=M
+@THIS
+M=D
+
+//push constant 5002
+@5002
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1
+
+//pop pointer 1
+@SP
+M=M-1
+A=M
+D=M
+@THAT
+M=D
+
+//push argument 0
+@0
+D=A
+@ARG
+A=D+M
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+
+//push constant 12
+@12
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1
+
+//add
+@SP
+M=M-1
+A=M
+D=M
+@13
+M=D
+@SP
+M=M-1
+A=M
+D=M
+@13
+D=M+D
+@SP
+A=M
+M=D
+@SP
+M=M+1
+
+//return
+
+//save frame address
+@LCL
+D=M
+@14
+M=D
+
+//save return address
+@5
+D=A
+@14
+A=M-D
+D=M
+@15
+M=D
+
+//Pop return value to top of stack
+@0
+D=A
+@ARG
+D=D+M
+@13
+M=D
+@SP
+M=M-1
+A=M
+D=M
+@13
+A=M
+M=D
+
+//reposition stack pointer for caller
+@ARG
+D=M+1
+@SP
+M=D
+
+//reposition 'THAT' for caller
+@1
+D=A
+@14
+A=M-D
+D=M
+@THAT
+M=D
+
+//reposition 'THIS' for caller
+@2
+D=A
+@14
+A=M-D
+D=M
+@THIS
+M=D
+
+//reposition 'ARG' for caller
+@3
+D=A
+@14
+A=M-D
+D=M
+@ARG
+M=D
+
+//reposition 'LCL' for caller
 @4
 D=A
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//call Main.fibonacci 1   // computes the 4'th fibonacci element
-
-//Generate return label and push it on the stack
-@Main.fibonacci$ret.3
-D=A
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//Push 'LCL' on the stack
-@LCL
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//Push 'ARG' on the stack
-@ARG
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//Push 'THIS' on the stack
-@THIS
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//Push 'THAT' on the stack
-@THAT
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//Reposition 'ARG'
-@6
-D=A
 @14
-M=D
-@SP
-D=M
-@14
-D=D-M
-@ARG
-M=D
-
-//Reposition 'LCL'
-@SP
+A=M-D
 D=M
 @LCL
 M=D
 
-//Jump to called function
-@Main.fibonacci
-0;JMP
-
-//Inject return address label
-(Main.fibonacci$ret.3)
-
-//label WHILE
-(Sys.Sys.init$WHILE)
-
-//goto WHILE              // loops infinitely
-@Sys.Sys.init$WHILE
+//jump to return address
+@15
+A=M
 0;JMP
 
 //finish

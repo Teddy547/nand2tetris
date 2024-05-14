@@ -6,7 +6,7 @@ from CodeWriter import CodeWriter
 
 if __name__ == '__main__':
 
-    folder_to_read = "/home/christian/dev/virtual_machine/Test_Dateien/FibonacciElement"
+    folder_to_read = "/home/christian/dev/virtual_machine/Test_Dateien/NestedCall"
     line_number = 0
     counter = 1
     files = [100]
@@ -86,6 +86,7 @@ if __name__ == '__main__':
 
                 if c_type == input_source.C_CALL:
                     output_source.write_call(argument_1, counter, argument_2)
+                    counter = counter + 1
 
                 if c_type == input_source.C_RETURN:
                     output_source.write_return()

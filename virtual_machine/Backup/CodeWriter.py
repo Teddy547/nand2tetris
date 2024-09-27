@@ -1,6 +1,5 @@
 from Constants import constants
 
-
 # This class generates and writes assembly code to the output file
 # The generated code depends on the type of command which the parser reads
 # The file is opened in append mode to properly merge more than one input file
@@ -15,8 +14,6 @@ class CodeWriter(constants):
                         "@SP\n"
                         "M=D\n")
         self.write_call("Sys.init", '0', '0')
-        self.__write_generic_call()
-        self.__write_generic_return()
 
     # Writes Assembly code for any arithmetic command
     def write_arithmetic(self, command, line_number, file_name):
@@ -149,11 +146,11 @@ class CodeWriter(constants):
                 self.file.write(f"@{assembly_seg}\n"
                                 f"D=M\n")
             else:
-                self.file.write(f"@{index}\n"
-                                f"D=A\n"  # write index address in the data register
-                                f"@{assembly_seg}\n"
-                                f"A=D+M\n"  # set address register to base address + index address
-                                f"D=M\n")  # set data register to the value to be pushed
+                self.file.write(f"@{index}\n"                       
+                                f"D=A\n"                                # write index address in the data register
+                                f"@{assembly_seg}\n"                    
+                                f"A=D+M\n"                              # set address register to base address + index address
+                                f"D=M\n")                               # set data register to the value to be pushed
 
             self.__push()
 
@@ -169,15 +166,15 @@ class CodeWriter(constants):
                                 f"M=D\n")
             else:
                 self.file.write(f"@{index}\n"
-                                f"D=A\n"  # take address of index into the data register
+                                f"D=A\n"                                # take address of index into the data register
                                 f"@{assembly_seg}\n"
-                                f"D=D+M\n"  # take index address + base address (stored in the memory of 'assembly_seg') into the data register
+                                f"D=D+M\n"                              # take index address + base address (stored in the memory of 'assembly_seg') into the data register
                                 f"@13\n"
-                                f"M=D\n")  # store address at the internal address '@13'
-                self.__pop()  # pop topmost stack value into the data register
-                self.file.write("@13\n"
-                                "A=M\n"  # set address register to address saved at '@13'
-                                "M=D\n")  # store the value from the data register at the target destination
+                                f"M=D\n")                               # store address at the internal address '@13'
+                self.__pop()                                            # pop topmost stack value into the data register
+                self.file.write("@13\n"                                 
+                                "A=M\n"                                 # set address register to address saved at '@13'
+                                "M=D\n")                                # store the value from the data register at the target destination
 
     # Writes a label to the output file. The label is made unique
     # by adding the file name to it.
@@ -214,31 +211,9 @@ class CodeWriter(constants):
         counter = int(counter)
         i = int(n_vars) + 5
 
-        self.file.write("\n//Save number of arguments at temporary address @14\n")
-        self.file.write(f"@{i}\n"
-                        f"D=A\n"
-                        f"@14\n"
-                        f"M=D\n")
-
-        self.file.write("\n//Save called function address at temporary variable R15\n")
-        self.file.write(f"@{function_name}\n"
-                        "D=A\n"
-                        "@15\n"
-                        "M=D\n")
-
-        self.file.write("\n//Take return address into D register and jump to GENERIC_CALL\n")
-        self.file.write(f"@{function_name}$ret.{counter}\n"  
+        self.file.write("\n//Generate return label and push it on the stack\n")
+        self.file.write(f"@{function_name}$ret.{counter}\n"                     # Push the return address on the stack
                         f"D=A\n")
-
-        self.file.write("@GENERIC_CALL\n"
-                        "0;JMP\n")
-
-        self.file.write("\n//Inject return address label\n")
-        self.file.write(f"({function_name}$ret.{counter})\n")  # Inject return address label
-
-    def __write_generic_call(self):
-        self.file.write("(GENERIC_CALL)\n")
-
         self.__push()
 
         self.file.write("\n//Push 'LCL' on the stack\n")
@@ -253,7 +228,7 @@ class CodeWriter(constants):
 
         self.file.write("\n//Push 'THIS' on the stack\n")
         self.file.write("@THIS\n"
-                        "D=M\n")
+                         "D=M\n")
         self.__push()
 
         self.file.write("\n//Push 'THAT' on the stack\n")
@@ -262,40 +237,39 @@ class CodeWriter(constants):
         self.__push()
 
         self.file.write("\n//Reposition 'ARG'\n")
-        self.file.write(f"@SP\n"
+        self.file.write(f"@{i}\n"
+                        f"D=A\n"
+                        f"@14\n"
+                        f"M=D\n"
+                        f"@SP\n"
                         f"D=M\n"
                         f"@14\n"
                         f"D=D-M\n"
                         f"@ARG\n"
-                        f"M=D\n")  # Reposition 'ARG' to SP-5-n-vars
+                        f"M=D\n")                                                           # Reposition 'ARG' to SP-5-n-vars
 
         self.file.write("\n//Reposition 'LCL'\n")
         self.file.write("@SP\n"
                         "D=M\n"
                         "@LCL\n"
-                        "M=D\n")  # Reposition 'LCL' to 'SP'
+                        "M=D\n")                                                            # Reposition 'LCL' to 'SP'
 
-        self.file.write((f"@15\n"
-                         f"A=M\n"
-                         f"0;JMP\n"))
+        self.file.write("\n//Jump to called function\n")
+        self.file.write(f"@{function_name}\n"
+                        "0;JMP\n")                                                          # Jump to the called function
 
-    # Writes assembly code that realizes a function return.
-    # This assembly code is always the same, regardless of function.
-    # Therefore, it is written after a label as part of the bootstrap.
-    # Every return call now just jumps to this label and achieves the
-    # function return. HUGE optimization regarding shortening
-    # the generated assembly code.
-    def __write_generic_return(self):
-        self.file.write(f"(GENERIC_RETURN)\n")
+        self.file.write("\n//Inject return address label\n")
+        self.file.write(f"({function_name}$ret.{counter})\n")                               # Inject return address label
 
+    def write_return(self):
         self.file.write("\n//save frame address\n")
-        self.file.write("@LCL\n"  # save the end address of the frame at the temporary variable 14
+        self.file.write("@LCL\n"                                                            # save the end address of the frame at the temporary variable 14
                         "D=M\n"
                         "@14\n"
                         "M=D\n")
 
         self.file.write("\n//save return address\n")
-        self.file.write("@5\n"  # get the return address and save it at the temporary variable 15
+        self.file.write("@5\n"                                                              # get the return address and save it at the temporary variable 15
                         "D=A\n"
                         "@14\n"
                         "A=M-D\n"
@@ -304,17 +278,16 @@ class CodeWriter(constants):
                         "M=D\n")
 
         self.file.write("\n//Pop return value to top of stack\n")
-        self.write_push_pop(self.C_POP, "argument", "0",
-                            '')  # pop the return value to argument 0, which will be at the top of the stack after returning
+        self.write_push_pop(self.C_POP, "argument", "0", '')      # pop the return value to argument 0, which will be at the top of the stack after returning
 
         self.file.write("\n//reposition stack pointer for caller\n")
-        self.file.write("@ARG\n"  # Reposition the stack pointer for the caller
+        self.file.write("@ARG\n"                                                            # Reposition the stack pointer for the caller
                         "D=M+1\n"
                         "@SP\n"
                         "M=D\n")
 
         self.file.write("\n//reposition 'THAT' for caller\n")
-        self.file.write("@1\n"  # Reposition THAT for the caller
+        self.file.write("@1\n"                                                              # Reposition THAT for the caller
                         "D=A\n"
                         "@14\n"
                         "A=M-D\n"
@@ -323,7 +296,7 @@ class CodeWriter(constants):
                         "M=D\n")
 
         self.file.write("\n//reposition 'THIS' for caller\n")
-        self.file.write("@2\n"  # Reposition THIS for the caller
+        self.file.write("@2\n"                                                              # Reposition THIS for the caller
                         "D=A\n"
                         "@14\n"
                         "A=M-D\n"
@@ -332,7 +305,7 @@ class CodeWriter(constants):
                         "M=D\n")
 
         self.file.write("\n//reposition 'ARG' for caller\n")
-        self.file.write("@3\n"  # Reposition ARG for the caller
+        self.file.write("@3\n"                                                              # Reposition ARG for the caller
                         "D=A\n"
                         "@14\n"
                         "A=M-D\n"
@@ -341,7 +314,7 @@ class CodeWriter(constants):
                         "M=D\n")
 
         self.file.write("\n//reposition 'LCL' for caller\n")
-        self.file.write("@4\n"  # Reposition LCL for the caller
+        self.file.write("@4\n"                                                              # Reposition LCL for the caller
                         "D=A\n"
                         "@14\n"
                         "A=M-D\n"
@@ -352,13 +325,6 @@ class CodeWriter(constants):
         self.file.write("\n//jump to return address\n")
         self.file.write("@15\n"
                         "A=M\n"
-                        "0;JMP\n")
-
-    # Every time a function returns, it jumps to this label. It is
-    # part of the bootstrap code and the code following it achieves
-    # the return call for EVERY function.
-    def write_return(self):
-        self.file.write(f"@GENERIC_RETURN\n"
                         "0;JMP\n")
 
     # Generic assembly code to pop the topmost stack value into

@@ -3,9 +3,27 @@ D=A
 @SP
 M=D
 
-//Generate return label and push it on the stack
+//Save number of arguments at temporary address @14
+@5
+D=A
+@14
+M=D
+
+//Save called function address at temporary variable R15
+@Sys.init
+D=A
+@15
+M=D
+
+//Take return address into D register and jump to GENERIC_CALL
 @Sys.init$ret.0
 D=A
+@GENERIC_CALL
+0;JMP
+
+//Inject return address label
+(Sys.init$ret.0)
+(GENERIC_CALL)
 @SP
 A=M
 M=D
@@ -49,10 +67,6 @@ M=D
 M=M+1
 
 //Reposition 'ARG'
-@5
-D=A
-@14
-M=D
 @SP
 D=M
 @14
@@ -65,13 +79,87 @@ M=D
 D=M
 @LCL
 M=D
-
-//Jump to called function
-@Sys.init
+@15
+A=M
 0;JMP
+(GENERIC_RETURN)
 
-//Inject return address label
-(Sys.init$ret.0)
+//save frame address
+@LCL
+D=M
+@14
+M=D
+
+//save return address
+@5
+D=A
+@14
+A=M-D
+D=M
+@15
+M=D
+
+//Pop return value to top of stack
+@0
+D=A
+@ARG
+D=D+M
+@13
+M=D
+@SP
+M=M-1
+A=M
+D=M
+@13
+A=M
+M=D
+
+//reposition stack pointer for caller
+@ARG
+D=M+1
+@SP
+M=D
+
+//reposition 'THAT' for caller
+@1
+D=A
+@14
+A=M-D
+D=M
+@THAT
+M=D
+
+//reposition 'THIS' for caller
+@2
+D=A
+@14
+A=M-D
+D=M
+@THIS
+M=D
+
+//reposition 'ARG' for caller
+@3
+D=A
+@14
+A=M-D
+D=M
+@ARG
+M=D
+
+//reposition 'LCL' for caller
+@4
+D=A
+@14
+A=M-D
+D=M
+@LCL
+M=D
+
+//jump to return address
+@15
+A=M
+0;JMP
 
 //function Class1.set 0
 (Class1.set)
@@ -128,82 +216,7 @@ M=D
 M=M+1
 
 //return
-
-//save frame address
-@LCL
-D=M
-@14
-M=D
-
-//save return address
-@5
-D=A
-@14
-A=M-D
-D=M
-@15
-M=D
-
-//Pop return value to top of stack
-@0
-D=A
-@ARG
-D=D+M
-@13
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@13
-A=M
-M=D
-
-//reposition stack pointer for caller
-@ARG
-D=M+1
-@SP
-M=D
-
-//reposition 'THAT' for caller
-@1
-D=A
-@14
-A=M-D
-D=M
-@THAT
-M=D
-
-//reposition 'THIS' for caller
-@2
-D=A
-@14
-A=M-D
-D=M
-@THIS
-M=D
-
-//reposition 'ARG' for caller
-@3
-D=A
-@14
-A=M-D
-D=M
-@ARG
-M=D
-
-//reposition 'LCL' for caller
-@4
-D=A
-@14
-A=M-D
-D=M
-@LCL
-M=D
-
-//jump to return address
-@15
-A=M
+@GENERIC_RETURN
 0;JMP
 
 //function Class1.get 0
@@ -249,82 +262,7 @@ M=D
 M=M+1
 
 //return
-
-//save frame address
-@LCL
-D=M
-@14
-M=D
-
-//save return address
-@5
-D=A
-@14
-A=M-D
-D=M
-@15
-M=D
-
-//Pop return value to top of stack
-@0
-D=A
-@ARG
-D=D+M
-@13
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@13
-A=M
-M=D
-
-//reposition stack pointer for caller
-@ARG
-D=M+1
-@SP
-M=D
-
-//reposition 'THAT' for caller
-@1
-D=A
-@14
-A=M-D
-D=M
-@THAT
-M=D
-
-//reposition 'THIS' for caller
-@2
-D=A
-@14
-A=M-D
-D=M
-@THIS
-M=D
-
-//reposition 'ARG' for caller
-@3
-D=A
-@14
-A=M-D
-D=M
-@ARG
-M=D
-
-//reposition 'LCL' for caller
-@4
-D=A
-@14
-A=M-D
-D=M
-@LCL
-M=D
-
-//jump to return address
-@15
-A=M
+@GENERIC_RETURN
 0;JMP
 
 //function Sys.init 0
@@ -352,71 +290,22 @@ M=M+1
 
 //call Class1.set 2
 
-//Generate return label and push it on the stack
-@Class1.set$ret.1
-D=A
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//Push 'LCL' on the stack
-@LCL
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//Push 'ARG' on the stack
-@ARG
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//Push 'THIS' on the stack
-@THIS
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//Push 'THAT' on the stack
-@THAT
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//Reposition 'ARG'
+//Save number of arguments at temporary address @14
 @7
 D=A
 @14
 M=D
-@SP
-D=M
-@14
-D=D-M
-@ARG
-M=D
 
-//Reposition 'LCL'
-@SP
-D=M
-@LCL
-M=D
-
-//Jump to called function
+//Save called function address at temporary variable R15
 @Class1.set
+D=A
+@15
+M=D
+
+//Take return address into D register and jump to GENERIC_CALL
+@Class1.set$ret.1
+D=A
+@GENERIC_CALL
 0;JMP
 
 //Inject return address label
@@ -450,71 +339,22 @@ M=M+1
 
 //call Class2.set 2
 
-//Generate return label and push it on the stack
-@Class2.set$ret.2
-D=A
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//Push 'LCL' on the stack
-@LCL
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//Push 'ARG' on the stack
-@ARG
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//Push 'THIS' on the stack
-@THIS
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//Push 'THAT' on the stack
-@THAT
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//Reposition 'ARG'
+//Save number of arguments at temporary address @14
 @7
 D=A
 @14
 M=D
-@SP
-D=M
-@14
-D=D-M
-@ARG
-M=D
 
-//Reposition 'LCL'
-@SP
-D=M
-@LCL
-M=D
-
-//Jump to called function
+//Save called function address at temporary variable R15
 @Class2.set
+D=A
+@15
+M=D
+
+//Take return address into D register and jump to GENERIC_CALL
+@Class2.set$ret.2
+D=A
+@GENERIC_CALL
 0;JMP
 
 //Inject return address label
@@ -530,71 +370,22 @@ M=D
 
 //call Class1.get 0
 
-//Generate return label and push it on the stack
-@Class1.get$ret.3
-D=A
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//Push 'LCL' on the stack
-@LCL
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//Push 'ARG' on the stack
-@ARG
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//Push 'THIS' on the stack
-@THIS
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//Push 'THAT' on the stack
-@THAT
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//Reposition 'ARG'
+//Save number of arguments at temporary address @14
 @5
 D=A
 @14
 M=D
-@SP
-D=M
-@14
-D=D-M
-@ARG
-M=D
 
-//Reposition 'LCL'
-@SP
-D=M
-@LCL
-M=D
-
-//Jump to called function
+//Save called function address at temporary variable R15
 @Class1.get
+D=A
+@15
+M=D
+
+//Take return address into D register and jump to GENERIC_CALL
+@Class1.get$ret.3
+D=A
+@GENERIC_CALL
 0;JMP
 
 //Inject return address label
@@ -602,71 +393,22 @@ M=D
 
 //call Class2.get 0
 
-//Generate return label and push it on the stack
-@Class2.get$ret.4
-D=A
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//Push 'LCL' on the stack
-@LCL
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//Push 'ARG' on the stack
-@ARG
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//Push 'THIS' on the stack
-@THIS
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//Push 'THAT' on the stack
-@THAT
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//Reposition 'ARG'
+//Save number of arguments at temporary address @14
 @5
 D=A
 @14
 M=D
-@SP
-D=M
-@14
-D=D-M
-@ARG
-M=D
 
-//Reposition 'LCL'
-@SP
-D=M
-@LCL
-M=D
-
-//Jump to called function
+//Save called function address at temporary variable R15
 @Class2.get
+D=A
+@15
+M=D
+
+//Take return address into D register and jump to GENERIC_CALL
+@Class2.get$ret.4
+D=A
+@GENERIC_CALL
 0;JMP
 
 //Inject return address label
@@ -734,82 +476,7 @@ M=D
 M=M+1
 
 //return
-
-//save frame address
-@LCL
-D=M
-@14
-M=D
-
-//save return address
-@5
-D=A
-@14
-A=M-D
-D=M
-@15
-M=D
-
-//Pop return value to top of stack
-@0
-D=A
-@ARG
-D=D+M
-@13
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@13
-A=M
-M=D
-
-//reposition stack pointer for caller
-@ARG
-D=M+1
-@SP
-M=D
-
-//reposition 'THAT' for caller
-@1
-D=A
-@14
-A=M-D
-D=M
-@THAT
-M=D
-
-//reposition 'THIS' for caller
-@2
-D=A
-@14
-A=M-D
-D=M
-@THIS
-M=D
-
-//reposition 'ARG' for caller
-@3
-D=A
-@14
-A=M-D
-D=M
-@ARG
-M=D
-
-//reposition 'LCL' for caller
-@4
-D=A
-@14
-A=M-D
-D=M
-@LCL
-M=D
-
-//jump to return address
-@15
-A=M
+@GENERIC_RETURN
 0;JMP
 
 //function Class2.get 0
@@ -855,82 +522,7 @@ M=D
 M=M+1
 
 //return
-
-//save frame address
-@LCL
-D=M
-@14
-M=D
-
-//save return address
-@5
-D=A
-@14
-A=M-D
-D=M
-@15
-M=D
-
-//Pop return value to top of stack
-@0
-D=A
-@ARG
-D=D+M
-@13
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@13
-A=M
-M=D
-
-//reposition stack pointer for caller
-@ARG
-D=M+1
-@SP
-M=D
-
-//reposition 'THAT' for caller
-@1
-D=A
-@14
-A=M-D
-D=M
-@THAT
-M=D
-
-//reposition 'THIS' for caller
-@2
-D=A
-@14
-A=M-D
-D=M
-@THIS
-M=D
-
-//reposition 'ARG' for caller
-@3
-D=A
-@14
-A=M-D
-D=M
-@ARG
-M=D
-
-//reposition 'LCL' for caller
-@4
-D=A
-@14
-A=M-D
-D=M
-@LCL
-M=D
-
-//jump to return address
-@15
-A=M
+@GENERIC_RETURN
 0;JMP
 
 //finish

@@ -1,16 +1,14 @@
 from Constants import constants
 
-
-# This class is used to read a single line from the input file
-# and to return constants for the type of arguments and then the arguments themselves
+# This class is used to read a single line from the input file and to return constants for the type of arguments and then the arguments themselves
 class Parser(constants):
+
     # The class constructor. Takes a path to a .vm file as input and opens a readable stream to it.
     # param: path to file
     def __init__(self, file_name):
         self.file = open(file_name, "r")
 
-    # Reads one line of the input file, strips any blank space
-    # and the newline, then returns the line. Comments or newline lines are ignored.
+    # Reads one line of the input file, strips any blank space and the newline, then returns the line. Comments or newline lines are ignored.
     # param: none
     def advance(self):
         command = self.file.readline()
@@ -38,8 +36,7 @@ class Parser(constants):
         if not c_type:
             return ''
 
-        if c_type[0] == 'add' or c_type[0] == 'sub' or c_type[0] == 'neg' or c_type[0] == 'eq' or c_type[0] == 'gt' or \
-                c_type[0] == 'lt' or c_type[0] == 'and' or c_type[0] == 'or' or c_type[0] == 'not':
+        if c_type[0] == 'add' or c_type[0] == 'sub' or c_type[0] == 'neg' or c_type[0] == 'eq' or c_type[0] == 'gt' or c_type[0] == 'lt' or c_type[0] == 'and' or c_type[0] == 'or' or c_type[0] == 'not':
             return self.C_ARITHMETIC
 
         elif c_type[0] == 'push':
@@ -49,7 +46,7 @@ class Parser(constants):
             return self.C_POP
 
         elif c_type[0] == 'label':
-            return self.C_LABEL
+            return  self.C_LABEL
 
         elif c_type[0] == 'goto':
             return self.C_GOTO

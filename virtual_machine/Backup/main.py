@@ -13,8 +13,7 @@ if __name__ == '__main__':
     input_source = ""
     output_source = ""
 
-    # Check if the supplied 'folder_to_read' is actually a folder
-    # or a single file and then generate the output file accordingly
+    # Check if the supplied 'folder_to_read' is actually a folder or a single file and then generate the output file accordingly
     if os.path.isdir(folder_to_read):
         files = glob.glob(folder_to_read + "/*.vm")
         file_to_write_name = folder_to_read.split("/")
@@ -55,8 +54,7 @@ if __name__ == '__main__':
                 if not c_type == input_source.C_RETURN:
                     argument_1 = input_source.arg1(line, c_type)
 
-                if (c_type == input_source.C_PUSH or c_type == input_source.C_POP or c_type == input_source.C_FUNCTION
-                        or c_type == input_source.C_CALL):
+                if c_type == input_source.C_PUSH or c_type == input_source.C_POP or c_type == input_source.C_FUNCTION or c_type == input_source.C_CALL:
                     argument_2 = input_source.arg2(line)
                     if c_type == input_source.C_FUNCTION:
                         function_name = argument_1

@@ -3,56 +3,65 @@ D=A
 @SP
 M=D
 
-//Generate return label and push it on the stack
+//Save number of arguments at temporary address @14
+@5
+D=A
+@14
+M=D
+
+//Save called function address at temporary variable R15
+@Sys.init
+D=A
+@15
+M=D
+
+//Take return address into D register and jump to GENERIC_CALL
 @Sys.init$ret.0
 D=A
-@SP
-A=M
-M=D
+@GENERIC_CALL
+0;JMP
+
+//Inject return address label
+(Sys.init$ret.0)
+(GENERIC_CALL)
 @SP
 M=M+1
+A=M-1
+M=D
 
 //Push 'LCL' on the stack
 @LCL
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //Push 'ARG' on the stack
 @ARG
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //Push 'THIS' on the stack
 @THIS
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //Push 'THAT' on the stack
 @THAT
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //Reposition 'ARG'
-@5
-D=A
-@14
-M=D
 @SP
 D=M
 @14
@@ -65,13 +74,86 @@ M=D
 D=M
 @LCL
 M=D
-
-//Jump to called function
-@Sys.init
+@15
+A=M
 0;JMP
+(GENERIC_RETURN)
 
-//Inject return address label
-(Sys.init$ret.0)
+//save frame address
+@LCL
+D=M
+@14
+M=D
+
+//save return address
+@5
+D=A
+@14
+A=M-D
+D=M
+@15
+M=D
+
+//Pop return value to top of stack
+@0
+D=A
+@ARG
+D=D+M
+@13
+M=D
+@SP
+AM=M-1
+D=M
+@13
+A=M
+M=D
+
+//reposition stack pointer for caller
+@ARG
+D=M+1
+@SP
+M=D
+
+//reposition 'THAT' for caller
+@1
+D=A
+@14
+A=M-D
+D=M
+@THAT
+M=D
+
+//reposition 'THIS' for caller
+@2
+D=A
+@14
+A=M-D
+D=M
+@THIS
+M=D
+
+//reposition 'ARG' for caller
+@3
+D=A
+@14
+A=M-D
+D=M
+@ARG
+M=D
+
+//reposition 'LCL' for caller
+@4
+D=A
+@14
+A=M-D
+D=M
+@LCL
+M=D
+
+//jump to return address
+@15
+A=M
+0;JMP
 
 //function Main.fibonacci 0
 (Main.fibonacci)
@@ -85,30 +167,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 2
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt                     // checks if n<2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -124,15 +202,13 @@ D=-1
 D=0
 (AFTER.Main.14)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Main.Main.fibonacci$IF_TRUE
 D;JNE
@@ -151,88 +227,12 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
-
-//save frame address
-@LCL
-D=M
-@14
-M=D
-
-//save return address
-@5
-D=A
-@14
-A=M-D
-D=M
-@15
-M=D
-
-//Pop return value to top of stack
-@0
-D=A
-@ARG
-D=D+M
-@13
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@13
-A=M
-M=D
-
-//reposition stack pointer for caller
-@ARG
-D=M+1
-@SP
-M=D
-
-//reposition 'THAT' for caller
-@1
-D=A
-@14
-A=M-D
-D=M
-@THAT
-M=D
-
-//reposition 'THIS' for caller
-@2
-D=A
-@14
-A=M-D
-D=M
-@THIS
-M=D
-
-//reposition 'ARG' for caller
-@3
-D=A
-@14
-A=M-D
-D=M
-@ARG
-M=D
-
-//reposition 'LCL' for caller
-@4
-D=A
-@14
-A=M-D
-D=M
-@LCL
-M=D
-
-//jump to return address
-@15
-A=M
+@GENERIC_RETURN
 0;JMP
 
 //label IF_FALSE         // if n>=2, returns fib(n-2)+fib(n-1)
@@ -245,106 +245,52 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 2
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Main.fibonacci 1  // computes fib(n-2)
 
-//Generate return label and push it on the stack
-@Main.fibonacci$ret.1
-D=A
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//Push 'LCL' on the stack
-@LCL
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//Push 'ARG' on the stack
-@ARG
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//Push 'THIS' on the stack
-@THIS
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//Push 'THAT' on the stack
-@THAT
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//Reposition 'ARG'
+//Save number of arguments at temporary address @14
 @6
 D=A
 @14
 M=D
-@SP
-D=M
-@14
-D=D-M
-@ARG
-M=D
 
-//Reposition 'LCL'
-@SP
-D=M
-@LCL
-M=D
-
-//Jump to called function
+//Save called function address at temporary variable R15
 @Main.fibonacci
+D=A
+@15
+M=D
+
+//Take return address into D register and jump to GENERIC_CALL
+@Main.fibonacci$ret.1
+D=A
+@GENERIC_CALL
 0;JMP
 
 //Inject return address label
@@ -357,106 +303,52 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Main.fibonacci 1  // computes fib(n-1)
 
-//Generate return label and push it on the stack
-@Main.fibonacci$ret.2
-D=A
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//Push 'LCL' on the stack
-@LCL
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//Push 'ARG' on the stack
-@ARG
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//Push 'THIS' on the stack
-@THIS
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//Push 'THAT' on the stack
-@THAT
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//Reposition 'ARG'
+//Save number of arguments at temporary address @14
 @6
 D=A
 @14
 M=D
-@SP
-D=M
-@14
-D=D-M
-@ARG
-M=D
 
-//Reposition 'LCL'
-@SP
-D=M
-@LCL
-M=D
-
-//Jump to called function
+//Save called function address at temporary variable R15
 @Main.fibonacci
+D=A
+@15
+M=D
+
+//Take return address into D register and jump to GENERIC_CALL
+@Main.fibonacci$ret.2
+D=A
+@GENERIC_CALL
 0;JMP
 
 //Inject return address label
@@ -464,100 +356,22 @@ M=D
 
 //add                    // returns fib(n-1) + fib(n-2)
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
-
-//save frame address
-@LCL
-D=M
-@14
-M=D
-
-//save return address
-@5
-D=A
-@14
-A=M-D
-D=M
-@15
-M=D
-
-//Pop return value to top of stack
-@0
-D=A
-@ARG
-D=D+M
-@13
-M=D
-@SP
-M=M-1
-A=M
-D=M
-@13
-A=M
-M=D
-
-//reposition stack pointer for caller
-@ARG
-D=M+1
-@SP
-M=D
-
-//reposition 'THAT' for caller
-@1
-D=A
-@14
-A=M-D
-D=M
-@THAT
-M=D
-
-//reposition 'THIS' for caller
-@2
-D=A
-@14
-A=M-D
-D=M
-@THIS
-M=D
-
-//reposition 'ARG' for caller
-@3
-D=A
-@14
-A=M-D
-D=M
-@ARG
-M=D
-
-//reposition 'LCL' for caller
-@4
-D=A
-@14
-A=M-D
-D=M
-@LCL
-M=D
-
-//jump to return address
-@15
-A=M
+@GENERIC_RETURN
 0;JMP
 
 //function Sys.init 0
@@ -569,78 +383,28 @@ D=A
 @4
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Main.fibonacci 1   // computes the 4'th fibonacci element
 
-//Generate return label and push it on the stack
-@Main.fibonacci$ret.3
-D=A
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//Push 'LCL' on the stack
-@LCL
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//Push 'ARG' on the stack
-@ARG
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//Push 'THIS' on the stack
-@THIS
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//Push 'THAT' on the stack
-@THAT
-D=M
-@SP
-A=M
-M=D
-@SP
-M=M+1
-
-//Reposition 'ARG'
+//Save number of arguments at temporary address @14
 @6
 D=A
 @14
 M=D
-@SP
-D=M
-@14
-D=D-M
-@ARG
-M=D
 
-//Reposition 'LCL'
-@SP
-D=M
-@LCL
-M=D
-
-//Jump to called function
+//Save called function address at temporary variable R15
 @Main.fibonacci
+D=A
+@15
+M=D
+
+//Take return address into D register and jump to GENERIC_CALL
+@Main.fibonacci$ret.3
+D=A
+@GENERIC_CALL
 0;JMP
 
 //Inject return address label

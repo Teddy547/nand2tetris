@@ -19,34 +19,41 @@ class CodeWriter(constants):
         self.__write_generic_return()
 
     # Writes Assembly code for any arithmetic command
+    # "add", "sub", "neg", "or", "and", "not" all compute directly on the stack bypassing "push" and "pop" completely
     def write_arithmetic(self, command, line_number, file_name):
 
         if command == "add":
-            self.__pop()
-            self.file.write("@13\n"
-                            "M=D\n")
-            self.__pop()
-            self.file.write("@13\n"
-                            "D=M+D\n")
-            self.__push()
+            self.file.write("@SP\n"
+                            "AM=M-1\n"
+                            "D=M\n"
+                            "A=A-1\n"
+                            "M=D+M\n")
 
         if command == "sub":
-            self.__subtract()
-            self.__push()
+            self.file.write("@SP\n"
+                            "AM=M-1\n"
+                            "D=M\n"
+                            "A=A-1\n"
+                            "M=M-D\n")
 
         if command == "neg":
-            self.__pop()
-            self.file.write("@13\n"
-                            "M=D\n")
-            self.file.write("D=-M\n")
-            self.__push()
+            self.file.write("@SP\n"
+                            "A=M-1\n"
+                            "M=-M\n")
 
         # 'Equal': Subtracts to topmost values on the stack from each other.
         # If the value is '0' they are equal, else they are not.
         # Labels and Jump commands are used to differentiate accordingly.
         # The labels are named and numbered to differentiate between them
         if command == "eq":
-            self.__subtract()
+            self.file.write("@SP\n"
+                            "AM=M-1\n"
+                            "D=M\n"
+                            "A=A-1\n"
+                            "D=M-D\n"
+                            "@SP\n"
+                            "M=M-1\n")
+
             self.file.write(f"@EQUAL.{file_name}.{line_number}\n"
                             "D;JEQ\n"
                             f"@NOTEQUAL.{file_name}.{line_number}\n"
@@ -62,7 +69,14 @@ class CodeWriter(constants):
 
         # 'Greater than': Assembly code is analogous to 'equal'
         if command == "gt":
-            self.__subtract()
+            self.file.write("@SP\n"
+                            "AM=M-1\n"
+                            "D=M\n"
+                            "A=A-1\n"
+                            "D=M-D\n"
+                            "@SP\n"
+                            "M=M-1\n")
+
             self.file.write(f"@GREATER.{file_name}.{line_number}\n"
                             "D;JGT\n"
                             f"@NOTGREATER.{file_name}.{line_number}\n"
@@ -78,7 +92,14 @@ class CodeWriter(constants):
 
         # 'Lower than': Assembly code is analogous to 'equal'
         if command == "lt":
-            self.__subtract()
+            self.file.write("@SP\n"
+                            "AM=M-1\n"
+                            "D=M\n"
+                            "A=A-1\n"
+                            "D=M-D\n"
+                            "@SP\n"
+                            "M=M-1\n")
+
             self.file.write(f"@LOWER.{file_name}.{line_number}\n"
                             "D;JLT\n"
                             f"@NOTLOWER.{file_name}.{line_number}\n"
@@ -93,29 +114,23 @@ class CodeWriter(constants):
             self.__push()
 
         if command == "and":
-            self.__pop()
-            self.file.write("@13\n"
-                            "M=D\n")
-            self.__pop()
-            self.file.write("@13\n"
-                            "D=M&D\n")
-            self.__push()
+            self.file.write("@SP\n"
+                            "AM=M-1\n"
+                            "D=M\n"
+                            "A=A-1\n"
+                            "M=D&M\n")
 
         if command == "or":
-            self.__pop()
-            self.file.write("@13\n"
-                            "M=D\n")
-            self.__pop()
-            self.file.write("@13\n"
-                            "D=M|D\n")
-            self.__push()
+            self.file.write("@SP\n"
+                            "AM=M-1\n"
+                            "D=M\n"
+                            "A=A-1\n"
+                            "M=D|M\n")
 
         if command == "not":
-            self.__pop()
-            self.file.write("@13\n"
-                            "M=D\n")
-            self.file.write("D=!M\n")
-            self.__push()
+            self.file.write("@SP\n"
+                            "A=M-1\n"
+                            "M=!M\n")
 
     # Realizes 'push' and 'pop' commands regarding different memory segments.
     def write_push_pop(self, command, segment, index, file_name):
@@ -227,7 +242,7 @@ class CodeWriter(constants):
                         "M=D\n")
 
         self.file.write("\n//Take return address into D register and jump to GENERIC_CALL\n")
-        self.file.write(f"@{function_name}$ret.{counter}\n"  
+        self.file.write(f"@{function_name}$ret.{counter}\n"
                         f"D=A\n")
 
         self.file.write("@GENERIC_CALL\n"

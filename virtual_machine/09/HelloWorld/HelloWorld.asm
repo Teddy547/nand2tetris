@@ -25,46 +25,41 @@ D=A
 (Sys.init$ret.0)
 (GENERIC_CALL)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //Push 'LCL' on the stack
 @LCL
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //Push 'ARG' on the stack
 @ARG
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //Push 'THIS' on the stack
 @THIS
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //Push 'THAT' on the stack
 @THAT
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //Reposition 'ARG'
 @SP
@@ -107,8 +102,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -170,15 +164,13 @@ D=A
 @16384
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop static 4
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.4
 M=D
@@ -187,29 +179,25 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop static 2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.2
 M=D
@@ -218,15 +206,13 @@ M=D
 @32
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop static 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.1
 M=D
@@ -235,15 +221,13 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop static 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.0
 M=D
@@ -252,10 +236,9 @@ M=D
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call String.new 1
 
@@ -282,8 +265,7 @@ D=A
 
 //pop static 3
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.3
 M=D
@@ -313,8 +295,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -344,8 +325,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -354,10 +334,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -372,10 +351,9 @@ D=A
 @127
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Array.new 1
 
@@ -402,8 +380,7 @@ D=A
 
 //pop static 5
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.5
 M=D
@@ -412,109 +389,97 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -541,8 +506,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -551,109 +515,97 @@ M=D
 @32
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -680,8 +632,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -690,109 +641,97 @@ M=D
 @33
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -819,8 +758,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -829,109 +767,97 @@ M=D
 @34
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 54
 @54
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 54
 @54
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 20
 @20
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -958,8 +884,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -968,109 +893,97 @@ M=D
 @35
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 18
 @18
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 18
 @18
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 18
 @18
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 18
 @18
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 18
 @18
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 18
 @18
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -1097,8 +1010,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -1107,109 +1019,97 @@ M=D
 @36
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -1236,8 +1136,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -1246,109 +1145,97 @@ M=D
 @37
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 35
 @35
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 49
 @49
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -1375,8 +1262,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -1385,109 +1271,97 @@ M=D
 @38
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 54
 @54
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 54
 @54
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -1514,8 +1388,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -1524,109 +1397,97 @@ M=D
 @39
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -1653,8 +1514,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -1663,109 +1523,97 @@ M=D
 @40
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -1792,8 +1640,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -1802,109 +1649,97 @@ M=D
 @41
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -1931,8 +1766,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -1941,109 +1775,97 @@ M=D
 @42
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -2070,8 +1892,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -2080,109 +1901,97 @@ M=D
 @43
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -2209,8 +2018,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -2219,109 +2027,97 @@ M=D
 @44
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -2348,8 +2144,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -2358,109 +2153,97 @@ M=D
 @45
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -2487,8 +2270,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -2497,109 +2279,97 @@ M=D
 @46
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -2626,8 +2396,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -2636,109 +2405,97 @@ M=D
 @47
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 32
 @32
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -2765,8 +2522,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -2775,109 +2531,97 @@ M=D
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -2904,8 +2648,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -2914,109 +2657,97 @@ M=D
 @49
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 14
 @14
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 15
 @15
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -3043,8 +2774,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -3053,109 +2783,97 @@ M=D
 @50
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -3182,8 +2900,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -3192,109 +2909,97 @@ M=D
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 28
 @28
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -3321,8 +3026,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -3331,109 +3035,97 @@ M=D
 @52
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 16
 @16
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 28
 @28
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 26
 @26
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 25
 @25
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 60
 @60
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -3460,8 +3152,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -3470,109 +3161,97 @@ M=D
 @53
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 31
 @31
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -3599,8 +3278,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -3609,109 +3287,97 @@ M=D
 @54
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 28
 @28
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 31
 @31
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -3738,8 +3404,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -3748,109 +3413,97 @@ M=D
 @55
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 49
 @49
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -3877,8 +3530,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -3887,109 +3539,97 @@ M=D
 @56
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -4016,8 +3656,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -4026,109 +3665,97 @@ M=D
 @57
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 62
 @62
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 14
 @14
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -4155,8 +3782,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -4165,109 +3791,97 @@ M=D
 @58
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -4294,8 +3908,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -4304,109 +3917,97 @@ M=D
 @59
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -4433,8 +4034,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -4443,109 +4043,97 @@ M=D
 @60
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -4572,8 +4160,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -4582,109 +4169,97 @@ M=D
 @61
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -4711,8 +4286,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -4721,109 +4295,97 @@ M=D
 @62
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -4850,8 +4412,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -4860,109 +4421,97 @@ M=D
 @64
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 59
 @59
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 59
 @59
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 59
 @59
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -4989,8 +4538,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -4999,109 +4547,97 @@ M=D
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -5128,8 +4664,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -5138,109 +4673,97 @@ M=D
 @65
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -5267,8 +4790,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -5277,109 +4799,97 @@ M=D
 @66
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 31
 @31
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 31
 @31
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 31
 @31
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -5406,8 +4916,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -5416,109 +4925,97 @@ M=D
 @67
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 28
 @28
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 54
 @54
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 35
 @35
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 35
 @35
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 54
 @54
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 28
 @28
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -5545,8 +5042,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -5555,109 +5051,97 @@ M=D
 @68
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 15
 @15
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 15
 @15
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -5684,8 +5168,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -5694,109 +5177,97 @@ M=D
 @69
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 35
 @35
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 11
 @11
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 15
 @15
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 11
 @11
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 35
 @35
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -5823,8 +5294,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -5833,109 +5303,97 @@ M=D
 @70
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 35
 @35
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 11
 @11
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 15
 @15
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 11
 @11
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -5962,8 +5420,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -5972,109 +5429,97 @@ M=D
 @71
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 28
 @28
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 54
 @54
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 35
 @35
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 59
 @59
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 54
 @54
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 44
 @44
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -6101,8 +5546,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -6111,109 +5555,97 @@ M=D
 @72
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -6240,8 +5672,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -6250,109 +5681,97 @@ M=D
 @73
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -6379,8 +5798,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -6389,109 +5807,97 @@ M=D
 @74
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 60
 @60
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 14
 @14
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -6518,8 +5924,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -6528,109 +5933,97 @@ M=D
 @75
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 15
 @15
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -6657,8 +6050,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -6667,109 +6059,97 @@ M=D
 @76
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 35
 @35
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -6796,8 +6176,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -6806,109 +6185,97 @@ M=D
 @77
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 33
 @33
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -6935,8 +6302,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -6945,109 +6311,97 @@ M=D
 @78
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 55
 @55
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 55
 @55
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 59
 @59
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 59
 @59
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -7074,8 +6428,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -7084,109 +6437,97 @@ M=D
 @79
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -7213,8 +6554,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -7223,109 +6563,97 @@ M=D
 @80
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 31
 @31
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 31
 @31
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -7352,8 +6680,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -7362,109 +6689,97 @@ M=D
 @81
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 59
 @59
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -7491,8 +6806,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -7501,109 +6815,97 @@ M=D
 @82
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 31
 @31
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 31
 @31
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -7630,8 +6932,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -7640,109 +6941,97 @@ M=D
 @83
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 28
 @28
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -7769,8 +7058,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -7779,109 +7067,97 @@ M=D
 @84
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 45
 @45
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -7908,8 +7184,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -7918,109 +7193,97 @@ M=D
 @85
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -8047,8 +7310,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -8057,109 +7319,97 @@ M=D
 @86
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -8186,8 +7436,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -8196,109 +7445,97 @@ M=D
 @87
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 18
 @18
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -8325,8 +7562,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -8335,109 +7571,97 @@ M=D
 @88
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -8464,8 +7688,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -8474,109 +7697,97 @@ M=D
 @89
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -8603,8 +7814,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -8613,109 +7823,97 @@ M=D
 @90
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 49
 @49
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 35
 @35
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -8742,8 +7940,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -8752,109 +7949,97 @@ M=D
 @91
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -8881,8 +8066,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -8891,109 +8075,97 @@ M=D
 @92
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 32
 @32
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -9020,8 +8192,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -9030,109 +8201,97 @@ M=D
 @93
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -9159,8 +8318,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -9169,109 +8327,97 @@ M=D
 @94
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 8
 @8
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 28
 @28
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 54
 @54
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -9298,8 +8444,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -9308,109 +8453,97 @@ M=D
 @95
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -9437,8 +8570,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -9447,109 +8579,97 @@ M=D
 @96
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -9576,8 +8696,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -9586,109 +8705,97 @@ M=D
 @97
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 14
 @14
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 54
 @54
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -9715,8 +8822,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -9725,109 +8831,97 @@ M=D
 @98
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 15
 @15
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -9854,8 +8948,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -9864,109 +8957,97 @@ M=D
 @99
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -9993,8 +9074,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -10003,109 +9083,97 @@ M=D
 @100
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 60
 @60
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 54
 @54
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -10132,8 +9200,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -10142,109 +9209,97 @@ M=D
 @101
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -10271,8 +9326,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -10281,109 +9335,97 @@ M=D
 @102
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 28
 @28
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 54
 @54
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 38
 @38
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 15
 @15
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 15
 @15
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -10410,8 +9452,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -10420,109 +9461,97 @@ M=D
 @103
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 62
 @62
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -10549,8 +9578,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -10559,109 +9587,97 @@ M=D
 @104
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 55
 @55
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -10688,8 +9704,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -10698,109 +9713,97 @@ M=D
 @105
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 14
 @14
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -10827,8 +9830,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -10837,109 +9839,97 @@ M=D
 @106
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 56
 @56
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -10966,8 +9956,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -10976,109 +9965,97 @@ M=D
 @107
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 15
 @15
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 15
 @15
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -11105,8 +10082,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -11115,109 +10091,97 @@ M=D
 @108
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 14
 @14
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -11244,8 +10208,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -11254,109 +10217,97 @@ M=D
 @109
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 29
 @29
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 43
 @43
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 43
 @43
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 43
 @43
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 43
 @43
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -11383,8 +10334,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -11393,109 +10343,97 @@ M=D
 @110
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 29
 @29
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -11522,8 +10460,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -11532,109 +10469,97 @@ M=D
 @111
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -11661,8 +10586,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -11671,109 +10595,97 @@ M=D
 @112
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 31
 @31
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -11800,8 +10712,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -11810,109 +10721,97 @@ M=D
 @113
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 62
 @62
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -11939,8 +10838,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -11949,109 +10847,97 @@ M=D
 @114
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 29
 @29
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 55
 @55
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 7
 @7
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -12078,8 +10964,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -12088,109 +10973,97 @@ M=D
 @115
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -12217,8 +11090,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -12227,109 +11099,97 @@ M=D
 @116
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 4
 @4
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 15
 @15
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 54
 @54
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 28
 @28
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -12356,8 +11216,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -12366,109 +11225,97 @@ M=D
 @117
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 54
 @54
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -12495,8 +11342,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -12505,109 +11351,97 @@ M=D
 @118
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -12634,8 +11468,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -12644,109 +11477,97 @@ M=D
 @119
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 18
 @18
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -12773,8 +11594,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -12783,109 +11603,97 @@ M=D
 @120
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 30
 @30
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -12912,8 +11720,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -12922,109 +11729,97 @@ M=D
 @121
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 62
 @62
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 24
 @24
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 15
 @15
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -13051,8 +11846,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -13061,109 +11855,97 @@ M=D
 @122
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 27
 @27
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 6
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 51
 @51
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -13190,8 +11972,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -13200,109 +11981,97 @@ M=D
 @123
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 56
 @56
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 7
 @7
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 56
 @56
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -13329,8 +12098,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -13339,109 +12107,97 @@ M=D
 @124
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -13468,8 +12224,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -13478,109 +12233,97 @@ M=D
 @125
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 7
 @7
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 56
 @56
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 12
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 7
 @7
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -13607,8 +12350,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -13617,109 +12359,97 @@ M=D
 @126
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 38
 @38
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 45
 @45
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 25
 @25
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.create 12
 
@@ -13746,8 +12476,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -13756,10 +12485,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -13770,19 +12498,17 @@ M=M+1
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 11
 @11
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Array.new 1
 
@@ -13815,8 +12541,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -13829,38 +12554,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 5
 @Output.5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -13869,23 +12589,20 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -13894,10 +12611,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -13907,8 +12623,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -13918,10 +12633,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -13930,29 +12644,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 1
 @1
@@ -13961,23 +12671,20 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -13986,10 +12693,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -13999,8 +12705,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -14010,10 +12715,9 @@ M=D
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -14022,29 +12726,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 2
 @2
@@ -14053,23 +12753,20 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -14078,10 +12775,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -14091,8 +12787,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -14102,10 +12797,9 @@ M=D
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -14114,29 +12808,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 3
 @3
@@ -14145,23 +12835,20 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -14170,10 +12857,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -14183,8 +12869,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -14194,10 +12879,9 @@ M=D
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -14206,29 +12890,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 4
 @4
@@ -14237,23 +12917,20 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -14262,10 +12939,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -14275,8 +12951,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -14286,10 +12961,9 @@ M=D
 @4
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -14298,29 +12972,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 5
 @5
@@ -14329,23 +12999,20 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -14354,10 +13021,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -14367,8 +13033,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -14378,10 +13043,9 @@ M=D
 @5
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -14390,29 +13054,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 6
 @6
@@ -14421,23 +13081,20 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -14446,10 +13103,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -14459,8 +13115,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -14470,10 +13125,9 @@ M=D
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -14482,29 +13136,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 7
 @7
@@ -14513,23 +13163,20 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -14538,10 +13185,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -14551,8 +13197,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -14562,10 +13207,9 @@ M=D
 @7
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -14574,29 +13218,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 8
 @8
@@ -14605,23 +13245,20 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -14630,10 +13267,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -14643,8 +13279,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -14654,10 +13289,9 @@ M=D
 @8
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -14666,29 +13300,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 9
 @9
@@ -14697,23 +13327,20 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -14722,10 +13349,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -14735,8 +13361,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -14746,10 +13371,9 @@ M=D
 @9
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -14758,29 +13382,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 10
 @10
@@ -14789,23 +13409,20 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -14814,10 +13431,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -14827,8 +13443,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -14838,10 +13453,9 @@ M=D
 @10
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -14850,29 +13464,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 11
 @11
@@ -14881,23 +13491,20 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -14906,10 +13513,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -14919,8 +13525,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -14930,10 +13535,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -14944,34 +13548,29 @@ M=M+1
 @0
 D=A
 @SP
-A=M
+M=M+1
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
-@SP
-M=M+1
 
 //push constant 127
 @127
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Array.new 1
 
@@ -14998,8 +13597,7 @@ D=A
 
 //pop static 6
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.6
 M=D
@@ -15008,10 +13606,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 2
 @2
@@ -15021,8 +13618,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -15038,30 +13634,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 127
 @127
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -15077,29 +13669,25 @@ D=-1
 D=0
 (AFTER.Output.1481)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto WHILE_END0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.Output.createShiftedMap$WHILE_END0
 D;JNE
@@ -15111,43 +13699,37 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 5
 @Output.5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -15159,10 +13741,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 0
 @0
@@ -15172,8 +13753,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -15183,10 +13763,9 @@ M=D
 @11
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Array.new 1
 
@@ -15219,8 +13798,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -15233,38 +13811,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 6
 @Output.6
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 1
 @1
@@ -15273,23 +13846,20 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -15298,10 +13868,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -15311,8 +13880,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -15322,10 +13890,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 3
 @3
@@ -15335,8 +13902,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -15352,30 +13918,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 11
 @11
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -15391,29 +13953,25 @@ D=-1
 D=0
 (AFTER.Output.1506)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto WHILE_END1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.Output.createShiftedMap$WHILE_END1
 D;JNE
@@ -15425,10 +13983,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 1
 @1
@@ -15437,29 +13994,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 3
 @3
@@ -15468,10 +14021,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -15480,34 +14032,29 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -15519,19 +14066,17 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 256
 @256
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Math.multiply 2
 
@@ -15558,16 +14103,14 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -15576,10 +14119,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -15589,8 +14131,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -15603,38 +14144,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 3
 @3
@@ -15644,8 +14180,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -15665,30 +14200,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //eq
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -15704,15 +14235,13 @@ D=-1
 D=0
 (AFTER.Output.1531)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.Output.createShiftedMap$IF_TRUE0
 D;JNE
@@ -15728,10 +14257,9 @@ D;JNE
 @32
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 2
 @2
@@ -15741,8 +14269,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -15762,38 +14289,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 2
 @2
@@ -15803,8 +14325,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -15824,10 +14345,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -15838,10 +14358,9 @@ M=M+1
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 0
 @0
@@ -15850,30 +14369,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 32
 @32
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -15889,10 +14404,9 @@ D=-1
 D=0
 (AFTER.Output.1551)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 0
 @0
@@ -15901,30 +14415,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 126
 @126
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -15940,34 +14450,29 @@ D=-1
 D=0
 (AFTER.Output.1554)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //or
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M|D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.Output.getMap$IF_TRUE0
 D;JNE
@@ -15983,10 +14488,9 @@ D;JNE
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop argument 0
 @0
@@ -15996,8 +14500,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -16010,15 +14513,13 @@ M=D
 @Output.2
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.Output.getMap$IF_TRUE1
 D;JNE
@@ -16037,43 +14538,37 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 5
 @Output.5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -16085,10 +14580,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 0
 @0
@@ -16098,8 +14592,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -16119,43 +14612,37 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 6
 @Output.6
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -16167,10 +14654,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 0
 @0
@@ -16180,8 +14666,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -16197,10 +14682,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -16211,25 +14695,21 @@ M=M+1
 @0
 D=A
 @SP
-A=M
+M=M+1
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
-@SP
-M=M+1
 
 //push argument 0
 @0
@@ -16238,10 +14718,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.getMap 1
 
@@ -16274,8 +14753,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -16285,10 +14763,9 @@ M=D
 @Output.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 0
 @0
@@ -16298,8 +14775,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -16315,30 +14791,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 11
 @11
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -16354,29 +14826,25 @@ D=-1
 D=0
 (AFTER.Output.1592)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto WHILE_END0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.Output.drawChar$WHILE_END0
 D;JNE
@@ -16385,15 +14853,13 @@ D;JNE
 @Output.2
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.Output.drawChar$IF_TRUE0
 D;JNE
@@ -16412,43 +14878,37 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 4
 @Output.4
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -16460,52 +14920,45 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 256
 @256
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //neg
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //and
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M&D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 3
 @3
@@ -16515,8 +14968,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -16536,43 +14988,37 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 4
 @Output.4
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -16584,38 +15030,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 255
 @255
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //and
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M&D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 3
 @3
@@ -16625,8 +15066,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -16642,38 +15082,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 4
 @Output.4
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 1
 @1
@@ -16682,10 +15117,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 2
 @2
@@ -16694,34 +15128,29 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -16733,10 +15162,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 3
 @3
@@ -16745,42 +15173,36 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //or
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M|D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -16789,10 +15211,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -16802,8 +15223,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -16816,38 +15236,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 32
 @32
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 0
 @0
@@ -16857,8 +15272,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -16871,38 +15285,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 1
 @1
@@ -16912,8 +15321,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -16930,10 +15338,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -16951,30 +15358,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -16990,10 +15393,9 @@ D=-1
 D=0
 (AFTER.Output.1648)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 0
 @0
@@ -17002,30 +15404,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 22
 @22
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -17041,29 +15439,25 @@ D=-1
 D=0
 (AFTER.Output.1651)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //or
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M|D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 1
 @1
@@ -17072,30 +15466,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -17111,29 +15501,25 @@ D=-1
 D=0
 (AFTER.Output.1655)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //or
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M|D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 1
 @1
@@ -17142,30 +15528,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 63
 @63
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -17181,34 +15563,29 @@ D=-1
 D=0
 (AFTER.Output.1659)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //or
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M|D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.Output.moveCursor$IF_TRUE0
 D;JNE
@@ -17224,10 +15601,9 @@ D;JNE
 @20
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Sys.error 1
 
@@ -17254,8 +15630,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -17270,19 +15645,17 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 2
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Math.divide 2
 
@@ -17309,8 +15682,7 @@ D=A
 
 //pop static 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.0
 M=D
@@ -17319,10 +15691,9 @@ M=D
 @32
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 0
 @0
@@ -17331,19 +15702,17 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 352
 @352
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Math.multiply 2
 
@@ -17370,55 +15739,47 @@ D=A
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 0
 @Output.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop static 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.1
 M=D
@@ -17430,28 +15791,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 0
 @Output.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 2
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Math.multiply 2
 
@@ -17478,14 +15836,12 @@ D=A
 
 //eq
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -17501,15 +15857,13 @@ D=-1
 D=0
 (AFTER.Output.1684)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop static 2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.2
 M=D
@@ -17518,10 +15872,9 @@ M=D
 @32
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.drawChar 1
 
@@ -17548,8 +15901,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -17558,10 +15910,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -17579,10 +15930,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call String.newLine 0
 
@@ -17609,14 +15959,12 @@ D=A
 
 //eq
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -17632,15 +15980,13 @@ D=-1
 D=0
 (AFTER.Output.1694)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.Output.printChar$IF_TRUE0
 D;JNE
@@ -17677,8 +16023,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -17697,10 +16042,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call String.backSpace 0
 
@@ -17727,14 +16071,12 @@ D=A
 
 //eq
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -17750,15 +16092,13 @@ D=-1
 D=0
 (AFTER.Output.1704)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.Output.printChar$IF_TRUE1
 D;JNE
@@ -17795,8 +16135,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -17815,10 +16154,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.drawChar 1
 
@@ -17845,8 +16183,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -17855,29 +16192,25 @@ M=D
 @Output.2
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.Output.printChar$IF_TRUE2
 D;JNE
@@ -17893,43 +16226,37 @@ D;JNE
 @Output.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop static 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.0
 M=D
@@ -17938,43 +16265,37 @@ M=D
 @Output.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop static 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.1
 M=D
@@ -17986,30 +16307,26 @@ M=D
 @Output.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 32
 @32
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //eq
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -18025,15 +16342,13 @@ D=-1
 D=0
 (AFTER.Output.1731)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE3
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.Output.printChar$IF_TRUE3
 D;JNE
@@ -18070,8 +16385,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -18087,29 +16401,25 @@ M=D
 @Output.2
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop static 2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.2
 M=D
@@ -18127,10 +16437,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -18141,15 +16450,13 @@ M=M+1
 @0
 D=A
 @SP
-A=M
+M=M+1
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
-@SP
-M=M+1
 
 //push argument 0
 @0
@@ -18158,10 +16465,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call String.length 1
 
@@ -18194,8 +16500,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -18211,10 +16516,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 1
 @1
@@ -18223,21 +16527,18 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -18253,29 +16554,25 @@ D=-1
 D=0
 (AFTER.Output.1754)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto WHILE_END0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.Output.printString$WHILE_END0
 D;JNE
@@ -18287,10 +16584,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -18299,10 +16595,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call String.charAt 2
 
@@ -18352,8 +16647,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -18365,38 +16659,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 0
 @0
@@ -18406,8 +16695,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -18424,10 +16712,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -18442,10 +16729,9 @@ D=A
 @Output.3
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 0
 @0
@@ -18454,10 +16740,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call String.setInt 2
 
@@ -18484,8 +16769,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -18494,10 +16778,9 @@ M=D
 @Output.3
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.printString 1
 
@@ -18524,8 +16807,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -18534,10 +16816,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -18552,71 +16833,61 @@ D=A
 @Output.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 352
 @352
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 0
 @Output.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop static 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.1
 M=D
@@ -18625,15 +16896,13 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop static 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.0
 M=D
@@ -18642,29 +16911,25 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop static 2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.2
 M=D
@@ -18673,30 +16938,26 @@ M=D
 @Output.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 8128
 @8128
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //eq
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -18712,15 +16973,13 @@ D=-1
 D=0
 (AFTER.Output.1794)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.Output.println$IF_TRUE0
 D;JNE
@@ -18736,15 +16995,13 @@ D;JNE
 @32
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop static 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.1
 M=D
@@ -18756,10 +17013,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -18774,15 +17030,13 @@ D=A
 @Output.2
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.Output.backSpace$IF_TRUE0
 D;JNE
@@ -18798,30 +17052,26 @@ D;JNE
 @Output.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -18837,15 +17087,13 @@ D=-1
 D=0
 (AFTER.Output.1810)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.Output.backSpace$IF_TRUE1
 D;JNE
@@ -18861,43 +17109,37 @@ D;JNE
 @Output.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop static 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.0
 M=D
@@ -18906,43 +17148,37 @@ M=D
 @Output.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop static 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.1
 M=D
@@ -18958,15 +17194,13 @@ M=D
 @31
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop static 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.0
 M=D
@@ -18975,30 +17209,26 @@ M=D
 @Output.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 32
 @32
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //eq
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -19014,15 +17244,13 @@ D=-1
 D=0
 (AFTER.Output.1828)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.Output.backSpace$IF_TRUE2
 D;JNE
@@ -19038,15 +17266,13 @@ D;JNE
 @8128
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop static 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.1
 M=D
@@ -19058,43 +17284,37 @@ M=D
 @Output.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 321
 @321
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop static 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.1
 M=D
@@ -19106,15 +17326,13 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop static 2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.2
 M=D
@@ -19130,29 +17348,25 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop static 2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Output.2
 M=D
@@ -19164,10 +17378,9 @@ M=D
 @32
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.drawChar 1
 
@@ -19194,8 +17407,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -19204,10 +17416,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -19222,10 +17433,9 @@ D=A
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -19240,10 +17450,9 @@ D=A
 @24576
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Memory.peek 1
 
@@ -19277,24 +17486,21 @@ D=A
 @0
 D=A
 @SP
-A=M
+M=M+1
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
-@SP
-M=M+1
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.printChar 1
 
@@ -19321,8 +17527,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -19337,30 +17542,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //eq
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -19376,10 +17577,9 @@ D=-1
 D=0
 (AFTER.Keyboard.1868)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -19388,30 +17588,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -19427,48 +17623,41 @@ D=-1
 D=0
 (AFTER.Keyboard.1871)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //or
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M|D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto WHILE_END0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Keyboard.Keyboard.readChar$WHILE_END0
 D;JNE
@@ -19504,8 +17693,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -19518,30 +17706,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -19557,15 +17741,13 @@ D=-1
 D=0
 (AFTER.Keyboard.1879)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Keyboard.Keyboard.readChar$IF_TRUE0
 D;JNE
@@ -19584,10 +17766,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 1
 @1
@@ -19597,8 +17778,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -19662,8 +17842,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -19675,10 +17854,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.printChar 1
 
@@ -19705,8 +17883,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -19718,10 +17895,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -19732,39 +17908,33 @@ M=M+1
 @0
 D=A
 @SP
-A=M
+M=M+1
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
-@SP
-M=M+1
 
 //push constant 80
 @80
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call String.new 1
 
@@ -19797,8 +17967,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -19811,10 +17980,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.printString 1
 
@@ -19841,8 +18009,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -19878,8 +18045,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -19916,8 +18082,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -19933,43 +18098,37 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto WHILE_END0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Keyboard.Keyboard.readLine$WHILE_END0
 D;JNE
@@ -20005,8 +18164,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -20019,10 +18177,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 1
 @1
@@ -20031,21 +18188,18 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //eq
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -20061,10 +18215,9 @@ D=-1
 D=0
 (AFTER.Keyboard.1916)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 4
 @4
@@ -20074,8 +18227,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -20088,29 +18240,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Keyboard.Keyboard.readLine$IF_TRUE0
 D;JNE
@@ -20129,10 +18277,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 2
 @2
@@ -20141,21 +18288,18 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //eq
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -20171,15 +18315,13 @@ D=-1
 D=0
 (AFTER.Keyboard.1925)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Keyboard.Keyboard.readLine$IF_TRUE1
 D;JNE
@@ -20198,10 +18340,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call String.eraseLastChar 1
 
@@ -20228,8 +18369,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -20248,10 +18388,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -20260,10 +18399,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call String.appendChar 2
 
@@ -20296,8 +18434,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -20323,10 +18460,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -20337,15 +18473,13 @@ M=M+1
 @0
 D=A
 @SP
-A=M
+M=M+1
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
-@SP
-M=M+1
 
 //push argument 0
 @0
@@ -20354,10 +18488,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Keyboard.readLine 1
 
@@ -20390,8 +18523,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -20404,10 +18536,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call String.intValue 1
 
@@ -20440,8 +18571,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -20454,10 +18584,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call String.dispose 1
 
@@ -20484,8 +18613,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -20497,10 +18625,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -20518,30 +18645,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -20557,29 +18680,25 @@ D=-1
 D=0
 (AFTER.Array.1960)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Array.Array.new$IF_TRUE0
 D;JNE
@@ -20595,10 +18714,9 @@ D;JNE
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Sys.error 1
 
@@ -20625,8 +18743,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -20641,10 +18758,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Memory.alloc 1
 
@@ -20685,15 +18801,13 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THIS
 M=D
@@ -20702,10 +18816,9 @@ M=D
 @THIS
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Memory.deAlloc 1
 
@@ -20732,8 +18845,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -20742,10 +18854,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -20760,10 +18871,9 @@ D=A
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Memory.alloc 1
 
@@ -20790,8 +18900,7 @@ D=A
 
 //pop pointer 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THIS
 M=D
@@ -20803,30 +18912,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -20842,15 +18947,13 @@ D=-1
 D=0
 (AFTER.String.1987)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @String.String.new$IF_TRUE0
 D;JNE
@@ -20866,10 +18969,9 @@ D;JNE
 @14
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Sys.error 1
 
@@ -20896,8 +18998,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -20912,30 +19013,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -20951,15 +19048,13 @@ D=-1
 D=0
 (AFTER.String.1997)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @String.String.new$IF_TRUE1
 D;JNE
@@ -20978,10 +19073,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Array.new 1
 
@@ -21014,8 +19108,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -21031,10 +19124,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop this 0
 @0
@@ -21044,8 +19136,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -21055,10 +19146,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop this 2
 @2
@@ -21068,8 +19158,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -21079,10 +19168,9 @@ M=D
 @THIS
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -21100,15 +19188,13 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THIS
 M=D
@@ -21120,30 +19206,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -21159,15 +19241,13 @@ D=-1
 D=0
 (AFTER.String.2016)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @String.String.dispose$IF_TRUE0
 D;JNE
@@ -21186,10 +19266,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Array.dispose 1
 
@@ -21216,8 +19295,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -21229,10 +19307,9 @@ M=D
 @THIS
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Memory.deAlloc 1
 
@@ -21259,8 +19336,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -21269,10 +19345,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -21290,15 +19365,13 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THIS
 M=D
@@ -21310,10 +19383,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -21331,15 +19403,13 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THIS
 M=D
@@ -21351,30 +19421,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -21390,10 +19456,9 @@ D=-1
 D=0
 (AFTER.String.2039)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 1
 @1
@@ -21402,10 +19467,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push this 2
 @2
@@ -21414,21 +19478,18 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -21444,29 +19505,25 @@ D=-1
 D=0
 (AFTER.String.2042)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //or
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M|D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 1
 @1
@@ -21475,10 +19532,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push this 2
 @2
@@ -21487,21 +19543,18 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //eq
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -21517,34 +19570,29 @@ D=-1
 D=0
 (AFTER.String.2046)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //or
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M|D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @String.String.charAt$IF_TRUE0
 D;JNE
@@ -21560,10 +19608,9 @@ D;JNE
 @15
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Sys.error 1
 
@@ -21590,8 +19637,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -21606,10 +19652,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push this 1
 @1
@@ -21618,34 +19663,29 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -21657,10 +19697,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -21678,15 +19717,13 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THIS
 M=D
@@ -21698,30 +19735,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -21737,10 +19770,9 @@ D=-1
 D=0
 (AFTER.String.2066)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 1
 @1
@@ -21749,10 +19781,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push this 2
 @2
@@ -21761,21 +19792,18 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -21791,29 +19819,25 @@ D=-1
 D=0
 (AFTER.String.2069)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //or
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M|D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 1
 @1
@@ -21822,10 +19846,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push this 2
 @2
@@ -21834,21 +19857,18 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //eq
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -21864,34 +19884,29 @@ D=-1
 D=0
 (AFTER.String.2073)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //or
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M|D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @String.String.setCharAt$IF_TRUE0
 D;JNE
@@ -21907,10 +19922,9 @@ D;JNE
 @16
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Sys.error 1
 
@@ -21937,8 +19951,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -21953,10 +19966,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push this 1
 @1
@@ -21965,29 +19977,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 2
 @2
@@ -21996,23 +20004,20 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -22021,10 +20026,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -22034,8 +20038,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -22045,10 +20048,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -22066,15 +20068,13 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THIS
 M=D
@@ -22086,10 +20086,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push this 0
 @0
@@ -22098,21 +20097,18 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //eq
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -22128,15 +20124,13 @@ D=-1
 D=0
 (AFTER.String.2097)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @String.String.appendChar$IF_TRUE0
 D;JNE
@@ -22152,10 +20146,9 @@ D;JNE
 @17
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Sys.error 1
 
@@ -22182,8 +20175,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -22198,10 +20190,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push this 1
 @1
@@ -22210,29 +20201,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 1
 @1
@@ -22241,23 +20228,20 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -22266,10 +20250,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -22279,8 +20262,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -22293,38 +20275,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop this 2
 @2
@@ -22334,8 +20311,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -22345,10 +20321,9 @@ M=D
 @THIS
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -22366,15 +20341,13 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THIS
 M=D
@@ -22386,30 +20359,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //eq
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -22425,15 +20394,13 @@ D=-1
 D=0
 (AFTER.String.2124)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @String.String.eraseLastChar$IF_TRUE0
 D;JNE
@@ -22449,10 +20416,9 @@ D;JNE
 @18
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Sys.error 1
 
@@ -22479,8 +20445,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -22495,38 +20460,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop this 2
 @2
@@ -22536,8 +20496,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -22547,10 +20506,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -22561,30 +20519,25 @@ M=M+1
 @0
 D=A
 @SP
-A=M
+M=M+1
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
-@SP
-M=M+1
 
 //push argument 0
 @0
@@ -22593,15 +20546,13 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THIS
 M=D
@@ -22613,30 +20564,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //eq
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -22652,15 +20599,13 @@ D=-1
 D=0
 (AFTER.String.2143)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @String.String.intValue$IF_TRUE0
 D;JNE
@@ -22676,10 +20621,9 @@ D;JNE
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -22692,24 +20636,21 @@ M=M+1
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 3
 @3
@@ -22719,8 +20660,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -22730,10 +20670,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push this 1
 @1
@@ -22742,34 +20681,29 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -22781,30 +20715,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 45
 @45
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //eq
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -22820,15 +20750,13 @@ D=-1
 D=0
 (AFTER.String.2159)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @String.String.intValue$IF_TRUE1
 D;JNE
@@ -22844,24 +20772,21 @@ D;JNE
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 4
 @4
@@ -22871,8 +20796,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -22882,10 +20806,9 @@ M=D
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 0
 @0
@@ -22895,8 +20818,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -22915,10 +20837,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push this 2
 @2
@@ -22927,21 +20848,18 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -22957,10 +20875,9 @@ D=-1
 D=0
 (AFTER.String.2172)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 3
 @3
@@ -22969,48 +20886,41 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //and
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M&D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto WHILE_END0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @String.String.intValue$WHILE_END0
 D;JNE
@@ -23022,10 +20932,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push this 1
 @1
@@ -23034,34 +20943,29 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -23073,38 +20977,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 2
 @2
@@ -23114,8 +21013,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -23128,30 +21026,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -23167,10 +21061,9 @@ D=-1
 D=0
 (AFTER.String.2187)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 2
 @2
@@ -23179,30 +21072,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 9
 @9
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -23218,43 +21107,37 @@ D=-1
 D=0
 (AFTER.String.2190)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //or
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M|D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 3
 @3
@@ -23264,8 +21147,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -23278,15 +21160,13 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @String.String.intValue$IF_TRUE2
 D;JNE
@@ -23305,19 +21185,17 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 10
 @10
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Math.multiply 2
 
@@ -23349,29 +21227,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 1
 @1
@@ -23381,8 +21255,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -23395,38 +21268,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 0
 @0
@@ -23436,8 +21304,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -23460,15 +21327,13 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE3
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @String.String.intValue$IF_TRUE3
 D;JNE
@@ -23487,24 +21352,21 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //neg
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 1
 @1
@@ -23514,8 +21376,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -23531,10 +21392,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -23545,25 +21405,21 @@ M=M+1
 @0
 D=A
 @SP
-A=M
+M=M+1
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
-@SP
-M=M+1
 
 //push argument 0
 @0
@@ -23572,15 +21428,13 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THIS
 M=D
@@ -23592,30 +21446,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //eq
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -23631,15 +21481,13 @@ D=-1
 D=0
 (AFTER.String.2226)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @String.String.setInt$IF_TRUE0
 D;JNE
@@ -23655,10 +21503,9 @@ D;JNE
 @19
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Sys.error 1
 
@@ -23685,8 +21532,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -23698,10 +21544,9 @@ M=D
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Array.new 1
 
@@ -23734,8 +21579,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -23748,30 +21592,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -23787,15 +21627,13 @@ D=-1
 D=0
 (AFTER.String.2239)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @String.String.setInt$IF_TRUE1
 D;JNE
@@ -23811,24 +21649,21 @@ D;JNE
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 3
 @3
@@ -23838,8 +21673,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -23852,24 +21686,21 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //neg
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop argument 1
 @1
@@ -23879,8 +21710,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -23896,10 +21726,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 1
 @1
@@ -23909,8 +21738,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -23926,30 +21754,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -23965,29 +21789,25 @@ D=-1
 D=0
 (AFTER.String.2255)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto WHILE_END0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @String.String.setInt$WHILE_END0
 D;JNE
@@ -23999,19 +21819,17 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 10
 @10
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Math.divide 2
 
@@ -24044,8 +21862,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -24058,10 +21875,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 2
 @2
@@ -24070,38 +21886,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 1
 @1
@@ -24110,10 +21921,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 1
 @1
@@ -24122,19 +21932,17 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 10
 @10
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Math.multiply 2
 
@@ -24161,54 +21969,46 @@ D=A
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -24217,10 +22017,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -24230,8 +22029,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -24244,38 +22042,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 0
 @0
@@ -24285,8 +22078,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -24299,10 +22091,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop argument 1
 @1
@@ -24312,8 +22103,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -24333,15 +22123,13 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @String.String.setInt$IF_TRUE2
 D;JNE
@@ -24360,10 +22148,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 2
 @2
@@ -24372,51 +22159,44 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 45
 @45
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -24425,10 +22205,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -24438,8 +22217,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -24452,38 +22230,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 0
 @0
@@ -24493,8 +22266,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -24510,10 +22282,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -24522,21 +22293,18 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -24552,15 +22320,13 @@ D=-1
 D=0
 (AFTER.String.2303)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE3
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @String.String.setInt$IF_TRUE3
 D;JNE
@@ -24576,10 +22342,9 @@ D;JNE
 @19
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Sys.error 1
 
@@ -24606,8 +22371,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -24622,30 +22386,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //eq
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -24661,15 +22421,13 @@ D=-1
 D=0
 (AFTER.String.2313)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE4
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @String.String.setInt$IF_TRUE4
 D;JNE
@@ -24685,10 +22443,9 @@ D;JNE
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push this 1
 @1
@@ -24697,51 +22454,44 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 48
 @48
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -24750,10 +22500,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -24763,8 +22512,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -24774,10 +22522,9 @@ M=D
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop this 2
 @2
@@ -24787,8 +22534,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -24805,10 +22551,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop this 2
 @2
@@ -24818,8 +22563,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -24835,10 +22579,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -24847,21 +22590,18 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -24877,29 +22617,25 @@ D=-1
 D=0
 (AFTER.String.2334)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto WHILE_END1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @String.String.setInt$WHILE_END1
 D;JNE
@@ -24911,10 +22647,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push this 1
 @1
@@ -24923,29 +22658,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -24954,10 +22685,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push this 2
 @2
@@ -24966,57 +22696,49 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 2
 @2
@@ -25025,34 +22747,29 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -25064,23 +22781,20 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -25089,10 +22803,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -25102,8 +22815,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -25116,38 +22828,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop this 2
 @2
@@ -25157,8 +22864,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -25181,10 +22887,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Array.dispose 1
 
@@ -25211,8 +22916,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -25221,10 +22925,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -25239,10 +22942,9 @@ D=A
 @128
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -25257,10 +22959,9 @@ D=A
 @129
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -25275,10 +22976,9 @@ D=A
 @34
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -25293,15 +22993,13 @@ D=A
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop static 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Memory.0
 M=D
@@ -25310,60 +23008,52 @@ M=D
 @2048
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 0
 @Memory.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 14334
 @14334
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -25372,10 +23062,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -25385,8 +23074,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -25396,60 +23084,52 @@ M=D
 @2049
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 0
 @Memory.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 2050
 @2050
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -25458,10 +23138,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -25471,8 +23150,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -25482,10 +23160,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -25503,43 +23180,37 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 0
 @Memory.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -25551,10 +23222,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -25572,38 +23242,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 0
 @Memory.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 1
 @1
@@ -25612,23 +23277,20 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -25637,10 +23299,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -25650,8 +23311,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -25661,10 +23321,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -25675,15 +23334,13 @@ M=M+1
 @0
 D=A
 @SP
-A=M
+M=M+1
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
-@SP
-M=M+1
 
 //push argument 0
 @0
@@ -25692,30 +23349,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -25731,15 +23384,13 @@ D=-1
 D=0
 (AFTER.Memory.2417)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Memory.Memory.alloc$IF_TRUE0
 D;JNE
@@ -25755,10 +23406,9 @@ D;JNE
 @5
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Sys.error 1
 
@@ -25785,8 +23435,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -25801,30 +23450,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //eq
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -25840,15 +23485,13 @@ D=-1
 D=0
 (AFTER.Memory.2427)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Memory.Memory.alloc$IF_TRUE1
 D;JNE
@@ -25864,10 +23507,9 @@ D;JNE
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop argument 0
 @0
@@ -25877,8 +23519,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -25891,10 +23532,9 @@ M=D
 @2048
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 0
 @0
@@ -25904,8 +23544,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -25921,30 +23560,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 16383
 @16383
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -25960,19 +23595,17 @@ D=-1
 D=0
 (AFTER.Memory.2439)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -25981,34 +23614,29 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -26020,10 +23648,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 0
 @0
@@ -26032,21 +23659,18 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -26062,48 +23686,41 @@ D=-1
 D=0
 (AFTER.Memory.2446)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //and
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M&D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto WHILE_END0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Memory.Memory.alloc$WHILE_END0
 D;JNE
@@ -26112,10 +23729,9 @@ D;JNE
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -26124,34 +23740,29 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -26163,10 +23774,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 1
 @1
@@ -26176,8 +23786,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -26187,10 +23796,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -26199,34 +23807,29 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -26238,30 +23841,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //eq
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -26277,10 +23876,9 @@ D=-1
 D=0
 (AFTER.Memory.2462)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 1
 @1
@@ -26289,30 +23887,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 16382
 @16382
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -26328,38 +23922,33 @@ D=-1
 D=0
 (AFTER.Memory.2465)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //or
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M|D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 1
 @1
@@ -26368,34 +23957,29 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -26407,30 +23991,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //eq
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -26446,34 +24026,29 @@ D=-1
 D=0
 (AFTER.Memory.2473)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //or
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M|D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Memory.Memory.alloc$IF_TRUE2
 D;JNE
@@ -26492,10 +24067,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 0
 @0
@@ -26505,8 +24079,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -26523,10 +24096,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -26535,38 +24107,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -26575,34 +24142,29 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -26614,10 +24176,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -26626,38 +24187,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 1
 @1
@@ -26666,34 +24222,29 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -26705,42 +24256,36 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -26749,10 +24294,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -26762,8 +24306,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -26773,10 +24316,9 @@ M=D
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 1
 @1
@@ -26785,34 +24327,29 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -26824,10 +24361,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 1
 @1
@@ -26836,49 +24372,42 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 2
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //eq
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -26894,15 +24423,13 @@ D=-1
 D=0
 (AFTER.Memory.2510)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE3
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Memory.Memory.alloc$IF_TRUE3
 D;JNE
@@ -26918,10 +24445,9 @@ D;JNE
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -26930,29 +24456,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -26961,51 +24483,44 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 2
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -27014,10 +24529,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -27027,8 +24541,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -27045,10 +24558,9 @@ M=D
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -27057,38 +24569,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 1
 @1
@@ -27097,34 +24604,29 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -27136,23 +24638,20 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -27161,10 +24660,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -27174,8 +24672,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -27201,10 +24698,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 0
 @0
@@ -27213,49 +24709,42 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 16379
 @16379
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -27271,15 +24760,13 @@ D=-1
 D=0
 (AFTER.Memory.2546)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE4
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Memory.Memory.alloc$IF_TRUE4
 D;JNE
@@ -27295,10 +24782,9 @@ D;JNE
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Sys.error 1
 
@@ -27325,8 +24811,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -27338,10 +24823,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -27350,34 +24834,29 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -27389,10 +24868,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 0
 @0
@@ -27401,49 +24879,42 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 2
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -27459,15 +24930,13 @@ D=-1
 D=0
 (AFTER.Memory.2562)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE5
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Memory.Memory.alloc$IF_TRUE5
 D;JNE
@@ -27486,38 +24955,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 2
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -27526,38 +24990,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -27566,34 +25025,29 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -27605,10 +25059,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 0
 @0
@@ -27617,70 +25070,60 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 2
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -27689,10 +25132,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -27702,8 +25144,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -27713,10 +25154,9 @@ M=D
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -27725,34 +25165,29 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -27764,10 +25199,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -27776,49 +25210,42 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 2
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //eq
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -27834,15 +25261,13 @@ D=-1
 D=0
 (AFTER.Memory.2592)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE6
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Memory.Memory.alloc$IF_TRUE6
 D;JNE
@@ -27861,38 +25286,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -27901,29 +25321,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -27932,10 +25348,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 0
 @0
@@ -27944,70 +25359,60 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 4
 @4
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -28016,10 +25421,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -28029,8 +25433,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -28050,38 +25453,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -28090,38 +25488,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -28130,34 +25523,29 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -28169,23 +25557,20 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -28194,10 +25579,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -28207,8 +25591,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -28221,10 +25604,9 @@ M=D
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -28233,29 +25615,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -28264,10 +25642,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 0
 @0
@@ -28276,70 +25653,60 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 2
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -28348,10 +25715,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -28361,8 +25727,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -28375,10 +25740,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -28387,51 +25751,44 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -28440,10 +25797,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -28453,8 +25809,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -28467,38 +25822,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 2
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -28509,15 +25859,13 @@ M=M+1
 @0
 D=A
 @SP
-A=M
+M=M+1
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
-@SP
-M=M+1
 
 //push argument 0
 @0
@@ -28526,38 +25874,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 2
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 0
 @0
@@ -28567,8 +25910,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -28578,10 +25920,9 @@ M=D
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -28590,34 +25931,29 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -28629,10 +25965,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 1
 @1
@@ -28642,8 +25977,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -28653,10 +25987,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 1
 @1
@@ -28665,34 +25998,29 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -28704,30 +26032,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //eq
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -28743,15 +26067,13 @@ D=-1
 D=0
 (AFTER.Memory.2669)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Memory.Memory.deAlloc$IF_TRUE0
 D;JNE
@@ -28767,10 +26089,9 @@ D;JNE
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -28779,38 +26100,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -28819,34 +26135,29 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -28858,10 +26169,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -28870,70 +26180,60 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 2
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -28942,10 +26242,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -28955,8 +26254,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -28973,10 +26271,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -28985,38 +26282,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -29025,34 +26317,29 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -29064,10 +26351,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -29076,38 +26362,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 1
 @1
@@ -29116,34 +26397,29 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -29155,42 +26431,36 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -29199,10 +26469,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -29212,8 +26481,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -29223,10 +26491,9 @@ M=D
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 1
 @1
@@ -29235,34 +26502,29 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -29274,10 +26536,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 1
 @1
@@ -29286,49 +26547,42 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 2
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //eq
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -29344,15 +26598,13 @@ D=-1
 D=0
 (AFTER.Memory.2719)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Memory.Memory.deAlloc$IF_TRUE1
 D;JNE
@@ -29368,10 +26620,9 @@ D;JNE
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -29380,29 +26631,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -29411,51 +26658,44 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 2
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -29464,10 +26704,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -29477,8 +26716,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -29495,10 +26733,9 @@ M=D
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -29507,38 +26744,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 1
 @1
@@ -29547,34 +26779,29 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -29586,23 +26813,20 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -29611,10 +26835,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -29624,8 +26847,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -29641,10 +26863,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -29659,10 +26880,9 @@ D=A
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call String.new 1
 
@@ -29691,10 +26911,9 @@ D=A
 @72
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call String.appendChar 2
 
@@ -29723,10 +26942,9 @@ D=A
 @101
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call String.appendChar 2
 
@@ -29755,10 +26973,9 @@ D=A
 @108
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call String.appendChar 2
 
@@ -29787,10 +27004,9 @@ D=A
 @108
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call String.appendChar 2
 
@@ -29819,10 +27035,9 @@ D=A
 @111
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call String.appendChar 2
 
@@ -29851,10 +27066,9 @@ D=A
 @32
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call String.appendChar 2
 
@@ -29883,10 +27097,9 @@ D=A
 @119
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call String.appendChar 2
 
@@ -29915,10 +27128,9 @@ D=A
 @111
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call String.appendChar 2
 
@@ -29947,10 +27159,9 @@ D=A
 @114
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call String.appendChar 2
 
@@ -29979,10 +27190,9 @@ D=A
 @108
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call String.appendChar 2
 
@@ -30011,10 +27221,9 @@ D=A
 @100
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call String.appendChar 2
 
@@ -30043,10 +27252,9 @@ D=A
 @33
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call String.appendChar 2
 
@@ -30096,8 +27304,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -30127,8 +27334,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -30137,10 +27343,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -30176,8 +27381,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -30207,8 +27411,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -30238,8 +27441,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -30269,8 +27471,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -30300,8 +27501,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -30331,8 +27531,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -30362,8 +27561,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -30372,10 +27570,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -30393,43 +27590,37 @@ D=A
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto WHILE_END0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Sys.Sys.halt$WHILE_END0
 D;JNE
@@ -30445,10 +27636,9 @@ D;JNE
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -30459,10 +27649,9 @@ M=M+1
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 0
 @0
@@ -30471,30 +27660,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -30510,15 +27695,13 @@ D=-1
 D=0
 (AFTER.Sys.2816)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Sys.Sys.wait$IF_TRUE0
 D;JNE
@@ -30534,10 +27717,9 @@ D;JNE
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Sys.error 1
 
@@ -30564,8 +27746,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -30583,30 +27764,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -30622,29 +27799,25 @@ D=-1
 D=0
 (AFTER.Sys.2827)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto WHILE_END0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Sys.Sys.wait$WHILE_END0
 D;JNE
@@ -30653,10 +27826,9 @@ D;JNE
 @50
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 0
 @0
@@ -30666,8 +27838,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -30683,30 +27854,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -30722,29 +27889,25 @@ D=-1
 D=0
 (AFTER.Sys.2835)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto WHILE_END1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Sys.Sys.wait$WHILE_END1
 D;JNE
@@ -30756,38 +27919,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 0
 @0
@@ -30797,8 +27955,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -30818,38 +27975,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop argument 0
 @0
@@ -30859,8 +28011,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -30877,10 +28028,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -30895,10 +28045,9 @@ D=A
 @69
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.printChar 1
 
@@ -30925,8 +28074,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -30935,10 +28083,9 @@ M=D
 @82
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.printChar 1
 
@@ -30965,8 +28112,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -30975,10 +28121,9 @@ M=D
 @82
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.printChar 1
 
@@ -31005,8 +28150,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -31018,10 +28162,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Output.printInt 1
 
@@ -31048,8 +28191,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -31079,8 +28221,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -31089,10 +28230,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -31103,19 +28243,17 @@ M=M+1
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 16
 @16
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Array.new 1
 
@@ -31142,8 +28280,7 @@ D=A
 
 //pop static 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Math.1
 M=D
@@ -31152,10 +28289,9 @@ M=D
 @16
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Array.new 1
 
@@ -31182,8 +28318,7 @@ D=A
 
 //pop static 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Math.0
 M=D
@@ -31192,60 +28327,52 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 0
 @Math.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -31254,10 +28381,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -31267,8 +28393,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -31284,30 +28409,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 15
 @15
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -31323,29 +28444,25 @@ D=-1
 D=0
 (AFTER.Math.2888)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto WHILE_END0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Math.Math.init$WHILE_END0
 D;JNE
@@ -31357,38 +28474,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 0
 @0
@@ -31398,8 +28510,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -31412,38 +28523,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 0
 @Math.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -31452,71 +28558,61 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 0
 @Math.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -31528,10 +28624,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -31540,71 +28635,61 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 0
 @Math.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -31616,42 +28701,36 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -31660,10 +28739,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -31673,8 +28751,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -31691,10 +28768,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -31712,30 +28788,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -31751,15 +28823,13 @@ D=-1
 D=0
 (AFTER.Math.2924)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Math.Math.abs$IF_TRUE0
 D;JNE
@@ -31778,24 +28848,21 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //neg
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop argument 0
 @0
@@ -31805,8 +28872,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -31822,10 +28888,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -31836,30 +28901,25 @@ M=M+1
 @0
 D=A
 @SP
-A=M
+M=M+1
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
-@SP
-M=M+1
 
 //push argument 0
 @0
@@ -31868,30 +28928,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -31907,10 +28963,9 @@ D=-1
 D=0
 (AFTER.Math.2937)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 1
 @1
@@ -31919,30 +28974,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -31958,29 +29009,25 @@ D=-1
 D=0
 (AFTER.Math.2940)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //and
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M&D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 0
 @0
@@ -31989,30 +29036,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -32028,10 +29071,9 @@ D=-1
 D=0
 (AFTER.Math.2944)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 1
 @1
@@ -32040,30 +29082,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -32079,48 +29117,41 @@ D=-1
 D=0
 (AFTER.Math.2947)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //and
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M&D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //or
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M|D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 4
 @4
@@ -32130,8 +29161,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -32144,10 +29174,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Math.abs 1
 
@@ -32180,8 +29209,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -32194,10 +29222,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Math.abs 1
 
@@ -32230,8 +29257,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -32244,10 +29270,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 1
 @1
@@ -32256,21 +29281,18 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -32286,15 +29308,13 @@ D=-1
 D=0
 (AFTER.Math.2959)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Math.Math.multiply$IF_TRUE0
 D;JNE
@@ -32313,10 +29333,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 1
 @1
@@ -32326,8 +29345,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -32340,10 +29358,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop argument 0
 @0
@@ -32353,8 +29370,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -32367,10 +29383,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop argument 1
 @1
@@ -32380,8 +29395,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -32400,38 +29414,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 1
 @1
@@ -32440,49 +29449,42 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -32498,29 +29500,25 @@ D=-1
 D=0
 (AFTER.Math.2977)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto WHILE_END0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Math.Math.multiply$WHILE_END0
 D;JNE
@@ -32532,43 +29530,37 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 0
 @Math.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -32580,10 +29572,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 1
 @1
@@ -32592,49 +29583,42 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //and
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M&D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //eq
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -32650,29 +29634,25 @@ D=-1
 D=0
 (AFTER.Math.2988)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Math.Math.multiply$IF_TRUE1
 D;JNE
@@ -32691,10 +29671,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 0
 @0
@@ -32703,29 +29682,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 0
 @0
@@ -32735,8 +29710,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -32749,10 +29723,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 3
 @3
@@ -32761,43 +29734,37 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 0
 @Math.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -32809,29 +29776,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 2
 @2
@@ -32841,8 +29804,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -32858,10 +29820,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 0
 @0
@@ -32870,29 +29831,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop argument 0
 @0
@@ -32902,8 +29859,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -32916,38 +29872,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 3
 @3
@@ -32957,8 +29908,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -32978,15 +29928,13 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Math.Math.multiply$IF_TRUE2
 D;JNE
@@ -33005,24 +29953,21 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //neg
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 0
 @0
@@ -33032,8 +29977,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -33049,10 +29993,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -33063,25 +30006,21 @@ M=M+1
 @0
 D=A
 @SP
-A=M
+M=M+1
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
-@SP
-M=M+1
 
 //push argument 1
 @1
@@ -33090,30 +30029,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //eq
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -33129,15 +30064,13 @@ D=-1
 D=0
 (AFTER.Math.3029)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Math.Math.divide$IF_TRUE0
 D;JNE
@@ -33153,10 +30086,9 @@ D;JNE
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Sys.error 1
 
@@ -33183,8 +30115,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -33199,30 +30130,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -33238,10 +30165,9 @@ D=-1
 D=0
 (AFTER.Math.3039)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 1
 @1
@@ -33250,30 +30176,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -33289,29 +30211,25 @@ D=-1
 D=0
 (AFTER.Math.3042)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //and
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M&D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 0
 @0
@@ -33320,30 +30238,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -33359,10 +30273,9 @@ D=-1
 D=0
 (AFTER.Math.3046)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 1
 @1
@@ -33371,30 +30284,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -33410,48 +30319,41 @@ D=-1
 D=0
 (AFTER.Math.3049)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //and
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M&D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //or
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M|D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 2
 @2
@@ -33461,8 +30363,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -33472,38 +30373,33 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 1
 @Math.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 1
 @1
@@ -33512,10 +30408,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Math.abs 1
 
@@ -33542,16 +30437,14 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -33560,10 +30453,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -33573,8 +30465,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -33587,10 +30478,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Math.abs 1
 
@@ -33623,8 +30513,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -33640,30 +30529,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 15
 @15
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -33679,10 +30564,9 @@ D=-1
 D=0
 (AFTER.Math.3068)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 3
 @3
@@ -33691,62 +30575,53 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //and
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M&D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto WHILE_END0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Math.Math.divide$WHILE_END0
 D;JNE
@@ -33755,10 +30630,9 @@ D;JNE
 @32767
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -33767,43 +30641,37 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 1
 @Math.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -33815,57 +30683,49 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -33874,43 +30734,37 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 1
 @Math.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -33922,49 +30776,42 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -33980,10 +30827,9 @@ D=-1
 D=0
 (AFTER.Math.3090)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 3
 @3
@@ -33993,8 +30839,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -34007,29 +30852,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Math.Math.divide$IF_TRUE1
 D;JNE
@@ -34048,66 +30889,57 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 1
 @Math.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -34116,43 +30948,37 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 1
 @Math.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -34164,10 +30990,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -34176,43 +31001,37 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 1
 @Math.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -34224,42 +31043,36 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -34268,10 +31081,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -34281,8 +31093,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -34295,71 +31106,61 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 1
 @Math.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -34371,38 +31172,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 0
 @0
@@ -34411,49 +31207,42 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -34469,10 +31258,9 @@ D=-1
 D=0
 (AFTER.Math.3129)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 3
 @3
@@ -34482,8 +31270,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -34496,29 +31283,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Math.Math.divide$IF_TRUE2
 D;JNE
@@ -34537,38 +31320,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 0
 @0
@@ -34578,8 +31356,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -34608,44 +31385,38 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //neg
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -34661,29 +31432,25 @@ D=-1
 D=0
 (AFTER.Math.3148)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto WHILE_END1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Math.Math.divide$WHILE_END1
 D;JNE
@@ -34695,43 +31462,37 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 1
 @Math.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -34743,38 +31504,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 0
 @0
@@ -34783,49 +31539,42 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -34841,29 +31590,25 @@ D=-1
 D=0
 (AFTER.Math.3161)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE3
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Math.Math.divide$IF_TRUE3
 D;JNE
@@ -34882,10 +31627,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -34894,43 +31638,37 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 0
 @Math.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -34942,29 +31680,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 1
 @1
@@ -34974,8 +31708,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -34988,10 +31721,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -35000,43 +31732,37 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 1
 @Math.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -35048,29 +31774,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop argument 0
 @0
@@ -35080,8 +31802,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -35097,38 +31818,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 0
 @0
@@ -35138,8 +31854,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -35159,15 +31874,13 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE4
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Math.Math.divide$IF_TRUE4
 D;JNE
@@ -35186,24 +31899,21 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //neg
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 1
 @1
@@ -35213,8 +31923,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -35230,10 +31939,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -35244,25 +31952,21 @@ M=M+1
 @0
 D=A
 @SP
-A=M
+M=M+1
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
-@SP
-M=M+1
 
 //push argument 0
 @0
@@ -35271,30 +31975,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -35310,15 +32010,13 @@ D=-1
 D=0
 (AFTER.Math.3202)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Math.Math.sqrt$IF_TRUE0
 D;JNE
@@ -35334,10 +32032,9 @@ D;JNE
 @4
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Sys.error 1
 
@@ -35364,8 +32061,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -35377,10 +32073,9 @@ M=D
 @7
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 0
 @0
@@ -35390,8 +32085,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -35407,44 +32101,38 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //neg
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -35460,29 +32148,25 @@ D=-1
 D=0
 (AFTER.Math.3216)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto WHILE_END0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Math.Math.sqrt$WHILE_END0
 D;JNE
@@ -35494,10 +32178,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -35506,43 +32189,37 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 0
 @Math.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -35554,29 +32231,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 1
 @1
@@ -35586,8 +32259,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -35600,10 +32272,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 1
 @1
@@ -35612,10 +32283,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Math.multiply 2
 
@@ -35648,8 +32318,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -35662,10 +32331,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 0
 @0
@@ -35674,21 +32342,18 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -35704,24 +32369,21 @@ D=-1
 D=0
 (AFTER.Math.3233)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 2
 @2
@@ -35730,30 +32392,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -35769,48 +32427,41 @@ D=-1
 D=0
 (AFTER.Math.3237)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //and
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M&D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Math.Math.sqrt$IF_TRUE1
 D;JNE
@@ -35829,10 +32480,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 3
 @3
@@ -35842,8 +32492,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -35859,38 +32508,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 0
 @0
@@ -35900,8 +32544,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -35921,10 +32564,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -35942,10 +32584,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 1
 @1
@@ -35954,21 +32595,18 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -35984,15 +32622,13 @@ D=-1
 D=0
 (AFTER.Math.3257)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Math.Math.max$IF_TRUE0
 D;JNE
@@ -36011,10 +32647,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop argument 1
 @1
@@ -36024,8 +32659,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -36041,10 +32675,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -36062,10 +32695,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 1
 @1
@@ -36074,21 +32706,18 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -36104,15 +32733,13 @@ D=-1
 D=0
 (AFTER.Math.3269)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Math.Math.min$IF_TRUE0
 D;JNE
@@ -36131,10 +32758,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop argument 1
 @1
@@ -36144,8 +32770,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -36161,10 +32786,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -36175,24 +32799,21 @@ M=M+1
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 16384
 @16384
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop static 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Screen.1
 M=D
@@ -36201,29 +32822,25 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop static 2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Screen.2
 M=D
@@ -36232,10 +32849,9 @@ M=D
 @17
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Array.new 1
 
@@ -36262,8 +32878,7 @@ D=A
 
 //pop static 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Screen.0
 M=D
@@ -36272,60 +32887,52 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 0
 @Screen.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -36334,10 +32941,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -36347,8 +32953,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -36364,30 +32969,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 16
 @16
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -36403,29 +33004,25 @@ D=-1
 D=0
 (AFTER.Screen.3299)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto WHILE_END0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Screen.Screen.init$WHILE_END0
 D;JNE
@@ -36437,38 +33034,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 0
 @0
@@ -36478,8 +33070,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -36492,38 +33083,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 0
 @Screen.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -36532,71 +33118,61 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 0
 @Screen.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -36608,10 +33184,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -36620,71 +33195,61 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 0
 @Screen.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -36696,42 +33261,36 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -36740,10 +33299,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -36753,8 +33311,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -36771,10 +33328,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -36785,10 +33341,9 @@ M=M+1
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //label WHILE_EXP0
 (Screen.Screen.clearScreen$WHILE_EXP0)
@@ -36800,30 +33355,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 8192
 @8192
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -36839,29 +33390,25 @@ D=-1
 D=0
 (AFTER.Screen.3336)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto WHILE_END0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Screen.Screen.clearScreen$WHILE_END0
 D;JNE
@@ -36873,60 +33420,52 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 1
 @Screen.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -36935,10 +33474,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -36948,8 +33486,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -36962,38 +33499,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 0
 @0
@@ -37003,8 +33535,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -37021,10 +33552,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -37039,15 +33569,13 @@ D=A
 @Screen.2
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Screen.Screen.updateLocation$IF_TRUE0
 D;JNE
@@ -37066,38 +33594,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 1
 @Screen.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 0
 @0
@@ -37106,43 +33629,37 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 1
 @Screen.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -37154,10 +33671,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 1
 @1
@@ -37166,42 +33682,36 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //or
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M|D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -37210,10 +33720,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -37223,8 +33732,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -37244,38 +33752,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 1
 @Screen.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 0
 @0
@@ -37284,43 +33787,37 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 1
 @Screen.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -37332,10 +33829,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 1
 @1
@@ -37344,56 +33840,48 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //and
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M&D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -37402,10 +33890,9 @@ M=D
 @5
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop that 0
 @0
@@ -37415,8 +33902,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -37429,10 +33915,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -37450,15 +33935,13 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop static 2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Screen.2
 M=D
@@ -37467,10 +33950,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -37481,20 +33963,17 @@ M=M+1
 @0
 D=A
 @SP
-A=M
+M=M+1
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
-@SP
-M=M+1
 
 //push argument 0
 @0
@@ -37503,30 +33982,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -37542,10 +34017,9 @@ D=-1
 D=0
 (AFTER.Screen.3402)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 0
 @0
@@ -37554,30 +34028,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 511
 @511
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -37593,29 +34063,25 @@ D=-1
 D=0
 (AFTER.Screen.3405)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //or
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M|D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 1
 @1
@@ -37624,30 +34090,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -37663,29 +34125,25 @@ D=-1
 D=0
 (AFTER.Screen.3409)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //or
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M|D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 1
 @1
@@ -37694,30 +34152,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 255
 @255
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -37733,34 +34187,29 @@ D=-1
 D=0
 (AFTER.Screen.3413)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //or
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M|D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Screen.Screen.drawPixel$IF_TRUE0
 D;JNE
@@ -37776,10 +34225,9 @@ D;JNE
 @7
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Sys.error 1
 
@@ -37806,8 +34254,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -37822,19 +34269,17 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 16
 @16
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Math.divide 2
 
@@ -37867,8 +34312,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -37881,10 +34325,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -37893,19 +34336,17 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 16
 @16
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Math.multiply 2
 
@@ -37932,22 +34373,19 @@ D=A
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 1
 @1
@@ -37957,8 +34395,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -37971,19 +34408,17 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 32
 @32
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Math.multiply 2
 
@@ -38015,29 +34450,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 2
 @2
@@ -38047,8 +34478,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -38061,10 +34491,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 1
 @1
@@ -38073,43 +34502,37 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 0
 @Screen.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -38121,10 +34544,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Screen.updateLocation 2
 
@@ -38151,8 +34573,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -38161,10 +34582,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -38182,15 +34602,13 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Screen.Screen.drawConditional$IF_TRUE0
 D;JNE
@@ -38209,10 +34627,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 0
 @0
@@ -38221,10 +34638,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Screen.drawPixel 2
 
@@ -38251,8 +34667,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -38271,10 +34686,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 1
 @1
@@ -38283,10 +34697,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Screen.drawPixel 2
 
@@ -38313,8 +34726,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -38326,10 +34738,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -38340,60 +34751,49 @@ M=M+1
 @0
 D=A
 @SP
-A=M
+M=M+1
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
-@SP
-M=M+1
 
 //push argument 0
 @0
@@ -38402,30 +34802,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -38441,10 +34837,9 @@ D=-1
 D=0
 (AFTER.Screen.3469)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 2
 @2
@@ -38453,30 +34848,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 511
 @511
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -38492,29 +34883,25 @@ D=-1
 D=0
 (AFTER.Screen.3472)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //or
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M|D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 1
 @1
@@ -38523,30 +34910,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -38562,29 +34945,25 @@ D=-1
 D=0
 (AFTER.Screen.3476)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //or
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M|D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 3
 @3
@@ -38593,30 +34972,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 255
 @255
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -38632,34 +35007,29 @@ D=-1
 D=0
 (AFTER.Screen.3480)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //or
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M|D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Screen.Screen.drawLine$IF_TRUE0
 D;JNE
@@ -38675,10 +35045,9 @@ D;JNE
 @8
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Sys.error 1
 
@@ -38705,8 +35074,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -38721,10 +35089,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 0
 @0
@@ -38733,29 +35100,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Math.abs 1
 
@@ -38788,8 +35151,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -38802,10 +35164,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 1
 @1
@@ -38814,29 +35175,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Math.abs 1
 
@@ -38869,8 +35226,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -38883,10 +35239,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 2
 @2
@@ -38895,21 +35250,18 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -38925,10 +35277,9 @@ D=-1
 D=0
 (AFTER.Screen.3501)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 6
 @6
@@ -38938,8 +35289,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -38952,10 +35302,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 3
 @3
@@ -38964,10 +35313,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 1
 @1
@@ -38976,21 +35324,18 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -39006,29 +35351,25 @@ D=-1
 D=0
 (AFTER.Screen.3506)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //and
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M&D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 6
 @6
@@ -39037,24 +35378,21 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 2
 @2
@@ -39063,10 +35401,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 0
 @0
@@ -39075,21 +35412,18 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -39105,53 +35439,45 @@ D=-1
 D=0
 (AFTER.Screen.3512)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //and
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M&D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //or
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M|D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Screen.Screen.drawLine$IF_TRUE1
 D;JNE
@@ -39170,10 +35496,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 4
 @4
@@ -39183,8 +35508,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -39197,10 +35521,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop argument 0
 @0
@@ -39210,8 +35533,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -39224,10 +35546,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop argument 2
 @2
@@ -39237,8 +35558,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -39251,10 +35571,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 4
 @4
@@ -39264,8 +35583,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -39278,10 +35596,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop argument 1
 @1
@@ -39291,8 +35608,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -39305,10 +35621,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop argument 3
 @3
@@ -39318,8 +35633,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -39335,15 +35649,13 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Screen.Screen.drawLine$IF_TRUE2
 D;JNE
@@ -39362,10 +35674,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 4
 @4
@@ -39375,8 +35686,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -39389,10 +35699,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 3
 @3
@@ -39402,8 +35711,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -39416,10 +35724,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 2
 @2
@@ -39429,8 +35736,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -39443,10 +35749,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 1
 @1
@@ -39456,8 +35761,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -39470,10 +35774,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 0
 @0
@@ -39483,8 +35786,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -39497,10 +35799,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 8
 @8
@@ -39510,8 +35811,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -39524,10 +35824,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 2
 @2
@@ -39536,21 +35835,18 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -39566,10 +35862,9 @@ D=-1
 D=0
 (AFTER.Screen.3549)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 7
 @7
@@ -39579,8 +35874,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -39600,10 +35894,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 1
 @1
@@ -39613,8 +35906,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -39627,10 +35919,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 0
 @0
@@ -39640,8 +35931,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -39654,10 +35944,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 8
 @8
@@ -39667,8 +35956,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -39681,10 +35969,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 3
 @3
@@ -39693,21 +35980,18 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -39723,10 +36007,9 @@ D=-1
 D=0
 (AFTER.Screen.3561)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 7
 @7
@@ -39736,8 +36019,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -39750,10 +36032,9 @@ M=D
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 2
 @2
@@ -39762,10 +36043,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Math.multiply 2
 
@@ -39797,29 +36077,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 5
 @5
@@ -39829,8 +36105,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -39840,10 +36115,9 @@ M=D
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 2
 @2
@@ -39852,10 +36126,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Math.multiply 2
 
@@ -39888,8 +36161,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -39899,10 +36171,9 @@ M=D
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 2
 @2
@@ -39911,10 +36182,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 3
 @3
@@ -39923,29 +36193,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Math.multiply 2
 
@@ -39978,8 +36244,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -39992,10 +36257,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -40004,10 +36268,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 6
 @6
@@ -40016,10 +36279,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Screen.drawConditional 3
 
@@ -40046,8 +36308,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -40062,10 +36323,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 8
 @8
@@ -40074,21 +36334,18 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -40104,29 +36361,25 @@ D=-1
 D=0
 (AFTER.Screen.3588)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto WHILE_END0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Screen.Screen.drawLine$WHILE_END0
 D;JNE
@@ -40138,30 +36391,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -40177,15 +36426,13 @@ D=-1
 D=0
 (AFTER.Screen.3593)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE3
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Screen.Screen.drawLine$IF_TRUE3
 D;JNE
@@ -40204,10 +36451,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 9
 @9
@@ -40216,29 +36462,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 5
 @5
@@ -40248,8 +36490,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -40269,10 +36510,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 10
 @10
@@ -40281,29 +36521,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 5
 @5
@@ -40313,8 +36549,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -40327,15 +36562,13 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE4
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Screen.Screen.drawLine$IF_TRUE4
 D;JNE
@@ -40354,38 +36587,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 0
 @0
@@ -40395,8 +36623,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -40416,38 +36643,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 0
 @0
@@ -40457,8 +36679,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -40477,38 +36698,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 1
 @1
@@ -40518,8 +36734,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -40532,10 +36747,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -40544,10 +36758,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 6
 @6
@@ -40556,10 +36769,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Screen.drawConditional 3
 
@@ -40586,8 +36798,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -40603,10 +36814,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -40617,50 +36827,41 @@ M=M+1
 @0
 D=A
 @SP
-A=M
+M=M+1
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
-@SP
-M=M+1
 
 //push argument 0
 @0
@@ -40669,10 +36870,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 2
 @2
@@ -40681,21 +36881,18 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -40711,10 +36908,9 @@ D=-1
 D=0
 (AFTER.Screen.3639)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 1
 @1
@@ -40723,10 +36919,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 3
 @3
@@ -40735,21 +36930,18 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -40765,29 +36957,25 @@ D=-1
 D=0
 (AFTER.Screen.3642)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //or
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M|D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 0
 @0
@@ -40796,30 +36984,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -40835,29 +37019,25 @@ D=-1
 D=0
 (AFTER.Screen.3646)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //or
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M|D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 2
 @2
@@ -40866,30 +37046,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 511
 @511
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -40905,29 +37081,25 @@ D=-1
 D=0
 (AFTER.Screen.3650)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //or
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M|D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 1
 @1
@@ -40936,30 +37108,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -40975,29 +37143,25 @@ D=-1
 D=0
 (AFTER.Screen.3654)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //or
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M|D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 3
 @3
@@ -41006,30 +37170,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 255
 @255
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -41045,34 +37205,29 @@ D=-1
 D=0
 (AFTER.Screen.3658)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //or
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M|D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Screen.Screen.drawRectangle$IF_TRUE0
 D;JNE
@@ -41088,10 +37243,9 @@ D;JNE
 @9
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Sys.error 1
 
@@ -41118,8 +37272,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -41134,19 +37287,17 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 16
 @16
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Math.divide 2
 
@@ -41179,8 +37330,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -41193,10 +37343,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 3
 @3
@@ -41205,19 +37354,17 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 16
 @16
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Math.multiply 2
 
@@ -41244,22 +37391,19 @@ D=A
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 7
 @7
@@ -41269,8 +37413,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -41283,19 +37426,17 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 16
 @16
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Math.divide 2
 
@@ -41328,8 +37469,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -41342,10 +37482,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 4
 @4
@@ -41354,19 +37493,17 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 16
 @16
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Math.multiply 2
 
@@ -41393,22 +37530,19 @@ D=A
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 8
 @8
@@ -41418,8 +37552,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -41432,43 +37565,37 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 0
 @Screen.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -41480,52 +37607,45 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 6
 @6
@@ -41535,8 +37655,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -41549,71 +37668,61 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 0
 @Screen.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -41625,38 +37734,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 5
 @5
@@ -41666,8 +37770,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -41680,19 +37783,17 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 32
 @32
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Math.multiply 2
 
@@ -41724,29 +37825,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 0
 @0
@@ -41756,8 +37853,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -41770,10 +37866,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 3
 @3
@@ -41782,29 +37877,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 2
 @2
@@ -41814,8 +37905,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -41831,10 +37921,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 3
 @3
@@ -41843,21 +37932,18 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -41873,43 +37959,37 @@ D=-1
 D=0
 (AFTER.Screen.3719)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto WHILE_END0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Screen.Screen.drawRectangle$WHILE_END0
 D;JNE
@@ -41921,10 +38001,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 2
 @2
@@ -41933,29 +38012,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 1
 @1
@@ -41965,8 +38040,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -41979,30 +38053,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //eq
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -42018,15 +38088,13 @@ D=-1
 D=0
 (AFTER.Screen.3729)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Screen.Screen.drawRectangle$IF_TRUE1
 D;JNE
@@ -42045,10 +38113,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 5
 @5
@@ -42057,10 +38124,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 6
 @6
@@ -42069,29 +38135,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //and
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M&D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Screen.updateLocation 2
 
@@ -42118,8 +38180,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -42138,10 +38199,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 6
 @6
@@ -42150,10 +38210,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Screen.updateLocation 2
 
@@ -42180,8 +38239,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -42193,38 +38251,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 0
 @0
@@ -42234,8 +38287,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -42251,10 +38303,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 1
 @1
@@ -42263,21 +38314,18 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -42293,29 +38341,25 @@ D=-1
 D=0
 (AFTER.Screen.3752)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto WHILE_END1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Screen.Screen.drawRectangle$WHILE_END1
 D;JNE
@@ -42327,33 +38371,29 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //neg
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Screen.updateLocation 2
 
@@ -42380,8 +38420,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -42393,38 +38432,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 0
 @0
@@ -42434,8 +38468,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -42455,10 +38488,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 5
 @5
@@ -42467,10 +38499,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Screen.updateLocation 2
 
@@ -42497,8 +38528,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -42513,38 +38543,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop argument 1
 @1
@@ -42554,8 +38579,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -42568,38 +38592,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 32
 @32
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 2
 @2
@@ -42608,29 +38627,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 0
 @0
@@ -42640,8 +38655,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -42658,10 +38672,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -42672,60 +38685,49 @@ M=M+1
 @0
 D=A
 @SP
-A=M
+M=M+1
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
-@SP
-M=M+1
 
 //push argument 1
 @1
@@ -42734,10 +38736,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 2
 @2
@@ -42746,10 +38747,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Math.min 2
 
@@ -42782,8 +38782,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -42796,10 +38795,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 2
 @2
@@ -42808,10 +38806,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Math.max 2
 
@@ -42844,8 +38841,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -42858,44 +38854,38 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //neg
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -42911,10 +38901,9 @@ D=-1
 D=0
 (AFTER.Screen.3797)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 0
 @0
@@ -42923,30 +38912,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 256
 @256
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -42962,29 +38947,25 @@ D=-1
 D=0
 (AFTER.Screen.3800)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //and
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M&D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 7
 @7
@@ -42993,30 +38974,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 512
 @512
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -43032,29 +39009,25 @@ D=-1
 D=0
 (AFTER.Screen.3804)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //and
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M&D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 8
 @8
@@ -43063,44 +39036,38 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //neg
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -43116,34 +39083,29 @@ D=-1
 D=0
 (AFTER.Screen.3809)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //and
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M&D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Screen.Screen.drawHorizontal$IF_TRUE0
 D;JNE
@@ -43162,19 +39124,17 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Math.max 2
 
@@ -43207,8 +39167,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -43221,19 +39180,17 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 511
 @511
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Math.min 2
 
@@ -43266,8 +39223,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -43280,19 +39236,17 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 16
 @16
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Math.divide 2
 
@@ -43325,8 +39279,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -43339,10 +39292,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 1
 @1
@@ -43351,19 +39303,17 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 16
 @16
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Math.multiply 2
 
@@ -43390,22 +39340,19 @@ D=A
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 9
 @9
@@ -43415,8 +39362,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -43429,19 +39375,17 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 16
 @16
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Math.divide 2
 
@@ -43474,8 +39418,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -43488,10 +39431,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 2
 @2
@@ -43500,19 +39442,17 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 16
 @16
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Math.multiply 2
 
@@ -43539,22 +39479,19 @@ D=A
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 10
 @10
@@ -43564,8 +39501,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -43578,43 +39514,37 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 0
 @Screen.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -43626,52 +39556,45 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 5
 @5
@@ -43681,8 +39604,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -43695,71 +39617,61 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 0
 @Screen.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop pointer 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @THAT
 M=D
@@ -43771,38 +39683,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 4
 @4
@@ -43812,8 +39719,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -43826,19 +39732,17 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 32
 @32
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Math.multiply 2
 
@@ -43870,29 +39774,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 0
 @0
@@ -43902,8 +39802,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -43916,10 +39815,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 1
 @1
@@ -43928,29 +39826,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 6
 @6
@@ -43960,8 +39854,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -43974,10 +39867,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 6
 @6
@@ -43986,29 +39878,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 3
 @3
@@ -44018,8 +39906,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -44032,30 +39919,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //eq
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -44071,15 +39954,13 @@ D=-1
 D=0
 (AFTER.Screen.3877)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Screen.Screen.drawHorizontal$IF_TRUE1
 D;JNE
@@ -44098,10 +39979,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 4
 @4
@@ -44110,10 +39990,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 5
 @5
@@ -44122,29 +40001,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //and
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M&D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Screen.updateLocation 2
 
@@ -44171,8 +40046,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -44191,10 +40065,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 5
 @5
@@ -44203,10 +40076,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Screen.updateLocation 2
 
@@ -44233,8 +40105,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -44246,38 +40117,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 0
 @0
@@ -44287,8 +40153,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -44304,10 +40169,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 3
 @3
@@ -44316,21 +40180,18 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -44346,29 +40207,25 @@ D=-1
 D=0
 (AFTER.Screen.3900)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto WHILE_END0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Screen.Screen.drawHorizontal$WHILE_END0
 D;JNE
@@ -44380,33 +40237,29 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //neg
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Screen.updateLocation 2
 
@@ -44433,8 +40286,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -44446,38 +40298,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 0
 @0
@@ -44487,8 +40334,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -44508,10 +40354,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 4
 @4
@@ -44520,10 +40365,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Screen.updateLocation 2
 
@@ -44550,8 +40394,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -44566,10 +40409,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -44587,10 +40429,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 3
 @3
@@ -44599,29 +40440,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 0
 @0
@@ -44630,10 +40467,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 2
 @2
@@ -44642,29 +40478,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 0
 @0
@@ -44673,10 +40505,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 2
 @2
@@ -44685,29 +40516,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Screen.drawHorizontal 3
 
@@ -44734,8 +40561,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -44747,10 +40573,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 3
 @3
@@ -44759,29 +40584,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 0
 @0
@@ -44790,10 +40611,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 2
 @2
@@ -44802,29 +40622,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 0
 @0
@@ -44833,10 +40649,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 2
 @2
@@ -44845,29 +40660,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Screen.drawHorizontal 3
 
@@ -44894,8 +40705,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -44907,10 +40717,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 2
 @2
@@ -44919,29 +40728,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 0
 @0
@@ -44950,10 +40755,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 3
 @3
@@ -44962,29 +40766,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 0
 @0
@@ -44993,10 +40793,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 3
 @3
@@ -45005,29 +40804,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Screen.drawHorizontal 3
 
@@ -45054,8 +40849,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -45067,10 +40861,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 2
 @2
@@ -45079,29 +40872,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 0
 @0
@@ -45110,10 +40899,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 3
 @3
@@ -45122,29 +40910,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 0
 @0
@@ -45153,10 +40937,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 3
 @3
@@ -45165,29 +40948,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Screen.drawHorizontal 3
 
@@ -45214,8 +40993,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -45224,10 +41002,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -45238,20 +41015,17 @@ M=M+1
 @0
 D=A
 @SP
-A=M
+M=M+1
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
 @SP
 M=M+1
-@SP
-A=M
+A=M-1
 M=D
-@SP
-M=M+1
 
 //push argument 0
 @0
@@ -45260,30 +41034,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -45299,10 +41069,9 @@ D=-1
 D=0
 (AFTER.Screen.3972)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 0
 @0
@@ -45311,30 +41080,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 511
 @511
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -45350,29 +41115,25 @@ D=-1
 D=0
 (AFTER.Screen.3975)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //or
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M|D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 1
 @1
@@ -45381,30 +41142,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -45420,29 +41177,25 @@ D=-1
 D=0
 (AFTER.Screen.3979)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //or
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M|D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 1
 @1
@@ -45451,30 +41204,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 255
 @255
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -45490,34 +41239,29 @@ D=-1
 D=0
 (AFTER.Screen.3983)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //or
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M|D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Screen.Screen.drawCircle$IF_TRUE0
 D;JNE
@@ -45533,10 +41277,9 @@ D;JNE
 @12
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Sys.error 1
 
@@ -45563,8 +41306,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -45579,10 +41321,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 2
 @2
@@ -45591,49 +41332,42 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -45649,10 +41383,9 @@ D=-1
 D=0
 (AFTER.Screen.3996)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 0
 @0
@@ -45661,10 +41394,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 2
 @2
@@ -45673,49 +41405,42 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 511
 @511
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -45731,29 +41456,25 @@ D=-1
 D=0
 (AFTER.Screen.4001)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //or
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M|D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 1
 @1
@@ -45762,10 +41483,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 2
 @2
@@ -45774,49 +41494,42 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -45832,29 +41545,25 @@ D=-1
 D=0
 (AFTER.Screen.4007)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //or
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M|D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 1
 @1
@@ -45863,10 +41572,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 2
 @2
@@ -45875,49 +41583,42 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 255
 @255
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -45933,34 +41634,29 @@ D=-1
 D=0
 (AFTER.Screen.4013)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //or
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M|D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Screen.Screen.drawCircle$IF_TRUE1
 D;JNE
@@ -45976,10 +41672,9 @@ D;JNE
 @13
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Sys.error 1
 
@@ -46006,8 +41701,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -46022,10 +41716,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 1
 @1
@@ -46035,8 +41728,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -46046,10 +41738,9 @@ M=D
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 2
 @2
@@ -46058,29 +41749,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 2
 @2
@@ -46090,8 +41777,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -46104,10 +41790,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 1
 @1
@@ -46116,10 +41801,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -46128,10 +41812,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 1
 @1
@@ -46140,10 +41823,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Screen.drawSymetric 4
 
@@ -46170,8 +41852,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -46186,10 +41867,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -46198,21 +41878,18 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //gt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -46228,29 +41905,25 @@ D=-1
 D=0
 (AFTER.Screen.4037)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //not
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 D=!M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto WHILE_END0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Screen.Screen.drawCircle$WHILE_END0
 D;JNE
@@ -46262,30 +41935,26 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 0
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //lt
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
@@ -46301,15 +41970,13 @@ D=-1
 D=0
 (AFTER.Screen.4042)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //if-goto IF_TRUE2
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Screen.Screen.drawCircle$IF_TRUE2
 D;JNE
@@ -46328,19 +41995,17 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 2
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -46349,10 +42014,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Math.multiply 2
 
@@ -46379,50 +42043,43 @@ D=A
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 3
 @3
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 2
 @2
@@ -46432,8 +42089,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -46453,19 +42109,17 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 2
 @2
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -46474,10 +42128,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 1
 @1
@@ -46486,29 +42139,25 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Math.multiply 2
 
@@ -46535,50 +42184,43 @@ D=A
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 5
 @5
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 2
 @2
@@ -46588,8 +42230,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -46602,38 +42243,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 1
 @1
@@ -46643,8 +42279,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -46660,38 +42295,33 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 1
 @1
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //add
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=M+D
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop local 0
 @0
@@ -46701,8 +42331,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -46715,10 +42344,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push argument 1
 @1
@@ -46727,10 +42355,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 0
 @0
@@ -46739,10 +42366,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push local 1
 @1
@@ -46751,10 +42377,9 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Screen.drawSymetric 4
 
@@ -46781,8 +42406,7 @@ D=A
 
 //pop temp 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -46798,10 +42422,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN

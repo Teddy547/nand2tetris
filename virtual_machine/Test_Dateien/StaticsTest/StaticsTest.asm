@@ -25,46 +25,41 @@ D=A
 (Sys.init$ret.0)
 (GENERIC_CALL)
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //Push 'LCL' on the stack
 @LCL
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //Push 'ARG' on the stack
 @ARG
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //Push 'THIS' on the stack
 @THIS
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //Push 'THAT' on the stack
 @THAT
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //Reposition 'ARG'
 @SP
@@ -107,8 +102,7 @@ D=D+M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 A=M
@@ -173,15 +167,13 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop static 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Class1.0
 M=D
@@ -193,15 +185,13 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop static 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Class1.1
 M=D
@@ -210,10 +200,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -228,38 +217,33 @@ D=A
 @Class1.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 1
 @Class1.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -274,19 +258,17 @@ D=A
 @6
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 8
 @8
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Class1.set 2
 
@@ -313,8 +295,7 @@ D=A
 
 //pop temp 0 // Dumps the return value
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -323,19 +304,17 @@ M=D
 @23
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push constant 15
 @15
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //call Class2.set 2
 
@@ -362,8 +341,7 @@ D=A
 
 //pop temp 0 // Dumps the return value
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @5
 M=D
@@ -433,15 +411,13 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop static 0
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Class2.0
 M=D
@@ -453,15 +429,13 @@ D=A
 A=D+M
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //pop static 1
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @Class2.1
 M=D
@@ -470,10 +444,9 @@ M=D
 @0
 D=A
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN
@@ -488,38 +461,33 @@ D=A
 @Class2.0
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //push static 1
 @Class2.1
 D=M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //sub
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 M=D
 @SP
-M=M-1
-A=M
+AM=M-1
 D=M
 @13
 D=D-M
 @SP
-A=M
-M=D
-@SP
 M=M+1
+A=M-1
+M=D
 
 //return
 @GENERIC_RETURN

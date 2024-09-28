@@ -365,18 +365,16 @@ class CodeWriter(constants):
     # the data register.
     def __pop(self):
         self.file.write("@SP\n"
-                        "M=M-1\n"
-                        "A=M\n"
+                        "AM=M-1\n"
                         "D=M\n")
 
     # Generic assembly code to push the value stored in the data
     # register to the top of the stack.
     def __push(self):
         self.file.write("@SP\n"
-                        "A=M\n"
-                        "M=D\n"
-                        "@SP\n"
-                        "M=M+1\n")
+                        "M=M+1\n"
+                        "A=M-1\n"
+                        "M=D\n")
 
     # Assembly code that pops the two topmost values of the stack,
     # subtracts the second from the first one and stores the result

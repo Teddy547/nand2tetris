@@ -15,11 +15,13 @@ class CodeWriter(constants):
                         "@SP\n"
                         "M=D\n")
         self.write_call("Sys.init", '0', '0')
-        self.__write_generic_call()
-        self.__write_generic_return()
+        self.write_global_equal()
+        self.__write_global_call()
+        self.__write_global_return()
 
     # Writes Assembly code for any arithmetic command
-    # "add", "sub", "neg", "or", "and", "not" all compute directly on the stack bypassing "push" and "pop" completely
+    # All commands compute directly on the stack bypassing "push" and "pop" completely
+    # Thus the generated code is as short and as efficient as possible
     def write_arithmetic(self, command, line_number, file_name):
 
         if command == "add":
@@ -45,27 +47,15 @@ class CodeWriter(constants):
         # If the value is '0' they are equal, else they are not.
         # Labels and Jump commands are used to differentiate accordingly.
         # The labels are named and numbered to differentiate between them
+        # The computation is performed directly on the stack without any use of "push" or "pop"
         if command == "eq":
-            self.file.write("@SP\n"
-                            "AM=M-1\n"
-                            "D=M\n"
-                            "A=A-1\n"
-                            "D=M-D\n"
-                            "@SP\n"
-                            "M=M-1\n")
-
             self.file.write(f"@EQUAL.{file_name}.{line_number}\n"
-                            "D;JEQ\n"
-                            f"@NOTEQUAL.{file_name}.{line_number}\n"
-                            "D;JNE\n"
-                            f"(EQUAL.{file_name}.{line_number})\n"
-                            "D=-1\n"
-                            f"@AFTER.{file_name}.{line_number}\n"
-                            "0;JMP\n"
-                            f"(NOTEQUAL.{file_name}.{line_number})\n"
-                            "D=0\n"
-                            f"(AFTER.{file_name}.{line_number})\n")
-            self.__push()
+                            f"D=A\n"
+                            f"@15\n"
+                            f"M=D\n"
+                            f"@GLOBAL_EQUAL\n"
+                            f"0;JMP\n"
+                            f"(EQUAL.{file_name}.{line_number})\n")
 
         # 'Greater than': Assembly code is analogous to 'equal'
         if command == "gt":
@@ -73,22 +63,20 @@ class CodeWriter(constants):
                             "AM=M-1\n"
                             "D=M\n"
                             "A=A-1\n"
-                            "D=M-D\n"
-                            "@SP\n"
-                            "M=M-1\n")
+                            "D=M-D\n")
 
-            self.file.write(f"@GREATER.{file_name}.{line_number}\n"
-                            "D;JGT\n"
-                            f"@NOTGREATER.{file_name}.{line_number}\n"
+            self.file.write(f"@NOTGREATER.{file_name}.{line_number}\n"
                             "D;JLE\n"
-                            f"(GREATER.{file_name}.{line_number})\n"
-                            "D=-1\n"
+                            "@SP\n"
+                            "A=M-1\n"
+                            "M=-1\n"
                             f"@AFTER.{file_name}.{line_number}\n"
                             "0;JMP\n"
                             f"(NOTGREATER.{file_name}.{line_number})\n"
-                            "D=0\n"
+                            f"@SP\n"
+                            f"A=M-1\n"
+                            "M=0\n"
                             f"(AFTER.{file_name}.{line_number})\n")
-            self.__push()
 
         # 'Lower than': Assembly code is analogous to 'equal'
         if command == "lt":
@@ -96,22 +84,20 @@ class CodeWriter(constants):
                             "AM=M-1\n"
                             "D=M\n"
                             "A=A-1\n"
-                            "D=M-D\n"
-                            "@SP\n"
-                            "M=M-1\n")
+                            "D=M-D\n")
 
-            self.file.write(f"@LOWER.{file_name}.{line_number}\n"
-                            "D;JLT\n"
-                            f"@NOTLOWER.{file_name}.{line_number}\n"
+            self.file.write(f"@NOTLOWER.{file_name}.{line_number}\n"
                             "D;JGE\n"
-                            f"(LOWER.{file_name}.{line_number})\n"
-                            "D=-1\n"
+                            "@SP\n"
+                            "A=M-1\n"
+                            "M=-1\n"
                             f"@AFTER.{file_name}.{line_number}\n"
                             "0;JMP\n"
                             f"(NOTLOWER.{file_name}.{line_number})\n"
-                            "D=0\n"
+                            f"@SP\n"
+                            f"A=M-1\n"
+                            "M=0\n"
                             f"(AFTER.{file_name}.{line_number})\n")
-            self.__push()
 
         if command == "and":
             self.file.write("@SP\n"
@@ -131,6 +117,32 @@ class CodeWriter(constants):
             self.file.write("@SP\n"
                             "A=M-1\n"
                             "M=!M\n")
+
+    def write_global_equal(self):
+        self.file.write("(GLOBAL_EQUAL)")
+
+        self.file.write("@SP\n"
+                        "AM=M-1\n"
+                        "D=M\n"
+                        "A=A-1\n"
+                        "D=M-D\n")
+
+        self.file.write(f"@NOTEQUAL\n"
+                        "D;JNE\n"
+                        f"@SP\n"
+                        f"A=M-1\n"
+                        "M=-1\n"
+                        f"@AFTERNOTEQUAL\n"
+                        "0;JMP\n"
+                        f"(NOTEQUAL)\n"
+                        "@SP\n"
+                        "A=M-1\n"
+                        "M=0\n"
+                        f"(AFTERNOTEQUAL)\n")
+
+        self.file.write("@15\n"
+                        "A=M\n"
+                        "0;JMP\n")
 
     # Realizes 'push' and 'pop' commands regarding different memory segments.
     def write_push_pop(self, command, segment, index, file_name):
@@ -241,18 +253,18 @@ class CodeWriter(constants):
                         "@15\n"
                         "M=D\n")
 
-        self.file.write("\n//Take return address into D register and jump to GENERIC_CALL\n")
+        self.file.write("\n//Take return address into D register and jump to GLOBAL_CALL\n")
         self.file.write(f"@{function_name}$ret.{counter}\n"
                         f"D=A\n")
 
-        self.file.write("@GENERIC_CALL\n"
+        self.file.write("@GLOBAL_CALL\n"
                         "0;JMP\n")
 
         self.file.write("\n//Inject return address label\n")
         self.file.write(f"({function_name}$ret.{counter})\n")  # Inject return address label
 
-    def __write_generic_call(self):
-        self.file.write("(GENERIC_CALL)\n")
+    def __write_global_call(self):
+        self.file.write("(GLOBAL_CALL)\n")
 
         self.__push()
 
@@ -300,8 +312,8 @@ class CodeWriter(constants):
     # Every return call now just jumps to this label and achieves the
     # function return. HUGE optimization regarding shortening
     # the generated assembly code.
-    def __write_generic_return(self):
-        self.file.write(f"(GENERIC_RETURN)\n")
+    def __write_global_return(self):
+        self.file.write(f"(GLOBAL_RETURN)\n")
 
         self.file.write("\n//save frame address\n")
         self.file.write("@LCL\n"  # save the end address of the frame at the temporary variable 14
@@ -373,7 +385,7 @@ class CodeWriter(constants):
     # part of the bootstrap code and the code following it achieves
     # the return call for EVERY function.
     def write_return(self):
-        self.file.write(f"@GENERIC_RETURN\n"
+        self.file.write(f"@GLOBAL_RETURN\n"
                         "0;JMP\n")
 
     # Generic assembly code to pop the topmost stack value into
@@ -390,17 +402,6 @@ class CodeWriter(constants):
                         "M=M+1\n"
                         "A=M-1\n"
                         "M=D\n")
-
-    # Assembly code that pops the two topmost values of the stack,
-    # subtracts the second from the first one and stores the result
-    # in the data register.
-    def __subtract(self):
-        self.__pop()
-        self.file.write("@13\n"
-                        "M=D\n")
-        self.__pop()
-        self.file.write("@13\n"
-                        "D=D-M\n")
 
     # Generates assembly code that realizes an infinite loop. Good practice
     # to finish any assembly program.

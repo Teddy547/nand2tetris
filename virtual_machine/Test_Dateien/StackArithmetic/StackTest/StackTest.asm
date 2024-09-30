@@ -15,28 +15,13 @@ A=M-1
 M=D
 
 //eq
-@SP
-AM=M-1
-D=M
-A=A-1
-D=M-D
-@SP
-M=M-1
 @EQUAL.StackTest.10
-D;JEQ
-@NOTEQUAL.StackTest.10
-D;JNE
+D=A
+@15
+M=D
+@GLOBAL_EQUAL
+0;JMP
 (EQUAL.StackTest.10)
-D=-1
-@AFTER.StackTest.10
-0;JMP
-(NOTEQUAL.StackTest.10)
-D=0
-(AFTER.StackTest.10)
-@SP
-M=M+1
-A=M-1
-M=D
 
 //push constant 17
 @17
@@ -55,28 +40,13 @@ A=M-1
 M=D
 
 //eq
-@SP
-AM=M-1
-D=M
-A=A-1
-D=M-D
-@SP
-M=M-1
 @EQUAL.StackTest.13
-D;JEQ
-@NOTEQUAL.StackTest.13
-D;JNE
-(EQUAL.StackTest.13)
-D=-1
-@AFTER.StackTest.13
-0;JMP
-(NOTEQUAL.StackTest.13)
-D=0
-(AFTER.StackTest.13)
-@SP
-M=M+1
-A=M-1
+D=A
+@15
 M=D
+@GLOBAL_EQUAL
+0;JMP
+(EQUAL.StackTest.13)
 
 //push constant 16
 @16
@@ -95,28 +65,13 @@ A=M-1
 M=D
 
 //eq
-@SP
-AM=M-1
-D=M
-A=A-1
-D=M-D
-@SP
-M=M-1
 @EQUAL.StackTest.16
-D;JEQ
-@NOTEQUAL.StackTest.16
-D;JNE
-(EQUAL.StackTest.16)
-D=-1
-@AFTER.StackTest.16
-0;JMP
-(NOTEQUAL.StackTest.16)
-D=0
-(AFTER.StackTest.16)
-@SP
-M=M+1
-A=M-1
+D=A
+@15
 M=D
+@GLOBAL_EQUAL
+0;JMP
+(EQUAL.StackTest.16)
 
 //push constant 892
 @892
@@ -140,23 +95,18 @@ AM=M-1
 D=M
 A=A-1
 D=M-D
-@SP
-M=M-1
-@LOWER.StackTest.19
-D;JLT
 @NOTLOWER.StackTest.19
 D;JGE
-(LOWER.StackTest.19)
-D=-1
+@SP
+A=M-1
+M=-1
 @AFTER.StackTest.19
 0;JMP
 (NOTLOWER.StackTest.19)
-D=0
-(AFTER.StackTest.19)
 @SP
-M=M+1
 A=M-1
-M=D
+M=0
+(AFTER.StackTest.19)
 
 //push constant 891
 @891
@@ -180,23 +130,18 @@ AM=M-1
 D=M
 A=A-1
 D=M-D
-@SP
-M=M-1
-@LOWER.StackTest.22
-D;JLT
 @NOTLOWER.StackTest.22
 D;JGE
-(LOWER.StackTest.22)
-D=-1
+@SP
+A=M-1
+M=-1
 @AFTER.StackTest.22
 0;JMP
 (NOTLOWER.StackTest.22)
-D=0
-(AFTER.StackTest.22)
 @SP
-M=M+1
 A=M-1
-M=D
+M=0
+(AFTER.StackTest.22)
 
 //push constant 891
 @891
@@ -220,23 +165,18 @@ AM=M-1
 D=M
 A=A-1
 D=M-D
-@SP
-M=M-1
-@LOWER.StackTest.25
-D;JLT
 @NOTLOWER.StackTest.25
 D;JGE
-(LOWER.StackTest.25)
-D=-1
+@SP
+A=M-1
+M=-1
 @AFTER.StackTest.25
 0;JMP
 (NOTLOWER.StackTest.25)
-D=0
-(AFTER.StackTest.25)
 @SP
-M=M+1
 A=M-1
-M=D
+M=0
+(AFTER.StackTest.25)
 
 //push constant 32767
 @32767
@@ -260,23 +200,18 @@ AM=M-1
 D=M
 A=A-1
 D=M-D
-@SP
-M=M-1
-@GREATER.StackTest.28
-D;JGT
 @NOTGREATER.StackTest.28
 D;JLE
-(GREATER.StackTest.28)
-D=-1
+@SP
+A=M-1
+M=-1
 @AFTER.StackTest.28
 0;JMP
 (NOTGREATER.StackTest.28)
-D=0
-(AFTER.StackTest.28)
 @SP
-M=M+1
 A=M-1
-M=D
+M=0
+(AFTER.StackTest.28)
 
 //push constant 32766
 @32766
@@ -300,23 +235,18 @@ AM=M-1
 D=M
 A=A-1
 D=M-D
-@SP
-M=M-1
-@GREATER.StackTest.31
-D;JGT
 @NOTGREATER.StackTest.31
 D;JLE
-(GREATER.StackTest.31)
-D=-1
+@SP
+A=M-1
+M=-1
 @AFTER.StackTest.31
 0;JMP
 (NOTGREATER.StackTest.31)
-D=0
-(AFTER.StackTest.31)
 @SP
-M=M+1
 A=M-1
-M=D
+M=0
+(AFTER.StackTest.31)
 
 //push constant 32766
 @32766
@@ -340,23 +270,18 @@ AM=M-1
 D=M
 A=A-1
 D=M-D
-@SP
-M=M-1
-@GREATER.StackTest.34
-D;JGT
 @NOTGREATER.StackTest.34
 D;JLE
-(GREATER.StackTest.34)
-D=-1
+@SP
+A=M-1
+M=-1
 @AFTER.StackTest.34
 0;JMP
 (NOTGREATER.StackTest.34)
-D=0
-(AFTER.StackTest.34)
 @SP
-M=M+1
 A=M-1
-M=D
+M=0
+(AFTER.StackTest.34)
 
 //push constant 57
 @57
@@ -439,4 +364,26 @@ M=!M
 //finish
 (END)
 @END
+0;JMP
+
+(GLOBAL_EQUAL)
+@SP
+AM=M-1
+D=M
+A=A-1
+D=M-D
+@NOTEQUAL
+D;JNE
+@SP
+A=M-1
+M=-1
+@AFTERNOTEQUAL
+0;JMP
+(NOTEQUAL)
+@SP
+A=M-1
+M=0
+(AFTERNOTEQUAL)
+@15
+A=M
 0;JMP

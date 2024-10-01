@@ -16,6 +16,8 @@ class CodeWriter(constants):
                         "M=D\n")
         self.write_call("Sys.init", '0', '0')
         self.write_global_equal()
+        self.write_global_greater_than()
+        self.write_global_lower_than()
         self.__write_global_call()
         self.__write_global_return()
 
@@ -59,45 +61,23 @@ class CodeWriter(constants):
 
         # 'Greater than': Assembly code is analogous to 'equal'
         if command == "gt":
-            self.file.write("@SP\n"
-                            "AM=M-1\n"
-                            "D=M\n"
-                            "A=A-1\n"
-                            "D=M-D\n")
-
-            self.file.write(f"@NOTGREATER.{file_name}.{line_number}\n"
-                            "D;JLE\n"
-                            "@SP\n"
-                            "A=M-1\n"
-                            "M=-1\n"
-                            f"@AFTER.{file_name}.{line_number}\n"
-                            "0;JMP\n"
-                            f"(NOTGREATER.{file_name}.{line_number})\n"
-                            f"@SP\n"
-                            f"A=M-1\n"
-                            "M=0\n"
-                            f"(AFTER.{file_name}.{line_number})\n")
+            self.file.write(f"@GREATERTHAN.{file_name}.{line_number}\n"
+                            f"D=A\n"
+                            f"@15\n"
+                            f"M=D\n"
+                            f"@GLOBAL_GREATERTHAN\n"
+                            f"0;JMP\n"
+                            f"(GREATERTHAN.{file_name}.{line_number})\n")
 
         # 'Lower than': Assembly code is analogous to 'equal'
         if command == "lt":
-            self.file.write("@SP\n"
-                            "AM=M-1\n"
-                            "D=M\n"
-                            "A=A-1\n"
-                            "D=M-D\n")
-
-            self.file.write(f"@NOTLOWER.{file_name}.{line_number}\n"
-                            "D;JGE\n"
-                            "@SP\n"
-                            "A=M-1\n"
-                            "M=-1\n"
-                            f"@AFTER.{file_name}.{line_number}\n"
-                            "0;JMP\n"
-                            f"(NOTLOWER.{file_name}.{line_number})\n"
-                            f"@SP\n"
-                            f"A=M-1\n"
-                            "M=0\n"
-                            f"(AFTER.{file_name}.{line_number})\n")
+            self.file.write(f"@LOWERTHAN.{file_name}.{line_number}\n"
+                            f"D=A\n"
+                            f"@15\n"
+                            f"M=D\n"
+                            f"@GLOBAL_LOWERTHAN\n"
+                            f"0;JMP\n"
+                            f"(LOWERTHAN.{file_name}.{line_number})\n")
 
         if command == "and":
             self.file.write("@SP\n"
@@ -119,7 +99,9 @@ class CodeWriter(constants):
                             "M=!M\n")
 
     def write_global_equal(self):
-        self.file.write("(GLOBAL_EQUAL)")
+        self.file.write("\n //equal\n")
+
+        self.file.write("(GLOBAL_EQUAL)\n")
 
         self.file.write("@SP\n"
                         "AM=M-1\n"
@@ -139,6 +121,62 @@ class CodeWriter(constants):
                         "A=M-1\n"
                         "M=0\n"
                         f"(AFTERNOTEQUAL)\n")
+
+        self.file.write("@15\n"
+                        "A=M\n"
+                        "0;JMP\n")
+
+    def write_global_greater_than(self):
+        self.file.write("\n //greater\n")
+
+        self.file.write("(GLOBAL_GREATERTHAN)\n")
+
+        self.file.write("@SP\n"
+                        "AM=M-1\n"
+                        "D=M\n"
+                        "A=A-1\n"
+                        "D=M-D\n")
+
+        self.file.write(f"@NOTGREATER\n"
+                        "D;JLE\n"
+                        "@SP\n"
+                        "A=M-1\n"
+                        "M=-1\n"
+                        f"@AFTERNOTGREATER\n"
+                        "0;JMP\n"
+                        f"(NOTGREATER)\n"
+                        f"@SP\n"
+                        f"A=M-1\n"
+                        "M=0\n"
+                        f"(AFTERNOTGREATER)\n")
+
+        self.file.write("@15\n"
+                        "A=M\n"
+                        "0;JMP\n")
+
+    def write_global_lower_than(self):
+        self.file.write("\n //lower\n")
+
+        self.file.write("(GLOBAL_LOWERTHAN)\n")
+
+        self.file.write("@SP\n"
+                        "AM=M-1\n"
+                        "D=M\n"
+                        "A=A-1\n"
+                        "D=M-D\n")
+
+        self.file.write(f"@NOTLOWER\n"
+                        "D;JGE\n"
+                        "@SP\n"
+                        "A=M-1\n"
+                        "M=-1\n"
+                        f"@AFTERNOTLOWER\n"
+                        "0;JMP\n"
+                        f"(NOTLOWER)\n"
+                        f"@SP\n"
+                        f"A=M-1\n"
+                        "M=0\n"
+                        f"(AFTERNOTLOWER)\n")
 
         self.file.write("@15\n"
                         "A=M\n"
@@ -264,6 +302,8 @@ class CodeWriter(constants):
         self.file.write(f"({function_name}$ret.{counter})\n")  # Inject return address label
 
     def __write_global_call(self):
+        self.file.write("\n //global call\n")
+
         self.file.write("(GLOBAL_CALL)\n")
 
         self.__push()
@@ -313,6 +353,8 @@ class CodeWriter(constants):
     # function return. HUGE optimization regarding shortening
     # the generated assembly code.
     def __write_global_return(self):
+        self.file.write("\n //global return\n")
+
         self.file.write(f"(GLOBAL_RETURN)\n")
 
         self.file.write("\n//save frame address\n")

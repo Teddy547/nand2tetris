@@ -6,7 +6,7 @@ from CodeWriter import CodeWriter
 
 if __name__ == '__main__':
 
-    folder_to_read = "/home/christian/dev/virtual_machine/Test_Dateien/StackArithmetic/StackTest"
+    folder_to_read = "/home/christian/dev/virtual_machine/Test_Dateien/FibonacciElement"
     line_number = 0
     counter = 1
     files = [100]
@@ -66,7 +66,7 @@ if __name__ == '__main__':
                     argument_2 = ''
 
                 # Write the current VM command as a comment in the assembly file for easier debugging
-                output_source.file.write(f"\n//{line}")
+                # output_source.file.write(f"\n//{line}")
 
                 if c_type == input_source.C_PUSH or c_type == input_source.C_POP:
                     output_source.write_push_pop(c_type, argument_1, argument_2, file_name)

@@ -99,7 +99,7 @@ class CodeWriter(constants):
                             "M=!M\n")
 
     def write_global_equal(self):
-        self.file.write("\n //equal\n")
+        # self.file.write("\n //equal\n")
 
         self.file.write("(GLOBAL_EQUAL)\n")
 
@@ -127,7 +127,7 @@ class CodeWriter(constants):
                         "0;JMP\n")
 
     def write_global_greater_than(self):
-        self.file.write("\n //greater\n")
+        # self.file.write("\n //greater\n")
 
         self.file.write("(GLOBAL_GREATERTHAN)\n")
 
@@ -155,7 +155,7 @@ class CodeWriter(constants):
                         "0;JMP\n")
 
     def write_global_lower_than(self):
-        self.file.write("\n //lower\n")
+        # self.file.write("\n //lower\n")
 
         self.file.write("(GLOBAL_LOWERTHAN)\n")
 
@@ -279,56 +279,56 @@ class CodeWriter(constants):
         counter = int(counter)
         i = int(n_vars) + 5
 
-        self.file.write("\n//Save number of arguments at temporary address @14\n")
+        # self.file.write("\n//Save number of arguments at temporary address @14\n")
         self.file.write(f"@{i}\n"
                         f"D=A\n"
                         f"@14\n"
                         f"M=D\n")
 
-        self.file.write("\n//Save called function address at temporary variable R15\n")
+        # self.file.write("\n//Save called function address at temporary variable R15\n")
         self.file.write(f"@{function_name}\n"
                         "D=A\n"
                         "@15\n"
                         "M=D\n")
 
-        self.file.write("\n//Take return address into D register and jump to GLOBAL_CALL\n")
+        # self.file.write("\n//Take return address into D register and jump to GLOBAL_CALL\n")
         self.file.write(f"@{function_name}$ret.{counter}\n"
                         f"D=A\n")
 
         self.file.write("@GLOBAL_CALL\n"
                         "0;JMP\n")
 
-        self.file.write("\n//Inject return address label\n")
+        # self.file.write("\n//Inject return address label\n")
         self.file.write(f"({function_name}$ret.{counter})\n")  # Inject return address label
 
     def __write_global_call(self):
-        self.file.write("\n //global call\n")
+        # self.file.write("\n //global call\n")
 
         self.file.write("(GLOBAL_CALL)\n")
 
         self.__push()
 
-        self.file.write("\n//Push 'LCL' on the stack\n")
+        # self.file.write("\n//Push 'LCL' on the stack\n")
         self.file.write("@LCL\n"
                         "D=M\n")
         self.__push()
 
-        self.file.write("\n//Push 'ARG' on the stack\n")
+        # self.file.write("\n//Push 'ARG' on the stack\n")
         self.file.write("@ARG\n"
                         "D=M\n")
         self.__push()
 
-        self.file.write("\n//Push 'THIS' on the stack\n")
+        # self.file.write("\n//Push 'THIS' on the stack\n")
         self.file.write("@THIS\n"
                         "D=M\n")
         self.__push()
 
-        self.file.write("\n//Push 'THAT' on the stack\n")
+        # self.file.write("\n//Push 'THAT' on the stack\n")
         self.file.write("@THAT\n"
                         "D=M\n")
         self.__push()
 
-        self.file.write("\n//Reposition 'ARG'\n")
+        # self.file.write("\n//Reposition 'ARG'\n")
         self.file.write(f"@SP\n"
                         f"D=M\n"
                         f"@14\n"
@@ -336,7 +336,7 @@ class CodeWriter(constants):
                         f"@ARG\n"
                         f"M=D\n")  # Reposition 'ARG' to SP-5-n-vars
 
-        self.file.write("\n//Reposition 'LCL'\n")
+        # self.file.write("\n//Reposition 'LCL'\n")
         self.file.write("@SP\n"
                         "D=M\n"
                         "@LCL\n"
@@ -353,17 +353,17 @@ class CodeWriter(constants):
     # function return. HUGE optimization regarding shortening
     # the generated assembly code.
     def __write_global_return(self):
-        self.file.write("\n //global return\n")
+        # self.file.write("\n //global return\n")
 
         self.file.write(f"(GLOBAL_RETURN)\n")
 
-        self.file.write("\n//save frame address\n")
+        # self.file.write("\n//save frame address\n")
         self.file.write("@LCL\n"  # save the end address of the frame at the temporary variable 14
                         "D=M\n"
                         "@14\n"
                         "M=D\n")
 
-        self.file.write("\n//save return address\n")
+        # self.file.write("\n//save return address\n")
         self.file.write("@5\n"  # get the return address and save it at the temporary variable 15
                         "D=A\n"
                         "@14\n"
@@ -372,17 +372,17 @@ class CodeWriter(constants):
                         "@15\n"
                         "M=D\n")
 
-        self.file.write("\n//Pop return value to top of stack\n")
+        # self.file.write("\n//Pop return value to top of stack\n")
         self.write_push_pop(self.C_POP, "argument", "0",
                             '')  # pop the return value to argument 0, which will be at the top of the stack after returning
 
-        self.file.write("\n//reposition stack pointer for caller\n")
+        # self.file.write("\n//reposition stack pointer for caller\n")
         self.file.write("@ARG\n"  # Reposition the stack pointer for the caller
                         "D=M+1\n"
                         "@SP\n"
                         "M=D\n")
 
-        self.file.write("\n//reposition 'THAT' for caller\n")
+        # self.file.write("\n//reposition 'THAT' for caller\n")
         self.file.write("@1\n"  # Reposition THAT for the caller
                         "D=A\n"
                         "@14\n"
@@ -391,7 +391,7 @@ class CodeWriter(constants):
                         "@THAT\n"
                         "M=D\n")
 
-        self.file.write("\n//reposition 'THIS' for caller\n")
+        # self.file.write("\n//reposition 'THIS' for caller\n")
         self.file.write("@2\n"  # Reposition THIS for the caller
                         "D=A\n"
                         "@14\n"
@@ -400,7 +400,7 @@ class CodeWriter(constants):
                         "@THIS\n"
                         "M=D\n")
 
-        self.file.write("\n//reposition 'ARG' for caller\n")
+        # self.file.write("\n//reposition 'ARG' for caller\n")
         self.file.write("@3\n"  # Reposition ARG for the caller
                         "D=A\n"
                         "@14\n"
@@ -409,7 +409,7 @@ class CodeWriter(constants):
                         "@ARG\n"
                         "M=D\n")
 
-        self.file.write("\n//reposition 'LCL' for caller\n")
+        # self.file.write("\n//reposition 'LCL' for caller\n")
         self.file.write("@4\n"  # Reposition LCL for the caller
                         "D=A\n"
                         "@14\n"
@@ -418,7 +418,7 @@ class CodeWriter(constants):
                         "@LCL\n"
                         "M=D\n")
 
-        self.file.write("\n//jump to return address\n")
+        # self.file.write("\n//jump to return address\n")
         self.file.write("@15\n"
                         "A=M\n"
                         "0;JMP\n")
@@ -448,8 +448,9 @@ class CodeWriter(constants):
     # Generates assembly code that realizes an infinite loop. Good practice
     # to finish any assembly program.
     def finishing_line(self):
-        self.file.write("\n//finish\n"
-                        "(END)\n"
+        # self.file.write("\n//finish\n")
+
+        self.file.write("(END)\n"
                         "@END\n"
                         "0;JMP")
 

@@ -6,8 +6,8 @@
 /** Initializes a new Square Dance game and starts running it. */
 class Main {
     function void main() {
-        var PillarGame game;
-        let game = PillarGame.new();
+        var TetrisGame game;
+        let game = TetrisGame.new();
         do game.run();
         do game.dispose();
         return;

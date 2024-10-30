@@ -14,25 +14,33 @@
  * the square's size. The 'q' key is used to quit the game.
  */
 
-class PillarGame {
-   field Pillar pillar; // the pillar of this game
-   field int direction; // the pillar's current direction: 
-                        // 0=none, 1=up, 2=down, 3=left, 4=right
+class TetrisGame {
+   field Pillar pillar; 	// the pillar of this game
+   field Square square;
+   field int direction; 	// the pillar's current direction: 
+							// 0=none, 1=up, 2=down, 3=left, 4=right
+   field int block_type;    // 1 = square, 2 = pillar   	              
 
-   /** Constructs a new pillar Game. */
-   constructor PillarGame new() {
-      // Creates a 15 by 60 pixels pillar and positions it at the top-left
-      // of the screen.
-      let pillar = Pillar.new(0, 0, 15);
+   /** Constructs a new Tetris Game. */
+   constructor TetrisGame new() {
+      let pillar = Pillar.new(20, 20, 15);
       let direction = 0;  // initial state is no movement
+      let block_type = 2;
       return this;
    }
 
    /** Disposes this game. */
    method void dispose() {
       do pillar.dispose();
+      do square.dispose();
       do Memory.deAlloc(this);
       return;
+   }
+
+   method void moveBlock() {
+	  if (block_type = 1) {do moveSquare();}
+	  if (block_type = 2) {do movePillar();}
+	  return;
    }
 
    /** Moves the square in the current direction. */
@@ -41,7 +49,16 @@ class PillarGame {
       if (direction = 2) { do pillar.moveDown(); }
       if (direction = 3) { do pillar.moveLeft(); }
       if (direction = 4) { do pillar.moveRight(); }
-      do Sys.wait(5);  // delays the next movement
+      do Sys.wait(100);  // delays the next movement
+      return;
+   }
+   
+   method void moveSquare() {
+	  if (direction = 1) { do square.moveUp(); }
+	  if (direction = 2) { do square.moveDown(); }
+	  if (direction = 3) { do square.moveLeft(); }
+	  if (direction = 4) { do square.moveRight(); }
+	  do Sys.wait(100);  // delays the next movement
       return;
    }
 
@@ -59,6 +76,8 @@ class PillarGame {
          }
          
          if (key = 81)  { let exit = true; }     // q key
+         if (key = 83) { let square = Square.new(20,20,15);
+						 let block_type = 1; }   // s key
          if (key = 131) { let direction = 1; }   // up arrow
          if (key = 133) { let direction = 2; }   // down arrow
          if (key = 130) { let direction = 3; }   // left arrow
@@ -67,7 +86,8 @@ class PillarGame {
          // waits for the key to be released
          while (~(key = 0)) {
             let key = Keyboard.keyPressed();
-            do movePillar();
+            do moveBlock();
+            let direction = 0;
          }
      } // while
      return;

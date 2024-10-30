@@ -1,0 +1,76 @@
+/** Implements a graphical Pillar. */
+class Pillar {
+
+   field int x, y; // screen location of the square's top-left corner
+   field int size; // length of this square, in pixels
+
+   /** Constructs a new pillar with a given location and size. */
+   constructor Pillar new(int Ax, int Ay, int Asize) {
+      let x = Ax;
+      let y = Ay;
+      let size = Asize;
+      do draw();
+      return this;
+   }
+
+   /** Disposes this pillar. */
+   method void dispose() {
+      do Memory.deAlloc(this);
+      return;
+   }
+
+   /** Draws the pillar on the screen. */
+   method void draw() {
+      do Screen.setColor(true);
+      do Screen.drawRectangle(x, y, x + size, y + (size * 4));
+      return;
+   }
+
+   /** Erases the pillar from the screen. */
+   method void erase() {
+      do Screen.setColor(false);
+      do Screen.drawRectangle(x, y, x + size, y + (size * 4));
+      return;
+   }
+
+   /** Moves the pillar up by 2 pixels. */
+   method void moveUp() {
+      if (y > 20) {
+         do erase();
+         let y=y-15;
+         do draw();
+      }
+      return;
+   }
+
+   /** Moves the pillar down by 15 pixels. */
+   method void moveDown() {
+      if ((y + (size * 4)) < 200) {
+         do erase();
+         let y = y+15;
+         do draw();
+      }
+      return;
+   }
+
+   /** Moves the pillar left by 15 pixels. */
+   method void moveLeft() {
+      if (x > 20) {
+         do erase();
+         let x = x - size;
+         do draw();
+      }
+      return;
+   }
+
+   /** Moves the pillar right by 15 pixels. */
+   method void moveRight() {
+      if ((x + size) < 490) {
+         do erase();
+         let x = x + size;
+         do draw();
+      }
+      return;
+   }
+}
+

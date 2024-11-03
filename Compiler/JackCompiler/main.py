@@ -1,5 +1,6 @@
 import os
 import glob
+from JackTokenizer import Tokenizer
 
 
 if __name__ == '__main__':
@@ -31,5 +32,16 @@ if __name__ == '__main__':
             pass
 
         file = open(file_to_write, "w")
-        file.write("Test\n")
+
+        tokenizer = Tokenizer(files[i])
+
+        while True:
+            line_to_write = tokenizer.advance()
+
+            if not line_to_write == tokenizer.NOTHING:
+                file.write(line_to_write)
+
+            if not tokenizer.has_more_lines(line_to_write):
+                break
+
         file.close()

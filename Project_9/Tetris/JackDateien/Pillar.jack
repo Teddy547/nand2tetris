@@ -33,7 +33,7 @@ class Pillar {
       return;
    }
 
-   /** Moves the pillar up by 2 pixels. */
+   /** Moves the pillar up by 15 pixels. */
    method void moveUp() {
       if (y > 20) {
          do erase();

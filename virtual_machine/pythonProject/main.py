@@ -94,9 +94,8 @@ if __name__ == '__main__':
                     output_source.write_return()
 
             if not input_source.has_more_lines(line):
+                input_source.close_file()
                 break
 
     output_source.finishing_line()
-
-    input_source.close_file()
     output_source.close_file()

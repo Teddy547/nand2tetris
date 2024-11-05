@@ -11,6 +11,7 @@ class Tokenizer(tokenType, keyWord, constants):
 
     def advance(self):
         line = self.file.readline()
+        line = line.strip(' ')
 
         if line.find('/**') >= 0 or line.find('/*') >= 0:
             self.comment = True
@@ -19,9 +20,14 @@ class Tokenizer(tokenType, keyWord, constants):
             self.comment = False
             return self.NOTHING
 
-        if not (line == '\n') and (line.find('//') and not self.comment):
-            line.strip()
-            line.strip('\n')
+        if not (line == '\n') and line.find('//') and not self.comment:
+            # line = line.strip('\n')
+
+            if line.find('//') > 0:
+                line = line.split("//")
+                line[0].strip(' ')
+                return line[0]
+
             return line
 
         else:

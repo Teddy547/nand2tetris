@@ -4,7 +4,7 @@ from JackTokenizer import Tokenizer
 
 
 if __name__ == '__main__':
-    folder_to_read = "/home/christian/dev/Compiler/Test_Dateien/ExpressionLessSquare"
+    folder_to_read = "/home/christian/dev/Compiler/Test_Dateien/ExpressionLessSquare/Main.jack"
     output_folder = "/home/christian/dev/Compiler/Test_Dateien/Output/"
     files = [100]
     input_source = ""
@@ -39,7 +39,7 @@ if __name__ == '__main__':
             line_to_write = tokenizer.advance()
 
             if not line_to_write == tokenizer.NOTHING:
-                file.write(line_to_write)
+                print(line_to_write)
 
             if not tokenizer.has_more_lines(line_to_write):
                 break

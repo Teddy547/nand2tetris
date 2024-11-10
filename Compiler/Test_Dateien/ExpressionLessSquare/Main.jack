@@ -6,7 +6,7 @@ class Main {
     static boolean test;    // Added for testing -- there is no static keyword
                             // in the Square files.
 
-    function void main(987) {
+    function void main(879 token987) {
         var SquareGame game;
         let game = game;
         do game.run();
@@ -23,3 +23,6 @@ class Main {
         return;
     }
 }
+"Test"
+
+ 

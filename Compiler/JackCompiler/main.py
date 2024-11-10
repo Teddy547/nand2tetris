@@ -9,6 +9,8 @@ if __name__ == '__main__':
     files = [100]
     input_source = ""
     output_source = ""
+    token = ""
+    tokenType = ""
 
     # Check if the supplied 'folder_to_read' is actually a folder
     # or a single file and then generate the output file accordingly
@@ -36,10 +38,15 @@ if __name__ == '__main__':
         tokenizer = Tokenizer(files[i])
 
         while True:
-            line_to_write = tokenizer.advance()
+            line_to_write = tokenizer.advance_line()
 
             if not line_to_write == tokenizer.NOTHING:
-                print(line_to_write)
+                while True:
+                    token = tokenizer.advance_token(line_to_write)
+                    tokenType = tokenizer.token_type(token)
+                    if not token:
+                        break
+                    print(token, tokenType)
 
             if not tokenizer.has_more_lines(line_to_write):
                 break

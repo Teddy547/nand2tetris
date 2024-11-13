@@ -10,9 +10,11 @@ class Tokenizer(tokenType, keyWord, constants):
     token_list = list
     i = 0
 
+    # constructor. takes a file and opens it for reading
     def __init__(self, file_name):
         self.file = open(file_name, "r")
 
+    # reads the opened file line by line, ignores comments and empty lines and splits the line by symbols
     def advance_line(self):
         line = self.file.readline()
         line = line.strip(' ')
@@ -27,7 +29,7 @@ class Tokenizer(tokenType, keyWord, constants):
         if not (line == '\n') and line.find('//') and not self.comment:  # empty lines and comments are ignored
             line = line.split("//")
             line = line[0].strip(' ')  # strips inline comments
-            line = re.split(r'(\W)', line)  # splits the string into individual lexical elements
+            line = re.split(r'([{}()\[\].,;+\-*/&|<>= ~])', line)  # splits the string into individual lexical elements
             line = [x.strip() for x in line]
             line = list(filter(None, line))  # removes all empty strings and each whitespace string
             return line
@@ -35,6 +37,8 @@ class Tokenizer(tokenType, keyWord, constants):
         else:
             return self.NOTHING
 
+    # takes an already split list of tokens and returns them one by one. when the list reaches its end the iterator
+    # is reset.
     def advance_token(self, token_list):
         if self.i < len(token_list):
             self.i = self.i + 1
@@ -43,6 +47,7 @@ class Tokenizer(tokenType, keyWord, constants):
             self.i = 0
             return False
 
+    # returns a constant representing the type of token
     def token_type(self, token):
         is_integer = self.represents_int(token)
 
@@ -62,8 +67,11 @@ class Tokenizer(tokenType, keyWord, constants):
         if is_integer:
             return self.INT_CONST
 
+        if token.find('\"') == 0:
+            return self.STRING_CONST
+
         else:
-            return "no"
+            return self.IDENTIFIER
 
     @staticmethod
     def has_more_lines(line):
@@ -80,4 +88,3 @@ class Tokenizer(tokenType, keyWord, constants):
             return False
         else:
             return True
-

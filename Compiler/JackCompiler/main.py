@@ -1,5 +1,6 @@
 import os
 import glob
+import sys
 
 from JackTokenizer import Tokenizer
 
@@ -11,6 +12,8 @@ if __name__ == '__main__':
     output_source = ""
     token = ""
     tokenType = ""
+    file = ""
+    file_to_write = ""
 
     # Check if the supplied 'folder_to_read' is actually a folder
     # or a single file and then generate the output file accordingly
@@ -21,7 +24,8 @@ if __name__ == '__main__':
         files[0] = folder_to_read
 
     else:
-        file_to_write = ""
+        print("Ungültiger Pfad")
+        sys.exit()
 
     for i in range(len(files)):
         file_name = files[i].split("/")
@@ -39,42 +43,38 @@ if __name__ == '__main__':
         tokenizer = Tokenizer(files[i])
 
         while True:
-            line_to_read = tokenizer.advance_line()
+            token = tokenizer.advance_token()
 
-            if not line_to_read == tokenizer.NOTHING:
-                while True:
-                    token = tokenizer.advance_token(line_to_read)
-                    tokenType = tokenizer.token_type(token)
-                    if not token:
-                        break
+            if not token == tokenizer.NOTHING:
+                tokenType = tokenizer.token_type(token)
 
-                    if tokenType == tokenizer.KEYWORD:
-                        file.write("<keyword> ")
-                        file.write(token)
-                        file.write(" </keyword>\n")
+                if not tokenizer.has_more_tokens(token):
+                    break
 
-                    if tokenType == tokenizer.SYMBOL:
-                        file.write("<symbol> ")
-                        file.write(token)
-                        file.write(" </symbol>\n")
+                if tokenType == tokenizer.KEYWORD:
+                    file.write("<keyword> ")
+                    file.write(token)
+                    file.write(" </keyword>\n")
 
-                    if tokenType == tokenizer.INT_CONST:
-                        file.write("<integerConstant> ")
-                        file.write(token)
-                        file.write(" </integerConstant>\n")
+                if tokenType == tokenizer.SYMBOL:
+                    file.write("<symbol> ")
+                    file.write(token)
+                    file.write(" </symbol>\n")
 
-                    if tokenType == tokenizer.STRING_CONST:
-                        file.write("<stringConstant> ")
-                        file.write(token)
-                        file.write(" </stringConstant>\n")
+                if tokenType == tokenizer.INT_CONST:
+                    file.write("<integerConstant> ")
+                    file.write(token)
+                    file.write(" </integerConstant>\n")
 
-                    if tokenType == tokenizer.IDENTIFIER:
-                        file.write("<identifier> ")
-                        file.write(token)
-                        file.write(" </identifier>\n")
+                if tokenType == tokenizer.STRING_CONST:
+                    file.write("<stringConstant> ")
+                    file.write(token)
+                    file.write(" </stringConstant>\n")
 
-            if not tokenizer.has_more_lines(line_to_read):
-                break
+                if tokenType == tokenizer.IDENTIFIER:
+                    file.write("<identifier> ")
+                    file.write(token)
+                    file.write(" </identifier>\n")
 
-        file.write("</tokens>")
-        file.close()
+    file.write("</tokens>")
+    file.close()

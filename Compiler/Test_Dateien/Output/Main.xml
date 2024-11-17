@@ -58,7 +58,7 @@
 <symbol> { </symbol>
 <symbol> } </symbol>
 <keyword> return </keyword>
+<integerConstant> 0 </integerConstant>
 <symbol> ; </symbol>
 <symbol> } </symbol>
 <symbol> } </symbol>
-</tokens>

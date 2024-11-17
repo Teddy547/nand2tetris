@@ -7,45 +7,57 @@ from Constants import constants
 
 class Tokenizer(tokenType, keyWord, constants):
     comment = False
-    token_list = list
+    token_list = list()
     i = 0
+    line = ""
 
     # constructor. takes a file and opens it for reading
     def __init__(self, file_name):
         self.file = open(file_name, "r")
 
     # reads the opened file line by line, ignores comments and empty lines and splits the line by symbols
-    def advance_line(self):
-        line = self.file.readline()
-        line = line.strip(' ')
+    def __advance_line(self):
+        self.line = self.file.readline()
+        self.line = self.line.strip(' ')
 
-        if line.find('/**') >= 0 or line.find('/*') >= 0:
+        if self.line.find('/**') >= 0 or self.line.find('/*') >= 0:
             self.comment = True
 
-        if line.find('*/') >= 0:
+        if self.line.find('*/') >= 0:
             self.comment = False
             return self.NOTHING
 
-        if not (line == '\n') and line.find('//') and not self.comment:  # empty lines and comments are ignored
-            line = line.split("//")
-            line = line[0].strip(' ')  # strips inline comments
-            line = re.split(r'([{}()\[\].,;+\-*/&|<>= ~])', line)  # splits the string into individual lexical elements
-            line = [x.strip() for x in line]
-            line = list(filter(None, line))  # removes all empty strings and each whitespace string
-            return line
+        if not (self.line == '\n') and self.line.find('//') and not self.comment:  # empty lines and comments are ignored
+            self.line = self.line.split("//")
+            self.line = self.line[0].strip(' ')  # strips inline comments
+            self.line = re.split(r'([{}()\[\].,;+\-*/&|<>= ~])', self.line)  # splits the string into individual lexical elements
+            self.line = [x.strip() for x in self.line]
+            self.line = list(filter(None, self.line))  # removes all empty strings and each whitespace string
+            return self.line
 
         else:
             return self.NOTHING
 
     # takes an already split list of tokens and returns them one by one. when the list reaches its end the iterator
     # is reset.
-    def advance_token(self, token_list):
-        if self.i < len(token_list):
+    def advance_token(self):
+
+        if not self.token_list:
+            self.token_list = self.__advance_line()
+            if not self.token_list:
+                return False
+
+        if self.token_list == self.NOTHING:
+            self.token_list = self.__advance_line()
+            return self.NOTHING
+
+        if self.i < len(self.token_list):
             self.i = self.i + 1
-            return token_list[self.i - 1]
+            return self.token_list[self.i - 1]
         else:
+            self.token_list = self.__advance_line()
             self.i = 0
-            return False
+            return self.NOTHING
 
     # returns a constant representing the type of token
     def token_type(self, token):
@@ -74,7 +86,7 @@ class Tokenizer(tokenType, keyWord, constants):
             return self.IDENTIFIER
 
     @staticmethod
-    def has_more_lines(line):
+    def has_more_tokens(line):
         if line:
             return True
         else:

@@ -2,10 +2,9 @@ import re
 
 from Constants import tokenType
 from Constants import keyWord
-from Constants import constants
 
 
-class Tokenizer(tokenType, keyWord, constants):
+class Tokenizer(tokenType, keyWord):
     comment = False
     line_of_code = False
     token_list = list()
@@ -64,7 +63,7 @@ class Tokenizer(tokenType, keyWord, constants):
 
     # returns a constant representing the type of token
     def token_type(self, token):
-        is_integer = self.represents_int(token)
+        is_integer = self.__represents_int(token)
 
         if (token == "class" or token == "constructor" or token == "function" or token == "method" or token == "field"
                 or token == 'static' or token == "var" or token == "int" or token == "char" or token == "boolean" or
@@ -89,14 +88,14 @@ class Tokenizer(tokenType, keyWord, constants):
             return self.IDENTIFIER
 
     @staticmethod
-    def has_more_tokens(line):
-        if line:
+    def has_more_tokens(token):
+        if token:
             return True
         else:
             return False
 
     @staticmethod
-    def represents_int(s):
+    def __represents_int(s):
         try:
             int(s)
         except ValueError:

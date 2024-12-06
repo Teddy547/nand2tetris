@@ -1,8 +1,5 @@
 # Defines some constants for use and better readability in other modules
 
-class constants:
-    NOTHING = '0N0'
-
 
 class tokenType:
     KEYWORD = 1

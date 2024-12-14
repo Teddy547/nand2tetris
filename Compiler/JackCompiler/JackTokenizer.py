@@ -16,6 +16,9 @@ class Tokenizer(tokenType, keyWord):
         self.file = open(file_name, "r")
         self.token_list = self.__advance_line()
 
+    def __del__(self):
+        self.file.close()
+
     # reads the opened file line by line, ignores comments and empty lines and splits the line by symbols
     def __advance_line(self):
         while True:
@@ -42,8 +45,8 @@ class Tokenizer(tokenType, keyWord):
         self.line_of_code = False
         return self.line
 
-    # takes an already split list of tokens and returns them one by one. when the list reaches its end the iterator
-    # is reset.
+    # takes an already split list of tokens and returns them one by one. When the list reaches its end the iterator
+    # is reset and the next line is split into a list of tokens.
     def advance_token(self):
 
         if not self.token_list:

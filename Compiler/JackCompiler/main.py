@@ -2,10 +2,10 @@ import os
 import glob
 import sys
 
-from JackTokenizer import Tokenizer
+from CompilationEngine import Engine
 
 if __name__ == '__main__':
-    folder_to_read = "/home/christian/dev/Compiler/Test_Dateien/ExpressionLessSquare/Main.jack"
+    folder_to_read = "/home/christian/dev/Compiler/Test_Dateien/ExpressionLessSquare/Square.jack"
     output_folder = "/home/christian/dev/Compiler/Test_Dateien/Output/"
     files = [100]
     input_source = ""
@@ -37,42 +37,6 @@ if __name__ == '__main__':
         except OSError:
             pass
 
-        file = open(file_to_write, "w")
-        file.write("<tokens>\n")
-
-        tokenizer = Tokenizer(files[i])
-
-        while True:
-            token = tokenizer.advance_token()
-            tokenType = tokenizer.token_type(token)
-
-            if not tokenizer.has_more_tokens(token):
-                break
-
-            if tokenType == tokenizer.KEYWORD:
-                file.write("<keyword> ")
-                file.write(token)
-                file.write(" </keyword>\n")
-
-            if tokenType == tokenizer.SYMBOL:
-                file.write("<symbol> ")
-                file.write(token)
-                file.write(" </symbol>\n")
-
-            if tokenType == tokenizer.INT_CONST:
-                file.write("<integerConstant> ")
-                file.write(token)
-                file.write(" </integerConstant>\n")
-
-            if tokenType == tokenizer.STRING_CONST:
-                file.write("<stringConstant> ")
-                file.write(token)
-                file.write(" </stringConstant>\n")
-
-            if tokenType == tokenizer.IDENTIFIER:
-                file.write("<identifier> ")
-                file.write(token)
-                file.write(" </identifier>\n")
-
-    file.write("</tokens>")
-    file.close()
+        engine = Engine(files[i], file_to_write)
+        engine.compile_class()
+        engine.__del__()

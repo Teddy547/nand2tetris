@@ -193,8 +193,8 @@ class Engine(Tokenizer):
 
         if not self.current_token == ";":
             self.__compile_expression()
-        else:
-            self.__process(";")
+
+        self.__process(";")
 
         return
 
@@ -210,9 +210,17 @@ class Engine(Tokenizer):
 
     # (expression( ',' expression)*)?
     def __compile_expression_list(self):
-        if not self.current_token == ")":
+        counter = 0
+
+        while not self.current_token == ")":
             self.__compile_expression()
-        return
+            counter = counter + 1
+            if self.current_token == ",":
+                self.__process(",")
+            else:
+                break
+                
+        return counter
 
     # subRoutineName '(' expressionList ')' |(className|varName) '.' subRoutineName '(' expressionList ')'
     def __compile_subroutine_call(self):
@@ -221,15 +229,16 @@ class Engine(Tokenizer):
 
         if self.current_token == "(":
             self.__compile_expression_list()
+            self.__process(")")
         else:
             self.__process(".")
 
-        self.__print_XML_token(self.current_token)
-        self.current_token = self.tokenizer.advance_token()
+            self.__print_XML_token(self.current_token)
+            self.current_token = self.tokenizer.advance_token()
 
-        self.__process("(")
-        self.__compile_expression_list()
-        self.__process(")")
+            self.__process("(")
+            self.__compile_expression_list()
+            self.__process(")")
 
         return
 

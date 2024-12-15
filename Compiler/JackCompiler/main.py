@@ -5,7 +5,7 @@ import sys
 from CompilationEngine import Engine
 
 if __name__ == '__main__':
-    folder_to_read = "/home/christian/dev/Compiler/Test_Dateien/ExpressionLessSquare/Square.jack"
+    folder_to_read = "/home/christian/dev/Compiler/Test_Dateien/ExpressionLessSquare"
     output_folder = "/home/christian/dev/Compiler/Test_Dateien/Output/"
     files = [100]
     input_source = ""

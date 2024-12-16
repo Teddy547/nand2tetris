@@ -24,6 +24,7 @@ class Tokenizer(tokenType, keyWord):
         while True:
             self.line = self.file.readline()
             self.line = self.line.strip(' ')
+            self.line = self.line.strip("\t")
 
             if self.line.find('/**') >= 0 or self.line.find('/*') >= 0:
                 self.comment = True
@@ -34,7 +35,7 @@ class Tokenizer(tokenType, keyWord):
             if not (self.line == '\n') and self.line.find('//') and not self.comment and not self.line.find('*/') >= 0:  # empty lines and comments are ignored
                 self.line = self.line.split("//")
                 self.line = self.line[0].strip(' ')  # strips inline comments
-                self.line = re.split(r'([{}()\[\].,;+\-*/&|<>= ~])', self.line)  # splits the string into individual lexical elements
+                self.line = re.split(r'(["{}()\[\].,;+\-*/&|<>= ~])', self.line)  # splits the string into individual lexical elements
                 self.line = [x.strip() for x in self.line]
                 self.line = list(filter(None, self.line))  # removes all empty strings and each whitespace string
                 self.line_of_code = True
@@ -48,9 +49,21 @@ class Tokenizer(tokenType, keyWord):
     # takes an already split list of tokens and returns them one by one. When the list reaches its end the iterator
     # is reset and the next line is split into a list of tokens.
     def advance_token(self):
-
         if not self.token_list:
             return False
+
+        if self.i < len(self.token_list):
+            if self.token_list[self.i] == '"':
+                j = self.i
+                new_string = ""
+                while True:
+                    new_string = new_string + self.token_list[j]
+                    j = j + 1
+                    if self.token_list[j] == '"':
+                        new_string = new_string + self.token_list[j]
+                        self.token_list[j] = new_string
+                        self.i = j
+                        break
 
         if self.i < len(self.token_list):
             self.i = self.i + 1

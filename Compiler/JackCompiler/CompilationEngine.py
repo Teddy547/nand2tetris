@@ -1,3 +1,5 @@
+from pycparser.ply.yacc import token
+
 from JackTokenizer import Tokenizer
 
 
@@ -137,7 +139,9 @@ class Engine(Tokenizer):
         self.current_token = self.tokenizer.advance_token()
 
         if self.current_token == "[":
+            self.__process("[")
             self.__compile_expression()
+            self.__process("]")
         else:
             self.__process("=")
 
@@ -200,17 +204,67 @@ class Engine(Tokenizer):
 
     # term (op term)*
     def __compile_expression(self):
-        self.__print_XML_token(self.current_token)
-        self.current_token = self.tokenizer.advance_token()
+        self.__compile_term()
+
+        while self.__is_operator():
+            self.__process(self.current_token)
+            self.__compile_term()
+
         return
 
     # integerConstant|stringConstant|keywordConstant|varName|varName '[' expression ']' | '(' expression ')' |(unaryOp term)|subRoutineCall
     def __compile_term(self):
+        token_type = self.tokenizer.token_type(self.current_token)
+
+        if token_type == self.INT_CONST:
+            self.__print_XML_token(self.current_token)
+            self.current_token = self.tokenizer.advance_token()
+
+        if token_type == self.STRING_CONST:
+            self.__print_XML_token(self.current_token)
+            self.current_token = self.tokenizer.advance_token()
+
+        if self.__is_keyword_constant():
+            self.__print_XML_token(self.current_token)
+            self.current_token = self.tokenizer.advance_token()
+
+        if self.current_token == "(":
+            self.__process("(")
+            self.__compile_expression()
+            self.__process(")")
+
+        if self.current_token == "-" or self.current_token == "~":
+            self.__print_XML_token(self.current_token)
+            self.current_token = self.tokenizer.advance_token()
+            self.__compile_term()
+
+        if token_type == self.IDENTIFIER:
+            lookahead = self.tokenizer.advance_token()
+
+            if lookahead == "[":
+                self.__print_XML_token(self.current_token)
+                self.current_token = lookahead
+                self.__process("[")
+                self.__compile_expression()
+                self.__process("]")
+
+            elif lookahead == "(" or lookahead == ".":
+                self.__print_XML_token(self.current_token)
+                self.current_token = lookahead
+                self.__compile_subroutine_call()
+
+            else:
+                self.__print_XML_token(self.current_token)
+                self.current_token = lookahead
+
         return
 
     # (expression( ',' expression)*)?
     def __compile_expression_list(self):
         counter = 0
+
+        if self.current_token == "(":
+            self.__process("(")
 
         while not self.current_token == ")":
             self.__compile_expression()
@@ -219,13 +273,14 @@ class Engine(Tokenizer):
                 self.__process(",")
             else:
                 break
-                
+
         return counter
 
     # subRoutineName '(' expressionList ')' |(className|varName) '.' subRoutineName '(' expressionList ')'
     def __compile_subroutine_call(self):
-        self.__print_XML_token(self.current_token)
-        self.current_token = self.tokenizer.advance_token()
+        if not self.current_token == "." or self.current_token == "(":
+            self.__print_XML_token(self.current_token)
+            self.current_token = self.tokenizer.advance_token()
 
         if self.current_token == "(":
             self.__compile_expression_list()
@@ -250,6 +305,21 @@ class Engine(Tokenizer):
 
     def __is_statement(self):
         if self.current_token == "let" or self.current_token == "if" or self.current_token == "while" or self.current_token == "do" or self.current_token == "return":
+            return True
+        else:
+            return False
+
+    def __is_operator(self):
+        if (
+                self.current_token == "+" or self.current_token == "-" or self.current_token == "*" or self.current_token == "/"
+                or self.current_token == "&" or self.current_token == "|" or self.current_token == "<" or self.current_token == ">"
+                or self.current_token == "="):
+            return True
+        else:
+            return False
+
+    def __is_keyword_constant(self):
+        if self.current_token == "true" or self.current_token == "false" or self.current_token == "null" or self.current_token == "this":
             return True
         else:
             return False

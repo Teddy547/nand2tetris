@@ -40,7 +40,7 @@ class Tokenizer(tokenType, keyWord):
                 self.line = list(filter(None, self.line))  # removes all empty strings and each whitespace string
                 self.line_of_code = True
 
-            if self.line_of_code:
+            if self.line_of_code:                           # Loop is broken when actual code is read in and not a comment or empty line
                 break
 
         self.line_of_code = False
@@ -52,17 +52,17 @@ class Tokenizer(tokenType, keyWord):
         if not self.token_list:
             return False
 
+        # This block of code reunites a previously split string constant back into a single string token
+        # and makes it the next token
         if self.i < len(self.token_list):
             if self.token_list[self.i] == '"':
-                j = self.i
                 new_string = ""
                 while True:
-                    new_string = new_string + self.token_list[j]
-                    j = j + 1
-                    if self.token_list[j] == '"':
-                        new_string = new_string + self.token_list[j]
-                        self.token_list[j] = new_string
-                        self.i = j
+                    new_string = new_string + self.token_list[self.i] + " "
+                    self.i = self.i + 1
+                    if self.token_list[self.i] == '"':
+                        new_string = new_string + self.token_list[self.i]
+                        self.token_list[self.i] = new_string
                         break
 
         if self.i < len(self.token_list):

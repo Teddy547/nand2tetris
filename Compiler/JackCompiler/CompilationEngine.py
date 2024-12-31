@@ -1,7 +1,8 @@
 from JackTokenizer import Tokenizer
+from SymbolTable import SymbolTable
 
 
-class Engine(Tokenizer):
+class Engine(Tokenizer, SymbolTable):
     current_token = ""
 
     # The constructor. Initializes a tokenizer, gets the first token and opens the output file for writing
@@ -11,6 +12,7 @@ class Engine(Tokenizer):
         self.current_token = self.tokenizer.advance_token()
         self.file = open(output_file, "w")
         self.file.write("<tokens>\n")
+        self.class_table = SymbolTable
 
     # The destructor. Closes the file and destructs the tokenizer before destructing itself.
     def __del__(self):
@@ -28,22 +30,30 @@ class Engine(Tokenizer):
         self.__process("}")
         self.file.write("</tokens>")
 
+        self.class_table.print_table(self)
+        self.class_table.reset(self.class_table.table)
+
     # Compiles 0 or more class variable declarations
     # (static|field) type varName (',' varName)* ';'
     def __compile_class_var_dec(self):
         while self.current_token == "static" or self.current_token == "field":
             self.__print_XML_token()
+            kind = self.current_token
             self.current_token = self.tokenizer.advance_token()
             token_Type = self.tokenizer.token_type(self.current_token)
 
             if self.__is_type(token_Type):
                 self.__print_XML_token()
+                var_type = self.current_token
                 self.current_token = self.tokenizer.advance_token()
                 token_Type = self.tokenizer.token_type(self.current_token)
 
                 while token_Type == self.tokenizer.IDENTIFIER:
                     self.__print_XML_token()
+                    name = self.current_token
                     self.current_token = self.tokenizer.advance_token()
+
+                    self.class_table.add(self, name, var_type, kind)
 
                     if self.current_token == ",":
                         self.__process(",")

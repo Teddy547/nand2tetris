@@ -1,6 +1,5 @@
 # Defines some constants for use and better readability in other modules
 
-
 class tokenType:
     KEYWORD = 1
     SYMBOL = 2
@@ -31,5 +30,3 @@ class keyWord:
     FALSE = 24
     NULL = 25
     THIS = 26
-
-

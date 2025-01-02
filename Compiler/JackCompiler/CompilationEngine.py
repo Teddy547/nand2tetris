@@ -4,6 +4,9 @@ from SymbolTable import SymbolTable
 
 class Engine(Tokenizer, SymbolTable):
     current_token = ""
+    className = ""
+    class_table = SymbolTable()
+    subroutineTable = SymbolTable()
 
     # The constructor. Initializes a tokenizer, gets the first token and opens the output file for writing
     def __init__(self, input_file, output_file):
@@ -12,7 +15,6 @@ class Engine(Tokenizer, SymbolTable):
         self.current_token = self.tokenizer.advance_token()
         self.file = open(output_file, "w")
         self.file.write("<tokens>\n")
-        self.class_table = SymbolTable
 
     # The destructor. Closes the file and destructs the tokenizer before destructing itself.
     def __del__(self):
@@ -22,15 +24,19 @@ class Engine(Tokenizer, SymbolTable):
     # 'class' className '{' classVarDec* subRoutineDec* '}'
     def compile_class(self):
         self.__process("class")
+
+        self.className = self.current_token                         # parses the className and takes it into a variable for the subroutine symbol table
         self.__print_XML_token()
         self.current_token = self.tokenizer.advance_token()
+
         self.__process("{")
         self.__compile_class_var_dec()
         self.__compile_subroutine()
         self.__process("}")
+
         self.file.write("</tokens>")
 
-        self.class_table.print_table(self)
+        self.class_table.print_table()
         self.class_table.reset(self.class_table.table)
 
     # Compiles 0 or more class variable declarations
@@ -53,7 +59,7 @@ class Engine(Tokenizer, SymbolTable):
                     name = self.current_token
                     self.current_token = self.tokenizer.advance_token()
 
-                    self.class_table.add(self, name, var_type, kind)
+                    self.class_table.add(name, var_type, kind)
 
                     if self.current_token == ",":
                         self.__process(",")
@@ -67,6 +73,10 @@ class Engine(Tokenizer, SymbolTable):
     # ('constructor'|'function'|'method) ('void'|type) subRoutineName '(' parameterList ')' subRoutineBody
     def __compile_subroutine(self):
         while self.current_token == "constructor" or self.current_token == "function" or self.current_token == "method":
+
+            if self.current_token == "method":
+                self.subroutineTable.add("this", self.className, "arg")
+
             while not self.current_token == "(":
                 self.__print_XML_token()
                 self.current_token = self.tokenizer.advance_token()
@@ -74,6 +84,9 @@ class Engine(Tokenizer, SymbolTable):
             self.__compile_parameter_list()
             self.__process(")")
             self.__compile_subroutine_body()
+
+            self.subroutineTable.print_table()
+            self.subroutineTable.reset(self.subroutineTable.table)
 
         return
 
@@ -83,8 +96,13 @@ class Engine(Tokenizer, SymbolTable):
         token_Type = self.tokenizer.token_type(self.current_token)
 
         while self.__is_type(token_Type):
+            var_type = self.current_token
             self.__print_XML_token()
             self.current_token = self.tokenizer.advance_token()
+            name = self.current_token
+
+            if not (self.current_token == "," or self.current_token == ")"):
+                self.subroutineTable.add(name, var_type, "arg")
 
             if self.current_token == ",":
                 self.__process(",")
@@ -107,14 +125,20 @@ class Engine(Tokenizer, SymbolTable):
     def __compile_var_dec(self):
         while self.current_token == "var":
             self.__process("var")
+            var_type = self.current_token
             token_Type = self.tokenizer.token_type(self.current_token)
 
             while self.__is_type(token_Type):
                 self.__print_XML_token()
                 self.current_token = self.tokenizer.advance_token()
+                name = self.current_token
+
+                if not (self.current_token == "," or self.current_token == ";"):
+                    self.subroutineTable.add(name, var_type, "var")
 
                 if self.current_token == ",":
                     self.__process(",")
+                    self.subroutineTable.add(self.current_token, var_type, "var")
 
                 token_Type = self.tokenizer.token_type(self.current_token)
 

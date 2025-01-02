@@ -30,3 +30,4 @@ class keyWord:
     FALSE = 24
     NULL = 25
     THIS = 26
+    ARG = 27

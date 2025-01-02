@@ -1,4 +1,6 @@
-class SymbolTable:
+from Constants import keyWord
+
+class SymbolTable(keyWord):
     table = []
     field_counter = 0
     static_counter = 0
@@ -34,6 +36,17 @@ class SymbolTable:
             self.table[-1]['#'] = self.var_counter
             self.var_counter = self.var_counter + 1
 
+        return
+
+    def varCount(self, kind):
+        if kind == self.STATIC:
+            return self.static_counter
+        elif kind == self.FIELD:
+            return self.field_counter
+        elif kind == self.VAR:
+            return self.var_counter
+        elif kind == self.ARG:
+            return self.arg_counter
         return
 
     def reset(self, table):

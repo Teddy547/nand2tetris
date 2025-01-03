@@ -1,5 +1,6 @@
 from Constants import keyWord
 
+
 class SymbolTable(keyWord):
     table = []
     field_counter = 0
@@ -49,9 +50,30 @@ class SymbolTable(keyWord):
             return self.arg_counter
         return
 
-    def reset(self, table):
-        for i in range(len(table)):
-            table.pop(0)
+    def kindOf(self, name):
+        for i in range(len(self.table)):
+            if self.table[i].get("name") == name:
+                return self.table[i].get("kind")
+
+        return False
+
+    def typeOf(self, name):
+        for i in range(len(self.table)):
+            if self.table[i].get("name") == name:
+                return self.table[i].get("type")
+
+        return False
+
+    def indexOf(self, name):
+        for i in range(len(self.table)):
+            if self.table[i].get("name") == name:
+                return self.table[i].get("#")
+
+        return False
+
+    def reset(self):
+        for i in range(len(self.table)):
+            self.table.pop(0)
 
         self.var_counter = 0
         self.arg_counter = 0

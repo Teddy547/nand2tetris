@@ -36,8 +36,7 @@ class Engine(Tokenizer, SymbolTable):
 
         self.file.write("</tokens>")
 
-        self.class_table.print_table()
-        self.class_table.reset(self.class_table.table)
+        self.class_table.reset()
 
     # Compiles 0 or more class variable declarations
     # (static|field) type varName (',' varName)* ';'
@@ -85,8 +84,7 @@ class Engine(Tokenizer, SymbolTable):
             self.__process(")")
             self.__compile_subroutine_body()
 
-            self.subroutineTable.print_table()
-            self.subroutineTable.reset(self.subroutineTable.table)
+            self.subroutineTable.reset()
 
         return
 

@@ -26,7 +26,7 @@ class Engine(Tokenizer, SymbolTable):
         self.__process("class")
 
         self.className = self.current_token                         # parses the className and takes it into a variable for the subroutine symbol table
-        self.__print_XML_token()
+        # self.__print_XML_token()
         self.current_token = self.tokenizer.advance_token()
 
         self.__process("{")
@@ -42,19 +42,19 @@ class Engine(Tokenizer, SymbolTable):
     # (static|field) type varName (',' varName)* ';'
     def __compile_class_var_dec(self):
         while self.current_token == "static" or self.current_token == "field":
-            self.__print_XML_token()
+            # self.__print_XML_token()
             kind = self.current_token
             self.current_token = self.tokenizer.advance_token()
             token_Type = self.tokenizer.token_type(self.current_token)
 
             if self.__is_type(token_Type):
-                self.__print_XML_token()
+                # self.__print_XML_token()
                 var_type = self.current_token
                 self.current_token = self.tokenizer.advance_token()
                 token_Type = self.tokenizer.token_type(self.current_token)
 
                 while token_Type == self.tokenizer.IDENTIFIER:
-                    self.__print_XML_token()
+                    # self.__print_XML_token()
                     name = self.current_token
                     self.current_token = self.tokenizer.advance_token()
 
@@ -77,7 +77,7 @@ class Engine(Tokenizer, SymbolTable):
                 self.subroutineTable.add("this", self.className, "arg")
 
             while not self.current_token == "(":
-                self.__print_XML_token()
+                # self.__print_XML_token()
                 self.current_token = self.tokenizer.advance_token()
             self.__process("(")
             self.__compile_parameter_list()
@@ -95,7 +95,7 @@ class Engine(Tokenizer, SymbolTable):
 
         while self.__is_type(token_Type):
             var_type = self.current_token
-            self.__print_XML_token()
+            # self.__print_XML_token()
             self.current_token = self.tokenizer.advance_token()
             name = self.current_token
 
@@ -127,7 +127,7 @@ class Engine(Tokenizer, SymbolTable):
             token_Type = self.tokenizer.token_type(self.current_token)
 
             while self.__is_type(token_Type):
-                self.__print_XML_token()
+                # self.__print_XML_token()
                 self.current_token = self.tokenizer.advance_token()
                 name = self.current_token
 
@@ -167,7 +167,7 @@ class Engine(Tokenizer, SymbolTable):
     # 'let' varName ('[' expression ']')? '=' expression ';'
     def __compile_let(self):
         self.__process("let")
-        self.__print_XML_token()
+        # self.__print_XML_token()
         self.current_token = self.tokenizer.advance_token()
 
         if self.current_token == "[":
@@ -246,18 +246,23 @@ class Engine(Tokenizer, SymbolTable):
 
     # integerConstant|stringConstant|keywordConstant|varName|varName '[' expression ']' | '(' expression ')' |(unaryOp term)|subRoutineCall
     def __compile_term(self):
+        unary_operator = ""
+        subroutine_name = ""
         token_type = self.tokenizer.token_type(self.current_token)
 
         if token_type == self.INT_CONST:
-            self.__print_XML_token()
+            # self.__print_XML_token()
+            self.file.write(f"push {self.current_token}\n")
             self.current_token = self.tokenizer.advance_token()
 
         if token_type == self.STRING_CONST:
-            self.__print_XML_token()
+            # self.__print_XML_token()
+            self.file.write(f"push {self.current_token}\n")
             self.current_token = self.tokenizer.advance_token()
 
         if self.__is_keyword_constant():
-            self.__print_XML_token()
+            # self.__print_XML_token()
+            self.file.write(f"push {self.current_token}\n")
             self.current_token = self.tokenizer.advance_token()
 
         if self.current_token == "(":
@@ -266,28 +271,41 @@ class Engine(Tokenizer, SymbolTable):
             self.__process(")")
 
         if self.current_token == "-" or self.current_token == "~":
-            self.__print_XML_token()
+            # self.__print_XML_token()
+            if self.current_token == "-":
+                unary_operator = "neg"
+            elif self.current_token == "~":
+                unary_operator = "not"
+
             self.current_token = self.tokenizer.advance_token()
             self.__compile_term()
 
-        if token_type == self.IDENTIFIER:
+        if token_type == self.IDENTIFIER:                               # in case of IDENTIFIER a lookahead is needed to differentiate between an array statement and a subroutine call
             lookahead = self.tokenizer.advance_token()
 
-            if lookahead == "[":
-                self.__print_XML_token()
+            if lookahead == "[":                                        # array statement
+                # self.__print_XML_token()
                 self.current_token = lookahead
                 self.__process("[")
                 self.__compile_expression()
                 self.__process("]")
 
-            elif lookahead == "(" or lookahead == ".":
-                self.__print_XML_token()
+            elif lookahead == "(" or lookahead == ".":                  # subroutine call
+                # self.__print_XML_token()
+                subroutine_name = self.current_token
                 self.current_token = lookahead
                 self.__compile_subroutine_call()
 
             else:
-                self.__print_XML_token()
+                # self.__print_XML_token()
+                self.file.write(f"push {self.current_token}\n")
                 self.current_token = lookahead
+
+        if not unary_operator == "":
+            self.file.write(f"{unary_operator}\n")
+
+        if not subroutine_name == "":
+            self.file.write(f"call {subroutine_name}\n")
 
         return
 
@@ -307,8 +325,8 @@ class Engine(Tokenizer, SymbolTable):
 
     # subRoutineName '(' expressionList ')' |(className|varName) '.' subRoutineName '(' expressionList ')'
     def __compile_subroutine_call(self):
-        if not self.current_token == "." or self.current_token == "(":
-            self.__print_XML_token()
+        if not (self.current_token == "." or self.current_token == "("):
+            # self.__print_XML_token()
             self.current_token = self.tokenizer.advance_token()
 
         if self.current_token == "(":
@@ -318,7 +336,7 @@ class Engine(Tokenizer, SymbolTable):
         else:
             self.__process(".")
 
-            self.__print_XML_token()
+            # self.__print_XML_token()
             self.current_token = self.tokenizer.advance_token()
 
             self.__process("(")
@@ -355,9 +373,9 @@ class Engine(Tokenizer, SymbolTable):
             return False
 
     def __process(self, string):
-        if self.current_token == string:
-            self.__print_XML_token()
-        else:
+        if not self.current_token == string:
+            # self.__print_XML_token()
+        # else:
             self.file.write("Syntax error")
 
         self.current_token = self.tokenizer.advance_token()

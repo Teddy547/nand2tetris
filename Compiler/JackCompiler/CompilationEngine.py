@@ -231,7 +231,7 @@ class Engine:
         self.__compile_expression()
         self.__process(")")
 
-        self.vmWriter.writeIf(f"IF{self.labelCounter}")
+        self.vmWriter.writeIf(f"IF_FALSE{self.labelCounter}")
         localLabelCounter = self.labelCounter
         self.labelCounter = self.labelCounter + 2
 
@@ -239,8 +239,8 @@ class Engine:
         self.__compile_statements()
         self.__process("}")
 
-        self.vmWriter.writeGOTO(f"IF{localLabelCounter + 1}")
-        self.vmWriter.writeLabel(f"IF{localLabelCounter}")
+        self.vmWriter.writeGOTO(f"IF_TRUE{localLabelCounter + 1}")
+        self.vmWriter.writeLabel(f"IF_FALSE{localLabelCounter}")
 
         if self.currentToken == "else":
             self.__process("else")
@@ -248,14 +248,14 @@ class Engine:
             self.__compile_statements()
             self.__process("}")
 
-            self.vmWriter.writeLabel(f"IF{localLabelCounter + 1}")
+        self.vmWriter.writeLabel(f"IF_TRUE{localLabelCounter + 1}")
         return
 
     # 'while' '(' expression ')' '{' statements '}'
     def __compile_while(self):
         self.__process("while")
 
-        self.vmWriter.writeLabel(f"WHILE{self.labelCounter}")
+        self.vmWriter.writeLabel(f"WHILE_EXP{self.labelCounter}")
         localLabelCounter = self.labelCounter
         self.labelCounter = self.labelCounter + 2
 
@@ -263,14 +263,14 @@ class Engine:
         self.__compile_expression()
         self.__process(")")
 
-        self.vmWriter.writeIf(f"WHILE{localLabelCounter + 1}")
+        self.vmWriter.writeIf(f"WHILE_END{localLabelCounter + 1}")
 
         self.__process("{")
         self.__compile_statements()
         self.__process("}")
 
-        self.vmWriter.writeGOTO(f"WHILE{localLabelCounter}")
-        self.vmWriter.writeLabel(f"WHILE{localLabelCounter + 1}")
+        self.vmWriter.writeGOTO(f"WHILE_EXP{localLabelCounter}")
+        self.vmWriter.writeLabel(f"WHILE_END{localLabelCounter + 1}")
         return
 
     # 'do' subRoutineCall ';'

@@ -48,7 +48,14 @@ class SymbolTable():
     def kindOf(self, name):
         for i in range(len(self.table)):
             if self.table[i].get("name") == name:
-                return self.table[i].get("kind")
+                if self.table[i].get("kind") == "static":
+                    return "static"
+                elif self.table[i].get("kind") == "field":
+                    return "this"
+                elif self.table[i].get("kind") == "var":
+                    return "local"
+                elif self.table[i].get("kind") == "arg":
+                    return "argument"
 
         return False
 

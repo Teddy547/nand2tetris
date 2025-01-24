@@ -37,9 +37,9 @@ class VMWriter:
     def writeUnaryOp(self, unaryOperator):
         match unaryOperator:
             case "-":
-                self.file.write("neg")
+                self.file.write("neg\n")
             case "~":
-                self.file.write("not")
+                self.file.write("not\n")
 
     def writeLabel(self, label):
         self.file.write(f"label {label}\n")
@@ -67,12 +67,24 @@ class VMWriter:
         self.file.write("return\n")
         return
 
+    def writeKeywordConstant(self, keyword):
+        if keyword == "true":
+            self.file.write("push constant 1\n"
+                            "neg\n")
+        if keyword == "false" or keyword == "null":
+            self.file.write("push constant 0\n")
+        return
+
     def writeError(self):
         self.file.write("Syntax Error\n")
         return
 
     def writeComment(self, comment):
         self.file.write(f"{comment}\n")
+        return
+
+    def writeNewLine(self):
+        self.file.write("\n\n")
         return
 
     def close(self):

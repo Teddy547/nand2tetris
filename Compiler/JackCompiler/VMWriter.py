@@ -50,7 +50,8 @@ class VMWriter:
         return
 
     def writeIf(self, label):
-        self.file.write(f"if-goto {label}\n")
+        self.file.write(f"not\n"
+                        f"if-goto {label}\n")
         return
 
     def writeCall(self, name, nArgs):
@@ -75,8 +76,11 @@ class VMWriter:
             self.file.write("push constant 0\n")
         return
 
-    def writeError(self):
-        self.file.write("Syntax Error\n")
+    def writeError(self, errorType):
+        if errorType == "Syntax":
+            self.file.write("Syntax Error\n")
+        elif errorType == "VarDec":
+            self.file.write("Undeclared Variable\n")
         return
 
     def writeComment(self, comment):

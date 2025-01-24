@@ -16,13 +16,13 @@ return
 
 
 function Main.convert 3
-push constant 1
-neg
+push constant 0
+not
 pop local 2
-label WHILE1
+label WHILE_EXP0
 push local 2
 not
-if-goto WHILE2
+if-goto WHILE_END0
 push local 1
 push constant 1
 add
@@ -34,38 +34,40 @@ push local 1
 push constant 16
 gt
 not
-not
-if-goto IF3
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
 push argument 0
 push local 0
 and
 push constant 0
 eq
 not
-not
-if-goto IF5
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
 push constant 8000
 push local 1
 add
 push constant 1
 call Memory.poke 2
 pop temp 0
-goto IF6
-label IF5
+goto IF_END1
+label IF_FALSE1
 push constant 8000
 push local 1
 add
 push constant 0
 call Memory.poke 2
 pop temp 0
-label IF6
-goto IF4
-label IF3
+label IF_END1
+goto IF_END0
+label IF_FALSE0
 push constant 0
 pop local 2
-label IF4
-goto WHILE1
-label WHILE2
+label IF_END0
+goto WHILE_EXP0
+label WHILE_END0
 push constant 0
 return
 
@@ -74,26 +76,27 @@ function Main.nextMask 0
 push argument 0
 push constant 0
 eq
-not
-if-goto IF7
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
 push constant 1
 return
-goto IF8
-label IF7
+goto IF_END0
+label IF_FALSE0
 push argument 0
 push constant 2
 call Math.multiply 2
 return
-label IF8
+label IF_END0
 
 
 function Main.fillMemory 0
-label WHILE9
+label WHILE_EXP0
 push argument 1
 push constant 0
 gt
 not
-if-goto WHILE10
+if-goto WHILE_END0
 push argument 0
 push argument 2
 call Memory.poke 2
@@ -106,9 +109,7 @@ push argument 0
 push constant 1
 add
 pop argument 0
-goto WHILE9
-label WHILE10
+goto WHILE_EXP0
+label WHILE_END0
 push constant 0
 return
-
-

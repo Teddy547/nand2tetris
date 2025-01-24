@@ -30,7 +30,7 @@ if __name__ == '__main__':
     for i in range(len(files)):
         file_name = files[i].split("/")
         file_name = file_name[-1].strip(".jack")
-        file_to_write = output_folder + file_name + ".xml"
+        file_to_write = output_folder + file_name + ".vm"
 
         try:
             os.remove(file_to_write)

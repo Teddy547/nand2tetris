@@ -1,18 +1,17 @@
 import re
 
 from Constants import tokenType
-from Constants import keyWord
 
 
-class Tokenizer(tokenType, keyWord):
-    comment = False
-    line_of_code = False
-    token_list = list()
-    i = 0
-    line = ""
+class Tokenizer:
 
     # constructor. takes a file and opens it for reading
     def __init__(self, file_name):
+        self.comment = False
+        self.line_of_code = False
+        self.token_list = list()
+        self.i = 0
+        self.line = ""
         self.file = open(file_name, "r")
         self.token_list = self.__advance_line()
 
@@ -86,22 +85,22 @@ class Tokenizer(tokenType, keyWord):
                 token == "void" or token == "true" or token == "false" or token == "null" or token == "this"
                 or token == "let" or token == "do" or token == "if" or token == "else" or token == "while"
                 or token == "return"):
-            return self.KEYWORD
+            return tokenType.KEYWORD
 
         if (token == "{" or token == "}" or token == "(" or token == ")" or token == "[" or token == "]"
                 or token == "." or token == "," or token == ";" or token == "+" or token == "-" or token == "*"
                 or token == "/" or token == "&" or token == "|" or token == "<" or token == ">" or token == "="
                 or token == "~"):
-            return self.SYMBOL
+            return tokenType.SYMBOL
 
         if is_integer:
-            return self.INT_CONST
+            return tokenType.INT_CONST
 
         if token.find('\"') == 0:
-            return self.STRING_CONST
+            return tokenType.STRING_CONST
 
         else:
-            return self.IDENTIFIER
+            return tokenType.IDENTIFIER
 
     @staticmethod
     def has_more_tokens(token):

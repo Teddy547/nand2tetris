@@ -1,6 +1,0 @@
-<tokens>
-push x
-push y
-push z
-call g
-</tokens>

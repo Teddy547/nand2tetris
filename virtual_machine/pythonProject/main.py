@@ -6,7 +6,7 @@ from CodeWriter import CodeWriter
 
 if __name__ == '__main__':
 
-    folder_to_read = "/home/christian/dev/virtual_machine/Test_Dateien/FibonacciElement"
+    folder_to_read = "/home/christian/dev/Compiler/Test_Dateien/Output"
     line_number = 0
     counter = 1
     files = [100]

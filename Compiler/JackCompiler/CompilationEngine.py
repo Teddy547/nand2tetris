@@ -2,6 +2,7 @@ from JackTokenizer import Tokenizer
 from SymbolTable import SymbolTable
 from VMWriter import VMWriter
 from Constants import tokenType
+from Constants import keyWord
 
 
 # noinspection SpellCheckingInspection
@@ -20,6 +21,9 @@ class Engine:
         self.subroutineTable = SymbolTable()
 
         self.void = False
+        self.isConstructor = False
+        self.isMethod = False
+        self.isMethodCall = False
         self.subRoutineName = ""
         self.subRoutineNameDo = ""
         self.classVarNameDo = ""
@@ -87,6 +91,9 @@ class Engine:
 
             if self.currentToken == "method":
                 self.subroutineTable.add("this", self.className, "arg")
+                self.isMethod = True
+            elif self.currentToken == "constructor":
+                self.isConstructor = True
 
             while not self.currentToken == "(":
 
@@ -105,6 +112,8 @@ class Engine:
             self.vmWriter.writeNewLine()
 
             self.void = False
+            self.isConstructor = False
+            self.isMethod = False
 
             print("Subroutine Table")
             self.subroutineTable.print_table()
@@ -138,6 +147,15 @@ class Engine:
     def __compile_subroutine_body(self):
         self.__process("{")
         self.__compile_var_dec()
+
+        if self.isConstructor:
+            self.vmWriter.writePush("constant", self.classTable.varCount(keyWord.FIELD))
+            self.vmWriter.writeCall("Memory.alloc", 1)
+            self.vmWriter.writePop("pointer", 0)
+        elif self.isMethod:
+            self.vmWriter.writePush("argument", 0)
+            self.vmWriter.writePop("pointer", 0)
+
         self.__compile_statements()
         self.__process("}")
         return
@@ -292,8 +310,6 @@ class Engine:
         if not self.currentToken == ";":
             self.__compile_expression()
 
-        # If a method or function is declared 'void', it pushes '0' onto the stack by convention before returning.
-        # Boolean value is updated during compileSubRoutine
         self.__process(";")
         self.vmWriter.writeReturn(self.void)
         return
@@ -373,10 +389,17 @@ class Engine:
                     self.__process("(")
                     self.numberOfExpressions = self.__compile_expression_list()
                     self.__process(")")
-                    self.functionNameToWrite = self.subRoutineNameDo
+                    self.functionNameToWrite = self.className + "." + self.subRoutineNameDo
+                    self.isMethodCall = True
+                    self.vmWriter.writeKeywordConstant("this")
 
                 else:
-                    self.classVarNameDo = self.subRoutineNameDo
+                    if self.subroutineTable.inTable(self.subRoutineNameDo):
+                        self.classVarNameDo = self.subroutineTable.typeOf(self.subRoutineNameDo)
+                        self.isMethod = True
+                    else:
+                        self.classVarNameDo = self.subRoutineNameDo
+
                     self.__process(".")
                     self.subRoutineNameDo = self.currentToken
 
@@ -392,6 +415,10 @@ class Engine:
 
         if not unary_operator == "":
             self.vmWriter.writeUnaryOp(unary_operator)
+
+        if self.isMethodCall:
+            self.numberOfExpressions = self.numberOfExpressions + 1
+            self.isMethodCall = False
 
         if not subroutine_name == "":
             self.vmWriter.writeCall(subroutine_name, number_of_expressions)

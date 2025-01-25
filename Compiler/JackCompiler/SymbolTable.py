@@ -63,15 +63,20 @@ class SymbolTable():
         for i in range(len(self.table)):
             if self.table[i].get("name") == name:
                 return self.table[i].get("type")
-
         return False
 
     def indexOf(self, name):
         for i in range(len(self.table)):
             if self.table[i].get("name") == name:
                 return self.table[i].get("#")
-
         return False
+
+    def inTable(self, name):
+        for i in range(len(self.table)):
+            if self.table[i].get("name") == name:
+                return True
+            else:
+                return False
 
     def reset(self):
         for i in range(len(self.table)):

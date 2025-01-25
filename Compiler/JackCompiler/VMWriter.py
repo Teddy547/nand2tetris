@@ -62,6 +62,9 @@ class VMWriter:
         self.file.write(f"function {name} {nVars}\n")
         return
 
+    # If a method or function is declared 'void', it pushes '0' onto the stack by convention before returning.
+    # If a constructor is declared, it pushes pointer 0 before returning
+    # Boolean values are updated during compileSubRoutine
     def writeReturn(self, void):
         if void:
             self.file.write("push constant 0\n")
@@ -72,8 +75,12 @@ class VMWriter:
         if keyword == "true":
             self.file.write("push constant 1\n"
                             "neg\n")
-        if keyword == "false" or keyword == "null":
+
+        elif keyword == "false" or keyword == "null":
             self.file.write("push constant 0\n")
+
+        elif keyword == "this":
+            self.file.write("push pointer 0\n")
         return
 
     def writeError(self, errorType):

@@ -140,7 +140,7 @@ push this 1
 push this 2
 add
 push constant 1
-neg
+sub
 push this 0
 push this 2
 add
@@ -210,7 +210,7 @@ push this 1
 push this 2
 add
 push constant 1
-neg
+sub
 push this 0
 push this 2
 add
@@ -241,7 +241,7 @@ push this 0
 push this 2
 add
 push constant 1
-neg
+sub
 push this 1
 push this 0
 push this 2
@@ -311,7 +311,7 @@ push this 0
 push this 2
 add
 push constant 1
-neg
+sub
 push this 1
 push this 0
 push this 2

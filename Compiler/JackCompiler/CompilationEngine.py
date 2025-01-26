@@ -11,23 +11,21 @@ class Engine:
     # The constructor. Initializes a tokenizer, gets the first token and opens the output file for writing
     def __init__(self, input_file, output_file):
         self.tokenizer = Tokenizer(input_file)
-        self.currentToken = ""
         self.currentToken = self.tokenizer.advance_token()
 
         self.vmWriter = VMWriter(output_file)
 
-        self.className = ""
         self.classTable = SymbolTable()
         self.subroutineTable = SymbolTable()
 
-        self.void = False
+        self.isVoid = False
         self.isConstructor = False
         self.isMethod = False
-        self.isMethodCall = False
+
+        self.className = ""
         self.subRoutineName = ""
-        self.subRoutineNameDo = ""
-        self.classVarNameDo = ""
         self.functionNameToWrite = ""
+
         self.numberOfExpressions = 0
         self.labelCounter = 1
         return
@@ -98,9 +96,10 @@ class Engine:
             while not self.currentToken == "(":
 
                 if self.currentToken == "void":
-                    self.void = True
+                    self.isVoid = True
 
-                # the name of the subroutine is the last token before the loop is left for good. So it is saved for naming purposes later
+                # the name of the subroutine is the last token before the loop is left for good.
+                # #So it is saved for naming purposes later
                 self.subRoutineName = self.currentToken
                 self.currentToken = self.tokenizer.advance_token()
 
@@ -111,7 +110,7 @@ class Engine:
 
             self.vmWriter.writeNewLine()
 
-            self.void = False
+            self.isVoid = False
             self.isConstructor = False
             self.isMethod = False
 
@@ -311,7 +310,7 @@ class Engine:
             self.__compile_expression()
 
         self.__process(";")
-        self.vmWriter.writeReturn(self.void)
+        self.vmWriter.writeReturn(self.isVoid)
         return
 
     # term (op term)*
@@ -332,8 +331,8 @@ class Engine:
     # integerConstant|stringConstant|keywordConstant|varName|varName '[' expression ']' | '(' expression ')' |(unaryOp term)|subRoutineCall
     def __compile_term(self):
         unary_operator = ""
-        subroutine_name = ""
-        number_of_expressions = 0
+        varType = ""
+
         token_type = self.tokenizer.token_type(self.currentToken)
 
         if token_type == tokenType.INT_CONST:
@@ -351,6 +350,7 @@ class Engine:
             self.__process("(")
             self.__compile_expression()
             self.__process(")")
+            return
 
         if self.currentToken == "-" or self.currentToken == "~":
             if self.currentToken == "-":
@@ -361,67 +361,78 @@ class Engine:
             self.currentToken = self.tokenizer.advance_token()
             self.__compile_term()
 
+        # In case of this '.' subRoutineName
+        if self.currentToken == ".":
+            self.__process(".")
+            subRoutineName = self.currentToken
+            self.currentToken = self.tokenizer.advance_token()
+            self.__process("(")
+            self.numberOfExpressions = self.__compile_expression_list() + 1
+            self.__process(")")
+            self.functionNameToWrite = self.className + "." + subRoutineName
+
         # in case of IDENTIFIER a lookahead is needed to differentiate between an array statement and a subroutine call
         if token_type == tokenType.IDENTIFIER:
 
+            # If the IDENTIFIER is found in one of the symbol tables the subsequent call must be a method
+            # If it is not found the subsequent call must be a function
             if self.subroutineTable.kindOf(self.currentToken):
                 self.vmWriter.writePush(self.subroutineTable.kindOf(self.currentToken),
                                         self.subroutineTable.indexOf(self.currentToken))
+                varType = self.subroutineTable.typeOf(self.currentToken)
             elif self.classTable.kindOf(self.currentToken):
                 self.vmWriter.writePush(self.classTable.kindOf(self.currentToken),
                                         self.classTable.indexOf(self.currentToken))
+                varType = self.classTable.typeOf(self.currentToken)
 
             lookahead = self.tokenizer.advance_token()
 
-            # array statement
+            # varName '[' exression ']' ; array
             if lookahead == "[":
                 self.currentToken = lookahead
                 self.__process("[")
                 self.__compile_expression()
                 self.__process("]")
 
-            # subroutine call
-            elif lookahead == "(" or lookahead == ".":
-                self.subRoutineNameDo = self.currentToken
+            # subRoutineName '(' expressionList ')' ; same as this.methodName, method call
+            elif lookahead == "(":
+                subRoutineName = self.currentToken
                 self.currentToken = lookahead
 
-                if self.currentToken == "(":
-                    self.__process("(")
-                    self.numberOfExpressions = self.__compile_expression_list()
-                    self.__process(")")
-                    self.functionNameToWrite = self.className + "." + self.subRoutineNameDo
-                    self.isMethodCall = True
-                    self.vmWriter.writeKeywordConstant("this")
+                # method call that operates either on the current object or an object of another class.
+                # The object is pushed onto the stack beforehand and is considered a variable when calling the function.
+                # Therefore, numberOfExpressions must be one higher than whatever expressionList returns
+                self.__process("(")
+                self.numberOfExpressions = self.__compile_expression_list() + 1
+                self.__process(")")
+                self.functionNameToWrite = self.className + "." + subRoutineName
+                self.vmWriter.writeKeywordConstant("this")
 
+            # (className|varName) '.' subRoutineName '(' expressionList ')' ; function call OR method call
+            # In case of function call varType must be empty, because it was not found in either symbol table
+            elif lookahead == ".":
+                if not varType == "":
+                    className = varType
+                    addExpressionFromMethod = 1
                 else:
-                    if self.subroutineTable.inTable(self.subRoutineNameDo):
-                        self.classVarNameDo = self.subroutineTable.typeOf(self.subRoutineNameDo)
-                        self.isMethod = True
-                    else:
-                        self.classVarNameDo = self.subRoutineNameDo
+                    className = self.currentToken
+                    addExpressionFromMethod = 0
 
-                    self.__process(".")
-                    self.subRoutineNameDo = self.currentToken
+                self.currentToken = lookahead
+                self.__process(".")
+                subRoutineName = self.currentToken
 
-                    self.currentToken = self.tokenizer.advance_token()
+                self.currentToken = self.tokenizer.advance_token()
 
-                    self.__process("(")
-                    self.numberOfExpressions = self.__compile_expression_list()
-                    self.__process(")")
-                    self.functionNameToWrite = self.classVarNameDo + "." + self.subRoutineNameDo
-
+                self.__process("(")
+                self.numberOfExpressions = self.__compile_expression_list() + addExpressionFromMethod
+                self.__process(")")
+                self.functionNameToWrite = className + "." + subRoutineName
             else:
                 self.currentToken = lookahead
 
         if not unary_operator == "":
             self.vmWriter.writeUnaryOp(unary_operator)
-
-        if self.isMethodCall:
-            self.numberOfExpressions = self.numberOfExpressions + 1
-            self.isMethodCall = False
-
-        if not subroutine_name == "":
-            self.vmWriter.writeCall(subroutine_name, number_of_expressions)
         return
 
     # (expression( ',' expression)*)?

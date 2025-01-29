@@ -216,10 +216,21 @@ class Engine:
 
         if self.currentToken == "[":
             self.__process("[")
+
+            if self.subroutineTable.kindOf(varName):
+                self.vmWriter.writePush(self.subroutineTable.kindOf(varName), self.subroutineTable.indexOf(varName))
+            elif self.classTable.kindOf(varName):
+                self.vmWriter.writePush(self.classTable.kindOf(varName), self.classTable.indexOf(varName))
+            else:
+                self.vmWriter.writeError("VarDec")
+
             self.__compile_expression()
             self.__process("]")
-        else:
-            self.__process("=")
+
+            self.vmWriter.writeArithmetic("+")
+            varName = ""
+
+        self.__process("=")
 
         self.__compile_expression()
 
@@ -233,7 +244,7 @@ class Engine:
             self.vmWriter.writePop(self.subroutineTable.kindOf(varName), self.subroutineTable.indexOf(varName))
         elif self.classTable.kindOf(varName):
             self.vmWriter.writePop(self.classTable.kindOf(varName), self.classTable.indexOf(varName))
-        else:
+        elif not varName == "":
             self.vmWriter.writeError("VarDec")
 
         self.__process(";")
@@ -340,6 +351,14 @@ class Engine:
             self.currentToken = self.tokenizer.advance_token()
 
         if token_type == tokenType.STRING_CONST:
+            self.currentToken = self.currentToken.strip('"')
+
+            self.vmWriter.writePush("constant", self.__countChars(self, self.currentToken))
+            self.vmWriter.writeCall("String.new", 1)
+            for i in range(len(self.currentToken)):
+                self.vmWriter.writePush("constant", ord(self.currentToken[i]))
+                self.vmWriter.writeCall("String.appendChar", 2)
+
             self.currentToken = self.tokenizer.advance_token()
 
         if self.__is_keyword_constant():
@@ -480,3 +499,12 @@ class Engine:
 
         self.currentToken = self.tokenizer.advance_token()
         return
+
+    @staticmethod
+    def __countChars(self, string):
+        count = 0
+
+        for i in range(len(string)):
+            count = count + 1
+
+        return count

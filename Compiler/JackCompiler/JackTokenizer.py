@@ -9,9 +9,14 @@ class Tokenizer:
     def __init__(self, file_name):
         self.comment = False
         self.line_of_code = False
+
         self.token_list = list()
+
         self.i = 0
+
         self.line = ""
+        self.stringConst = ""
+
         self.file = open(file_name, "r")
         self.token_list = self.__advance_line()
 
@@ -34,7 +39,21 @@ class Tokenizer:
             if not (self.line == '\n') and self.line.find('//') and not self.comment and not self.line.find('*/') >= 0:  # empty lines and comments are ignored
                 self.line = self.line.split("//")
                 self.line = self.line[0].strip(' ')  # strips inline comments
-                self.line = re.split(r'(["{}()\[\].,;+\-*/&|<>= ~])', self.line)  # splits the string into individual lexical elements
+                self.stringConst = re.split(r'(")', self.line)
+
+                # This for loop extracts any string constants found to preserve them as is
+                for i in range(len(self.stringConst)):
+                    if self.stringConst[i].find('"') == 0:
+                        tempStringConst = self.stringConst[i]
+                        i = i + 1
+                        while self.stringConst[i] != '"':
+                            tempStringConst = tempStringConst + self.stringConst[i]
+                            i = i + 1
+                        self.stringConst = tempStringConst + '"'
+                        break
+
+                # splits the line into individual lexical elements. Also completely breaks up any STRING constants. Those are reinserted later.
+                self.line = re.split(r'(["{}()\[\].,;+\-*/&|<>= ~])', self.line)
                 self.line = [x.strip() for x in self.line]
                 self.line = list(filter(None, self.line))  # removes all empty strings and each whitespace string
                 self.line_of_code = True
@@ -51,17 +70,14 @@ class Tokenizer:
         if not self.token_list:
             return False
 
-        # This block of code reunites a previously split string constant back into a single string token
-        # and makes it the next token
+        # With this code block split and broken up string constants are iterated over. At the end the previously
+        # extracted string is reinserted as is and made the next token.
         if self.i < len(self.token_list):
             if self.token_list[self.i] == '"':
-                new_string = ""
                 while True:
-                    new_string = new_string + self.token_list[self.i] + " "
                     self.i = self.i + 1
                     if self.token_list[self.i] == '"':
-                        new_string = new_string + self.token_list[self.i]
-                        self.token_list[self.i] = new_string
+                        self.token_list[self.i] = self.stringConst
                         break
 
         if self.i < len(self.token_list):

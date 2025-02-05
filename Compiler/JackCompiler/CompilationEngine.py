@@ -230,14 +230,27 @@ class Engine:
             self.vmWriter.writeArithmetic("+")
             varName = ""
 
-        self.__process("=")
+            self.__process("=")
+            self.__compile_expression()
 
-        self.__compile_expression()
+            # Calls a function, method or constructor. Function name is constructed in 'compileExpression'.
+            if not self.functionNameToWrite == "":
+                self.vmWriter.writeCall(self.functionNameToWrite, self.numberOfExpressions)
+                self.functionNameToWrite = ""
 
-        # Calls a function, method or constructor. Function name is constructed in 'compileExpression'.
-        if not self.functionNameToWrite == "":
-            self.vmWriter.writeCall(self.functionNameToWrite, self.numberOfExpressions)
-            self.functionNameToWrite = ""
+            self.vmWriter.writePop("temp", 0)
+            self.vmWriter.writePop("pointer", 1)
+            self.vmWriter.writePush("temp", 0)
+            self.vmWriter.writePop("that", 0)
+
+        else:
+            self.__process("=")
+            self.__compile_expression()
+
+            # Calls a function, method or constructor. Function name is constructed in 'compileExpression'.
+            if not self.functionNameToWrite == "":
+                self.vmWriter.writeCall(self.functionNameToWrite, self.numberOfExpressions)
+                self.functionNameToWrite = ""
 
         # Looks for the variable in the symbol tables. Throws an error, if the variable is undeclared.
         if self.subroutineTable.kindOf(varName):
@@ -353,7 +366,7 @@ class Engine:
         if token_type == tokenType.STRING_CONST:
             self.currentToken = self.currentToken.strip('"')
 
-            self.vmWriter.writePush("constant", self.__countChars(self, self.currentToken))
+            self.vmWriter.writePush("constant", self.__countChars(self.currentToken))
             self.vmWriter.writeCall("String.new", 1)
             for i in range(len(self.currentToken)):
                 self.vmWriter.writePush("constant", ord(self.currentToken[i]))
@@ -411,6 +424,9 @@ class Engine:
                 self.currentToken = lookahead
                 self.__process("[")
                 self.__compile_expression()
+                self.vmWriter.writeArithmetic("+")
+                self.vmWriter.writePop("pointer", 1)
+                self.vmWriter.writePush("that", 0)
                 self.__process("]")
 
             # subRoutineName '(' expressionList ')' ; same as this.methodName, method call
@@ -501,7 +517,7 @@ class Engine:
         return
 
     @staticmethod
-    def __countChars(self, string):
+    def __countChars(string):
         count = 0
 
         for i in range(len(string)):

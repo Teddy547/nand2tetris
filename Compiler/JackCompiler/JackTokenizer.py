@@ -29,6 +29,7 @@ class Tokenizer:
             self.line = self.file.readline()
             self.line = self.line.strip(' ')
             self.line = self.line.strip("\t")
+            self.line = self.line.strip(' ')                                # Strips any whitespace that may be present AFTER any tabs are stripped
 
             if self.line.find('/**') >= 0 or self.line.find('/*') >= 0:
                 self.comment = True

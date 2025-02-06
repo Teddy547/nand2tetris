@@ -48,7 +48,7 @@ class Engine:
         self.__compile_subroutine()
         self.__process("}")
 
-        print("Class Table")
+        print(f"Class Table: {self.className}")
         self.classTable.print_table()
         self.classTable.reset()
         return
@@ -114,7 +114,7 @@ class Engine:
             self.isConstructor = False
             self.isMethod = False
 
-            print("Subroutine Table")
+            print(f"Subroutine Table: {self.subRoutineName}")
             self.subroutineTable.print_table()
             self.subroutineTable.reset()
         return
@@ -438,10 +438,10 @@ class Engine:
                 # The object is pushed onto the stack beforehand and is considered a variable when calling the function.
                 # Therefore, numberOfExpressions must be one higher than whatever expressionList returns
                 self.__process("(")
+                self.vmWriter.writeKeywordConstant("this")
                 self.numberOfExpressions = self.__compile_expression_list() + 1
                 self.__process(")")
                 self.functionNameToWrite = self.className + "." + subRoutineName
-                self.vmWriter.writeKeywordConstant("this")
 
             # (className|varName) '.' subRoutineName '(' expressionList ')' ; function call OR method call
             # In case of function call varType must be empty, because it was not found in either symbol table

@@ -183,7 +183,7 @@ not
 if-goto IF_FALSE5
 push constant 511
 push this 2
-neg
+sub
 pop this 0
 goto IF_TRUE6
 label IF_FALSE5

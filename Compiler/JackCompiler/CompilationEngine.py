@@ -362,6 +362,7 @@ class Engine:
         if token_type == tokenType.INT_CONST:
             self.vmWriter.writePush("constant", self.currentToken)
             self.currentToken = self.tokenizer.advance_token()
+            return
 
         if token_type == tokenType.STRING_CONST:
             self.currentToken = self.currentToken.strip('"')
@@ -373,10 +374,12 @@ class Engine:
                 self.vmWriter.writeCall("String.appendChar", 2)
 
             self.currentToken = self.tokenizer.advance_token()
+            return
 
         if self.__is_keyword_constant():
             self.vmWriter.writeKeywordConstant(self.currentToken)
             self.currentToken = self.tokenizer.advance_token()
+            return
 
         if self.currentToken == "(":
             self.__process("(")
@@ -402,6 +405,7 @@ class Engine:
             self.numberOfExpressions = self.__compile_expression_list() + 1
             self.__process(")")
             self.functionNameToWrite = self.className + "." + subRoutineName
+            return
 
         # in case of IDENTIFIER a lookahead is needed to differentiate between an array statement and a subroutine call
         if token_type == tokenType.IDENTIFIER:

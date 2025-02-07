@@ -216,6 +216,8 @@ class Engine:
 
         if self.currentToken == "[":
             self.__process("[")
+            self.__compile_expression()
+            self.__process("]")
 
             if self.subroutineTable.kindOf(varName):
                 self.vmWriter.writePush(self.subroutineTable.kindOf(varName), self.subroutineTable.indexOf(varName))
@@ -224,19 +226,11 @@ class Engine:
             else:
                 self.vmWriter.writeError("VarDec")
 
-            self.__compile_expression()
-            self.__process("]")
-
             self.vmWriter.writeArithmetic("+")
             varName = ""
 
             self.__process("=")
             self.__compile_expression()
-
-            # Calls a function, method or constructor. Function name is constructed in 'compileExpression'.
-            if not self.functionNameToWrite == "":
-                self.vmWriter.writeCall(self.functionNameToWrite, self.numberOfExpressions)
-                self.functionNameToWrite = ""
 
             self.vmWriter.writePop("temp", 0)
             self.vmWriter.writePop("pointer", 1)
@@ -246,11 +240,6 @@ class Engine:
         else:
             self.__process("=")
             self.__compile_expression()
-
-            # Calls a function, method or constructor. Function name is constructed in 'compileExpression'.
-            if not self.functionNameToWrite == "":
-                self.vmWriter.writeCall(self.functionNameToWrite, self.numberOfExpressions)
-                self.functionNameToWrite = ""
 
         # Looks for the variable in the symbol tables. Throws an error, if the variable is undeclared.
         if self.subroutineTable.kindOf(varName):
@@ -321,8 +310,6 @@ class Engine:
         self.__compile_expression()
         self.__process(";")
 
-        self.vmWriter.writeCall(self.functionNameToWrite, self.numberOfExpressions)
-        self.functionNameToWrite = ""
         self.vmWriter.writePop("temp", 0)
         return
 
@@ -356,6 +343,8 @@ class Engine:
     def __compile_term(self):
         unary_operator = ""
         varType = ""
+        kind = ""
+        index = ""
 
         token_type = self.tokenizer.token_type(self.currentToken)
 
@@ -410,27 +399,41 @@ class Engine:
         # in case of IDENTIFIER a lookahead is needed to differentiate between an array statement and a subroutine call
         if token_type == tokenType.IDENTIFIER:
 
+            lookahead = self.tokenizer.advance_token()
+
             # If the IDENTIFIER is found in one of the symbol tables the subsequent call must be a method
             # If it is not found the subsequent call must be a function
             if self.subroutineTable.kindOf(self.currentToken):
-                self.vmWriter.writePush(self.subroutineTable.kindOf(self.currentToken),
-                                        self.subroutineTable.indexOf(self.currentToken))
-                varType = self.subroutineTable.typeOf(self.currentToken)
-            elif self.classTable.kindOf(self.currentToken):
-                self.vmWriter.writePush(self.classTable.kindOf(self.currentToken),
-                                        self.classTable.indexOf(self.currentToken))
-                varType = self.classTable.typeOf(self.currentToken)
 
-            lookahead = self.tokenizer.advance_token()
+                if lookahead == "[":
+                    kind = self.subroutineTable.kindOf(self.currentToken)
+                    index = self.subroutineTable.indexOf(self.currentToken)
+                else:
+                    self.vmWriter.writePush(self.subroutineTable.kindOf(self.currentToken),
+                                            self.subroutineTable.indexOf(self.currentToken))
+                    varType = self.subroutineTable.typeOf(self.currentToken)
+
+            elif self.classTable.kindOf(self.currentToken):
+
+                if lookahead == "[":
+                    kind = self.classTable.kindOf(self.currentToken)
+                    index = self.classTable.indexOf(self.currentToken)
+                else:
+                    self.vmWriter.writePush(self.classTable.kindOf(self.currentToken),
+                                            self.classTable.indexOf(self.currentToken))
+                    varType = self.classTable.typeOf(self.currentToken)
 
             # varName '[' exression ']' ; array
             if lookahead == "[":
                 self.currentToken = lookahead
                 self.__process("[")
                 self.__compile_expression()
+
+                self.vmWriter.writePush(kind, index)
                 self.vmWriter.writeArithmetic("+")
                 self.vmWriter.writePop("pointer", 1)
                 self.vmWriter.writePush("that", 0)
+
                 self.__process("]")
 
             # subRoutineName '(' expressionList ')' ; same as this.methodName, method call
@@ -446,6 +449,7 @@ class Engine:
                 self.numberOfExpressions = self.__compile_expression_list() + 1
                 self.__process(")")
                 self.functionNameToWrite = self.className + "." + subRoutineName
+                self.vmWriter.writeCall(self.functionNameToWrite, self.numberOfExpressions)
 
             # (className|varName) '.' subRoutineName '(' expressionList ')' ; function call OR method call
             # In case of function call varType must be empty, because it was not found in either symbol table
@@ -467,6 +471,7 @@ class Engine:
                 self.numberOfExpressions = self.__compile_expression_list() + addExpressionFromMethod
                 self.__process(")")
                 self.functionNameToWrite = className + "." + subRoutineName
+                self.vmWriter.writeCall(self.functionNameToWrite, self.numberOfExpressions)
             else:
                 self.currentToken = lookahead
 

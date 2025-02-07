@@ -53,7 +53,7 @@ class Tokenizer:
                         self.stringConst = tempStringConst + '"'
                         break
 
-                # splits the line into individual lexical elements. Also completely breaks up any STRING constants. Those are reinserted later.
+                # splits the line into individual lexical elements. Also, completely breaks up any STRING constants. Those are reinserted later.
                 self.line = re.split(r'(["{}()\[\].,;+\-*/&|<>= ~])', self.line)
                 self.line = [x.strip() for x in self.line]
                 self.line = list(filter(None, self.line))  # removes all empty strings and each whitespace string

@@ -1,7 +1,7 @@
 from Constants import keyWord
 
 
-class SymbolTable():
+class SymbolTable:
 
     def __init__(self):
         self.field_counter = 0

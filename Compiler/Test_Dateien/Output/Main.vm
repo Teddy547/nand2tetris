@@ -672,15 +672,11 @@ call Output.println 0
 pop temp 0
 push constant 0
 return
-
-
 function Main.double 0
 push argument 0
 push constant 2
 call Math.multiply 2
 return
-
-
 function Main.fill 0
 label WHILE_EXP3
 push argument 1
@@ -705,5 +701,3 @@ goto WHILE_EXP3
 label WHILE_END4
 push constant 0
 return
-
-

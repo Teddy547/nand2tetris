@@ -45,6 +45,8 @@ class SymbolTable:
             return self.arg_counter
         return
 
+    # Returns the kind of any variable, if found in the symbol table.
+    # Returns 'False' if no variable is found
     def kindOf(self, name):
         for i in range(len(self.table)):
             if self.table[i].get("name") == name:
@@ -59,25 +61,23 @@ class SymbolTable:
 
         return False
 
+    # Returns the type of any variable, if found in the symbol table.
+    # Returns 'False' if no variable is found
     def typeOf(self, name):
         for i in range(len(self.table)):
             if self.table[i].get("name") == name:
                 return self.table[i].get("type")
         return False
 
+    # Returns the index of any variable, if found in the symbol table.
+    # Returns 'False' if no variable is found
     def indexOf(self, name):
         for i in range(len(self.table)):
             if self.table[i].get("name") == name:
                 return self.table[i].get("#")
         return False
 
-    def inTable(self, name):
-        for i in range(len(self.table)):
-            if self.table[i].get("name") == name:
-                return True
-            else:
-                return False
-
+    # Completely empties the table and deletes all entries
     def reset(self):
         for i in range(len(self.table)):
             self.table.pop(0)
@@ -89,6 +89,7 @@ class SymbolTable:
 
         return
 
+    # Prints the table to the console. Useful for debugging.
     def print_table(self):
         print(self.table)
         return

@@ -24,9 +24,7 @@ class Engine:
 
         self.className = ""
         self.subRoutineName = ""
-        self.functionNameToWrite = ""
 
-        self.numberOfExpressions = 0
         self.labelCounter = 1
         return
 
@@ -39,7 +37,7 @@ class Engine:
     def compile_class(self):
         self.__process("class")
 
-        # parses the className and takes it into a variable for the subroutine symbol table
+        # parses the className and takes it into a variable for use in the subroutine symbol table
         self.className = self.currentToken
         self.currentToken = self.tokenizer.advance_token()
 
@@ -50,6 +48,7 @@ class Engine:
 
         print(f"Class Table: {self.className}")
         self.classTable.print_table()
+
         self.classTable.reset()
         return
 
@@ -79,7 +78,9 @@ class Engine:
                         typeOfCurrentToken = self.tokenizer.token_type(self.currentToken)
                     else:
                         break
+
             self.__process(";")
+
         return
 
     # Compiles 0 or more subroutine declarations
@@ -108,7 +109,7 @@ class Engine:
             self.__process(")")
             self.__compile_subroutine_body()
 
-            self.vmWriter.writeNewLine()
+            # self.vmWriter.writeNewLine()
 
             self.isVoid = False
             self.isConstructor = False
@@ -116,13 +117,12 @@ class Engine:
 
             print(f"Subroutine Table: {self.subRoutineName}")
             self.subroutineTable.print_table()
+
             self.subroutineTable.reset()
         return
 
     # Compiles 0 or 1 parameter list, which itself might contain several parameters
     # ((type varName) (',' type varName)*)?
-
-    # Writes the VM Code for function calls at the end, because it marks the end of any constructor, method or function declaration. Naming by convention.
     def __compile_parameter_list(self):
         token_Type = self.tokenizer.token_type(self.currentToken)
 
@@ -161,6 +161,8 @@ class Engine:
 
     # Compiles 0 or more variable declarations
     # 'var' type varName (',' varName)* ';'
+
+    # Adds all variables to the subroutine table
     def __compile_var_dec(self):
         localVariableCounter = 0
 
@@ -171,23 +173,20 @@ class Engine:
 
             while self.__is_type(token_Type):
                 self.currentToken = self.tokenizer.advance_token()
-                name = self.currentToken
 
                 if not (self.currentToken == "," or self.currentToken == ";"):
-                    self.subroutineTable.add(name, var_type, "var")
-                    localVariableCounter = localVariableCounter + 1
+                    self.subroutineTable.add(self.currentToken, var_type, "var")
                 elif self.currentToken == ",":
                     self.__process(",")
                     self.subroutineTable.add(self.currentToken, var_type, "var")
-                    localVariableCounter = localVariableCounter + 1
 
                 token_Type = self.tokenizer.token_type(self.currentToken)
 
             self.__process(";")
 
-        self.functionNameToWrite = self.className + "." + self.subRoutineName
-        self.vmWriter.writeFunction(f"{self.functionNameToWrite}", localVariableCounter)
-        self.functionNameToWrite = ""
+        # After variable declaration the function name can be writte to the output file. No prior code is generated
+        functionNameToWrite = self.className + "." + self.subRoutineName
+        self.vmWriter.writeFunction(f"{functionNameToWrite}", self.subroutineTable.varCount(keyWord.VAR))
         return
 
     # statement*
@@ -391,9 +390,10 @@ class Engine:
             subRoutineName = self.currentToken
             self.currentToken = self.tokenizer.advance_token()
             self.__process("(")
-            self.numberOfExpressions = self.__compile_expression_list() + 1
+            numberOfExpressions = self.__compile_expression_list() + 1
             self.__process(")")
-            self.functionNameToWrite = self.className + "." + subRoutineName
+            functionNameToWrite = self.className + "." + subRoutineName
+            self.vmWriter.writeCall(functionNameToWrite, numberOfExpressions)
             return
 
         # in case of IDENTIFIER a lookahead is needed to differentiate between an array statement and a subroutine call
@@ -446,10 +446,10 @@ class Engine:
                 # Therefore, numberOfExpressions must be one higher than whatever expressionList returns
                 self.__process("(")
                 self.vmWriter.writeKeywordConstant("this")
-                self.numberOfExpressions = self.__compile_expression_list() + 1
+                numberOfExpressions = self.__compile_expression_list() + 1
                 self.__process(")")
-                self.functionNameToWrite = self.className + "." + subRoutineName
-                self.vmWriter.writeCall(self.functionNameToWrite, self.numberOfExpressions)
+                functionNameToWrite = self.className + "." + subRoutineName
+                self.vmWriter.writeCall(functionNameToWrite, numberOfExpressions)
 
             # (className|varName) '.' subRoutineName '(' expressionList ')' ; function call OR method call
             # In case of function call varType must be empty, because it was not found in either symbol table
@@ -468,10 +468,10 @@ class Engine:
                 self.currentToken = self.tokenizer.advance_token()
 
                 self.__process("(")
-                self.numberOfExpressions = self.__compile_expression_list() + addExpressionFromMethod
+                numberOfExpressions = self.__compile_expression_list() + addExpressionFromMethod
                 self.__process(")")
-                self.functionNameToWrite = className + "." + subRoutineName
-                self.vmWriter.writeCall(self.functionNameToWrite, self.numberOfExpressions)
+                functionNameToWrite = className + "." + subRoutineName
+                self.vmWriter.writeCall(functionNameToWrite, numberOfExpressions)
             else:
                 self.currentToken = lookahead
 

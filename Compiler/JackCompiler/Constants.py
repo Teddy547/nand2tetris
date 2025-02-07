@@ -9,25 +9,7 @@ class tokenType:
 
 
 class keyWord:
-    CLASS = 6
-    METHOD = 7
-    FUNCTION = 8
-    CONSTRUCTOR = 9
-    INT = 10
-    BOOLEAN = 11
-    CHAR = 12
-    VOID = 13
-    VAR = 14
-    STATIC = 15
-    FIELD = 16
-    LET = 17
-    DO = 18
-    IF = 19
-    ELSE = 20
-    WHILE = 21
-    RETURN = 22
-    TRUE = 23
-    FALSE = 24
-    NULL = 25
-    THIS = 26
-    ARG = 27
+    VAR = 6
+    STATIC = 7
+    FIELD = 8
+    ARG = 9

@@ -83,6 +83,7 @@ class VMWriter:
             self.file.write("push pointer 0\n")
         return
 
+    # Writes some error codes to the output file.
     def writeError(self, errorType):
         if errorType == "Syntax":
             self.file.write("Syntax Error\n")
@@ -90,10 +91,12 @@ class VMWriter:
             self.file.write("Undeclared Variable\n")
         return
 
+    # Writes a comment to the output file. Might be useful for debugging purposes
     def writeComment(self, comment):
-        self.file.write(f"{comment}\n")
+        self.file.write(f"//{comment}\n")
         return
 
+    # Writes two emtpy lines to the output file. Useful for debugging purposes.
     def writeNewLine(self):
         self.file.write("\n\n")
         return

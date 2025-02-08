@@ -213,6 +213,7 @@ class Engine:
         varName = self.currentToken
         self.currentToken = self.tokenizer.advance_token()
 
+        # Compiles an array expression on the left. Stacked array expressions are dealt with recursively via compileExpression
         if self.currentToken == "[":
             self.__process("[")
             self.__compile_expression()
@@ -334,6 +335,7 @@ class Engine:
             self.__process(self.currentToken)
             self.__compile_term()
 
+        # Thanks to its recursive nature any operator is written postfix to the output file
         if not operator == "":
             self.vmWriter.writeArithmetic(operator)
         return
@@ -347,11 +349,13 @@ class Engine:
 
         token_type = self.tokenizer.token_type(self.currentToken)
 
+        # integerConstant
         if token_type == tokenType.INT_CONST:
             self.vmWriter.writePush("constant", self.currentToken)
             self.currentToken = self.tokenizer.advance_token()
             return
 
+        # stringConstant
         if token_type == tokenType.STRING_CONST:
             self.currentToken = self.currentToken.strip('"')
 
@@ -364,25 +368,25 @@ class Engine:
             self.currentToken = self.tokenizer.advance_token()
             return
 
+        # keywordConstant
         if self.__is_keyword_constant():
             self.vmWriter.writeKeywordConstant(self.currentToken)
             self.currentToken = self.tokenizer.advance_token()
             return
 
+        # '(' expression ')'
         if self.currentToken == "(":
             self.__process("(")
             self.__compile_expression()
             self.__process(")")
             return
 
+        # (unaryOp term)
         if self.currentToken == "-" or self.currentToken == "~":
-            if self.currentToken == "-":
-                unary_operator = self.currentToken
-            elif self.currentToken == "~":
-                unary_operator = self.currentToken
-
+            unary_operator = self.currentToken
             self.currentToken = self.tokenizer.advance_token()
             self.__compile_term()
+            self.vmWriter.writeUnaryOp(unary_operator)
 
         # In case of this '.' subRoutineName
         if self.currentToken == ".":
@@ -403,6 +407,7 @@ class Engine:
 
             # If the IDENTIFIER is found in one of the symbol tables the subsequent call must be a method
             # If it is not found the subsequent call must be a function
+            # In case of arrays the identifier must not be pushed now, but in postfix. Therefore, it is saved now and to be pushed later.
             if self.subroutineTable.kindOf(self.currentToken):
 
                 if lookahead == "[":
@@ -451,7 +456,7 @@ class Engine:
                 functionNameToWrite = self.className + "." + subRoutineName
                 self.vmWriter.writeCall(functionNameToWrite, numberOfExpressions)
 
-            # (className|varName) '.' subRoutineName '(' expressionList ')' ; function call OR method call
+            # (className|varName) '.' subRoutineName '(' expressionList ')' ; function call OR method call (that operates on an object of anothe class)
             # In case of function call varType must be empty, because it was not found in either symbol table
             elif lookahead == ".":
                 if not varType == "":
@@ -475,15 +480,14 @@ class Engine:
             else:
                 self.currentToken = lookahead
 
-        if not unary_operator == "":
-            self.vmWriter.writeUnaryOp(unary_operator)
         return
 
     # (expression( ',' expression)*)?
     def __compile_expression_list(self):
         counter = 0
 
-        while not self.currentToken == ")":  # As long as the closing bracket is not found, the expression list is not finished
+        # As long as the closing bracket is not found, the expression list is not finished
+        while not self.currentToken == ")":
             self.__compile_expression()
             counter = counter + 1
             if self.currentToken == ",":

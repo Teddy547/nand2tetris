@@ -1,0 +1,125 @@
+function Math.init 2
+push constant 0
+pop local 0
+push constant 1
+pop local 1
+push constant 15
+call Array.new 1
+pop static 0
+label WHILE_EXP1
+push local 0
+push constant 15
+lt
+not
+if-goto WHILE_END2
+push local 0
+push static 0
+add
+push local 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 1
+push local 1
+add
+pop local 1
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP1
+label WHILE_END2
+push constant 0
+return
+function Math.abs 1
+push argument 0
+pop local 0
+push local 0
+push constant 0
+lt
+not
+if-goto IF_FALSE3
+push local 0
+neg
+pop local 0
+goto IF_TRUE4
+label IF_FALSE3
+label IF_TRUE4
+push local 0
+return
+function Math.multiply 4
+push constant 0
+pop local 0
+push argument 0
+pop local 1
+push argument 1
+pop local 2
+push constant 0
+pop local 3
+label WHILE_EXP5
+push local 3
+push constant 15
+lt
+not
+if-goto WHILE_END6
+push local 2
+push local 3
+call Math.bit 2
+not
+if-goto IF_FALSE7
+push local 0
+push local 1
+add
+pop local 0
+goto IF_TRUE8
+label IF_FALSE7
+label IF_TRUE8
+push local 1
+push local 1
+add
+pop local 1
+push local 3
+push constant 1
+add
+pop local 3
+goto WHILE_EXP5
+label WHILE_END6
+push local 0
+return
+function Math.divide 1
+push constant 0
+pop local 0
+push local 0
+return
+function Math.sqrt 0
+push constant 0
+return
+function Math.max 0
+push constant 0
+return
+function Math.min 0
+push constant 0
+return
+function Math.bit 2
+push argument 1
+pop local 1
+push argument 0
+push local 1
+push static 0
+add
+pop pointer 1
+push that 0
+and
+not
+if-goto IF_FALSE9
+push constant 1
+neg
+pop local 0
+goto IF_TRUE10
+label IF_FALSE9
+push constant 0
+pop local 0
+label IF_TRUE10
+push local 0
+return

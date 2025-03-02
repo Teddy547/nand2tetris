@@ -5,8 +5,8 @@ import sys
 from CompilationEngine import Engine
 
 if __name__ == '__main__':
-    folder_to_read = "/home/christian/dev/Compiler/Test_Dateien/ComplexArrays"
-    output_folder = "/home/christian/dev/Compiler/Test_Dateien/Output/"
+    folder_to_read = "/home/christian/dev/Project 12/Math"
+    output_folder = "/home/christian/dev/Project 12/Math"
     files = [100]
     file_to_write = ""
 
@@ -25,7 +25,7 @@ if __name__ == '__main__':
     for i in range(len(files)):
         file_name = files[i].split("/")
         file_name = file_name[-1].strip(".jack")
-        file_to_write = output_folder + file_name + ".vm"
+        file_to_write = output_folder + "/" + file_name + ".vm"
 
         try:
             os.remove(file_to_write)

@@ -164,7 +164,6 @@ class Engine:
 
     # Adds all variables to the subroutine table
     def __compile_var_dec(self):
-        localVariableCounter = 0
 
         while self.currentToken == "var":
             self.__process("var")
@@ -224,7 +223,7 @@ class Engine:
             elif self.classTable.kindOf(varName):
                 self.vmWriter.writePush(self.classTable.kindOf(varName), self.classTable.indexOf(varName))
             else:
-                self.vmWriter.writeError("VarDec")
+                self.vmWriter.writeError("VarDec", self.currentToken)
 
             self.vmWriter.writeArithmetic("+")
             varName = ""
@@ -247,7 +246,7 @@ class Engine:
         elif self.classTable.kindOf(varName):
             self.vmWriter.writePop(self.classTable.kindOf(varName), self.classTable.indexOf(varName))
         elif not varName == "":
-            self.vmWriter.writeError("VarDec")
+            self.vmWriter.writeError("VarDec", self.currentToken)
 
         self.__process(";")
 
@@ -342,7 +341,6 @@ class Engine:
 
     # integerConstant|stringConstant|keywordConstant|varName|varName '[' expression ']' | '(' expression ')' |(unaryOp term)|subRoutineCall
     def __compile_term(self):
-        unary_operator = ""
         varType = ""
         kind = ""
         index = ""
@@ -524,7 +522,7 @@ class Engine:
 
     def __process(self, string):
         if not self.currentToken == string:
-            self.vmWriter.writeError("Syntax")
+            self.vmWriter.writeError("Syntax", string)
 
         self.currentToken = self.tokenizer.advance_token()
         return

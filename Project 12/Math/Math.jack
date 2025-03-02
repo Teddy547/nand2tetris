@@ -1,0 +1,108 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/12/Math.jack
+
+/**
+ * A library of commonly used mathematical functions.
+ * Note: Jack compilers implement multiplication and division using OS method calls.
+ */
+class Math {
+	static Array twoTothe;
+
+    /** Initializes the library. */
+    function void init() {
+		var int i;
+		var int j;
+		let i = 0;
+		let j = 1;
+		let twoTothe = Array.new(15);
+		
+		while(i<15) {
+			let twoTothe[i] = j;
+			let j = j + j;
+			let i = i + 1;
+		}
+	return;
+    }
+
+    /** Returns the absolute value of x. */
+    function int abs(int x) {
+		var int abs;
+		let abs = x;
+		
+		if(abs < 0) {
+			let abs = -abs;
+			}
+			
+    return abs;
+    }
+
+    /** Returns the product of x and y. 
+     *  When a Jack compiler detects the multiplication operator '*' in the 
+     *  program's code, it handles it by invoking this method. In other words,
+     *  the Jack expressions x*y and multiply(x,y) return the same value.
+     */
+    function int multiply(int x, int y) {
+		var int sum;
+		var int shiftedx;
+		var int secondfactor;
+		var int i;
+		
+		let sum = 0;
+		let shiftedx = x;
+		let secondfactor = y;
+		let i = 0;
+		
+		while (i < 15) {
+			if (Math.bit(secondfactor, i)) {
+				let sum = sum + shiftedx;
+				}
+			let shiftedx = shiftedx + shiftedx;
+			let i = i + 1;
+		}
+		
+    return sum;
+    }
+
+    /** Returns the integer part of x/y.
+     *  When a Jack compiler detects the multiplication operator '/' in the 
+     *  program's code, it handles it by invoking this method. In other words,
+     *  the Jack expressions x/y and divide(x,y) return the same value.
+     */
+    function int divide(int x, int y) {
+		var int div;
+		let div = 0;
+    return div;
+    }
+
+    /** Returns the integer part of the square root of x. */
+    function int sqrt(int x) {
+    return 0;
+    }
+
+    /** Returns the greater number. */
+    function int max(int a, int b) {
+    return 0;
+    }
+
+    /** Returns the smaller number. */
+    function int min(int a, int b) {
+    return 0;
+    }
+    
+    function boolean bit(int x, int i) {
+		var boolean bool;
+		var int counter;
+		let counter = i; 
+		
+		if(x & twoTothe[counter]) {
+			let bool = true;
+			}
+		else {
+			let bool = false;
+			}
+			
+	return bool;
+	}
+}

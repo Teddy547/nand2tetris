@@ -84,9 +84,9 @@ class VMWriter:
         return
 
     # Writes some error codes to the output file.
-    def writeError(self, errorType):
+    def writeError(self, errorType, token):
         if errorType == "Syntax":
-            self.file.write("Syntax Error\n")
+            self.file.write(f"Syntax Error. Expected {token}\n")
         elif errorType == "VarDec":
             self.file.write("Undeclared Variable\n")
         return

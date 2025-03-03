@@ -8,7 +8,7 @@
  * Note: Jack compilers implement multiplication and division using OS method calls.
  */
 class Math {
-	static Array twoTothe;
+	static Array pow2;
 
     /** Initializes the library. */
     function void init() {
@@ -16,10 +16,10 @@ class Math {
 		var int j;
 		let i = 0;
 		let j = 1;
-		let twoTothe = Array.new(15);
+		let pow2 = Array.new(15);
 		
-		while(i<15) {
-			let twoTothe[i] = j;
+		while(i<16) {
+			let pow2[i] = j;
 			let j = j + j;
 			let i = i + 1;
 		}
@@ -28,14 +28,10 @@ class Math {
 
     /** Returns the absolute value of x. */
     function int abs(int x) {
-		var int abs;
-		let abs = x;
-		
-		if(abs < 0) {
-			let abs = -abs;
-			}
-			
-    return abs;
+		if(x < 0) {
+			let x = -x;
+			}	
+    return x;
     }
 
     /** Returns the product of x and y. 
@@ -54,7 +50,7 @@ class Math {
 		let secondfactor = y;
 		let i = 0;
 		
-		while (i < 15) {
+		while (i < 16) {
 			if (Math.bit(secondfactor, i)) {
 				let sum = sum + shiftedx;
 				}
@@ -82,27 +78,31 @@ class Math {
     }
 
     /** Returns the greater number. */
-    function int max(int a, int b) {
-    return 0;
+    function int max(int a, int b) { 
+		if(a>b) {
+			return a;
+			}
+		else {
+			return b;
+			}
     }
 
     /** Returns the smaller number. */
-    function int min(int a, int b) {
-    return 0;
+    function int min(int a, int b) {		
+		if (a<b) {
+			return a;
+			}
+		else {
+			return b;
+			}
     }
     
     function boolean bit(int x, int i) {
-		var boolean bool;
-		var int counter;
-		let counter = i; 
-		
-		if(x & twoTothe[counter]) {
-			let bool = true;
+		if(x & pow2[i] = 0) {
+			return false;
 			}
 		else {
-			let bool = false;
+			return true;
 			}
-			
-	return bool;
 	}
 }

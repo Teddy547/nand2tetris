@@ -68,21 +68,28 @@ class Math {
      *  the Jack expressions x/y and divide(x,y) return the same value.
      */
     function int divide(int x, int y) {
-		var int q;
-    
-		if(y > x) {
-			return 0;
-			}
-		
-		let q = Math.divide(Math.abs(x), Math.abs(y+y));
-		
-		if((x - (2 * q * y)) < y) {
-			return q+q;
-			}
-		else {
-			return q+q+1;
-			}
+        var int q;
+        let q = Math._divide(Math.abs(x), Math.abs(y)); 
+        if ((x < 0) = (y < 0)) {						 // if signs differ the returning value must be negative
+            return q;
+        } else {
+            return -q;
+        }
     }
+
+    function int _divide(int x, int y) {
+        var int q;
+        if ((y > x) | (y < 0)) {						 // y<0 means that y overflowed during the compution of y+y. In this case 0 must be returned.
+            return 0;
+        }
+        let q = Math._divide(x, y+y);
+        if ((x - (2*q*y)) < y) {
+            return q+q;
+        } else {
+            return q+q+1;
+        }
+    } 
+    
     
     /** Returns the integer part of the square root of x. */
     function int sqrt(int x) {

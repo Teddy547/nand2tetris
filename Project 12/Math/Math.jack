@@ -95,22 +95,28 @@ class Math {
     function int sqrt(int x) {
 		var int y;
 		var int j;
-		var int test;
+		var int t;
+		var boolean b;
 		let y = 0;
 		let j = 7;
 		
 		while(j > -1) {
-			/*do Output.printInt(y);
-			do Output.printChar(32);
-			do Output.printInt(Math.pow(y + Math.pow(2, j), 2));
-			do Output.println(); */
-			if((Math.pow(y + Math.pow(2, j), 2) < x) | (Math.pow(y + Math.pow(2, j), 2) = x)){
+			let t = Math.pow(y + Math.pow(2, j), 2);
+			
+			if((t < x) | (t = x)){
+				let b = true;
+				}
+			
+			if(t < 0){
+				let b = false;
+				}
+				
+			if(b){
 				let y = y + Math.pow(2, j);
 				}
 			let j = j - 1;
 			}
-		do Output.printInt(y);
-		do Output.println();
+
     return y;
     }
     

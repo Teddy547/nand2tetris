@@ -153,7 +153,7 @@ push constant 1
 add
 return
 label IF_END1
-function Math.sqrt 3
+function Math.sqrt 4
 push constant 0
 pop local 0
 push constant 7
@@ -172,39 +172,47 @@ call Math.pow 2
 add
 push constant 2
 call Math.pow 2
+pop local 2
+push local 2
 push argument 0
 lt
-push local 0
-push constant 2
-push local 1
-call Math.pow 2
-add
-push constant 2
-call Math.pow 2
+push local 2
 push argument 0
 eq
 or
 if-goto IF_TRUE0
 goto IF_FALSE0
 label IF_TRUE0
+push constant 0
+not
+pop local 3
+label IF_FALSE0
+push local 2
+push constant 0
+lt
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push constant 0
+pop local 3
+label IF_FALSE1
+push local 3
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
 push local 0
 push constant 2
 push local 1
 call Math.pow 2
 add
 pop local 0
-label IF_FALSE0
+label IF_FALSE2
 push local 1
 push constant 1
 sub
 pop local 1
 goto WHILE_EXP0
 label WHILE_END0
-push local 0
-call Output.printInt 1
-pop temp 0
-call Output.println 0
-pop temp 0
 push local 0
 return
 function Math.pow 2
